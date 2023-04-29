@@ -1,7 +1,9 @@
-Tesis.aux
-Tesis.log
-Tesis.out
-Tesis.pdf
-Tesis.synctex.gz
-Tesis.toc
+*.aux
+*.log
+*.out
+*.pdf
+*.synctex.gz
+*.toc
+*.dvi
+*.ps
 .auctex-auto/
