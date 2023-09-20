@@ -1,0 +1,11 @@
+#+title: Ideas para mi Tesis Doctoral
+#+author: Carlos Eduardo artínez Aguilar
+#+LANGUAGE: esp
+#+OPTIONS: tex:t
+#+SETUPFILE: ~/Templates/latex-export.org
+
+* Temática principal: Estudio de foliaciones holomorfas en variedades compactas Kähler.
+
+\noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de folaiaciones holomorfas $\mathrm{F}$ en variedades Kähler $(M,h)$ de tal forma que $M/F$ sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas $\{ \nu(L) \,|\,L\in \mathrm{F}\}$, estuviera uniformemente acotado $\{\nu(L) < M\}$, esto lleva a que la función $\nu$ sea dicretamente semicontinua superiormente. Es decir que en los límites de hojas $L_j\rightarrow L$n o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohmología en $\re$ y ver que pasa con $\zah$
+
+** Ciclos evanecentes y los límites de hojas
