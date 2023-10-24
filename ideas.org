@@ -2,10 +2,141 @@
 #+author: Carlos Eduardo artínez Aguilar
 #+LANGUAGE: esp
 #+OPTIONS: tex:t
+#+STARTUP: latexpreview
 #+SETUPFILE: ~/Templates/latex-export.org
 
 * Temática principal: Estudio de foliaciones holomorfas en variedades compactas Kähler.
 
-\noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de folaiaciones holomorfas $\mathrm{F}$ en variedades Kähler $(M,h)$ de tal forma que $M/F$ sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas $\{ \nu(L) \,|\,L\in \mathrm{F}\}$, estuviera uniformemente acotado $\{\nu(L) < M\}$, esto lleva a que la función $\nu$ sea dicretamente semicontinua superiormente. Es decir que en los límites de hojas $L_j\rightarrow L$n o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohmología en $\re$ y ver que pasa con $\zah$
+\noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de folaiaciones holomorfas $\mathrm{F}$ en variedades Kähler $(M,h)$ de tal forma que $M/F$ sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas $\{ \nu(L) \,|\,L\in \mathrm{F}\}$, estuviera uniformemente acotado $\{\nu(L) < M\}$, esto lleva a que la función $\nu$ sea dicretamente semicontinua superiormente. Es decir que en los límites de hojas $L_j\rightarrow L$ o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohomología en $\re$ y ver que pasa con $\zah$
 
 ** Ciclos evanecentes y los límites de hojas
+Esencialmente creo que si se aproxima una hoja de la foliacion por medio de otras la topologia no deberia crecer y eso refleja que exisen ciclos "loops" evanecentes es decir que generadores del grupo fundamental deberian desaparecer en el limite pues se van haciendo chichos. Ahora en terminos de la ya he investigado, es decir el volumen, esto quiere decir que tenemos un efecto inverso, es decir si el volumen crece y da un brinco, entonces el grupo fundamental se hace chico y estamos en la presencia de un ciclo evanecente, esto deberia verse en por ejemplo regiones fundamentales de curvas hiporbolicas por ejemplo.
+** Numeros de Lelong
+Del examen de candidatura, creo que la idea de ver la taza de crecimiento de los volumenes es una herramienta poderosa y eso nos relaciona directamente con los numeros de lelong. Entonces es necesario ver si hay alguna interpretecion topologica (homologica o cohomologica) de estos. A continuación hay un resumen del artículo "Propiétés Métriques Des Ensembles Analytiques Complexes"
+*** Introducción
+#+BEGIN_QUOTE
+La nocion "d'aire" de los conjuntos analíticos complejos se encuentra ahora claramente establecida. Esta se deriva de la existenncia de la inegral de una forma diferencial sobre tal conjunto. Esto define la base de un método de estudio de las propiedades métricas de los conjuntos analíticos complejos. A su vez en el estudio de estos aparecen una clase particular de operadores lineares: los fluidos (¿corrientes?) o formas diferenciales generalizadas, que son a la vez positivos y cerrados. En términos más abstractos, se busca un functor de la categoría de conjuntos analíticos complejos en la categoría de dichas corrientes. Para la búsqueda de este functor, parace que un punto de vista nuevo y eficaz es mediante los teorema de prolongación de conjuntos analíticos como el resultado de Remmert-Stein y la demostración de la conjetura de W. Stoll, demostrada por E, Bishop. Por otra parte una familia cerrdad de conjuntos analíticos es una familia normal, esto se compara con el teorema clásico de P. Montell de funciones holomorfas.
+#+END_QUOTE
+
+Luego prosigue definir qué es la noción de "d'aire", la cual se aplica a objetos que no son varidades y que la exposición que sigue Lelong proviene del estudio de conjuntos analíticos y semi-analíticos reales hecho por M. Herrera, aunado a esto la herramienta matemática que se utiliza para esto es clásica (medidas y distribuciones).
+
+Recordemos que un conjunto $A$ es un subconjunto analítico complejo de la variedad analítica $M$ si es cerrado y todo punto $x\in A$ posée una vecindad $U_x$ tal que $A\cap U_x=V(f_1,\dots,f_k)$ donde $V(F)$ denota el conjunto de ceros de la familia de funciones en $F$ y $f_j:U_x\rightarrow\co$. Un conjunto analítico en general no tiene una estructura de variedad diferencial. Por lo que es necesario defeinir un /punto ordinario/ de $A$ como un punto $x\in A$ tal que en una carta $(U_x,\varphi)$ de $x$, $U_x\cap A$ es biholomorfa a una vecindad de un subespacio lineal $L^{k}\subset\con$ por medio de una restricción de $\varphi$, la dimensión compleja de $L^{k}$, $k$ es la dimensión de $A$ en $x$, denotaremos por $A'$ al conjunto de puntos ordinarios. Los puntos ordianarios forman un subconjunto analítico de $A$ de dimensión $k'\leq k$. Si $A$ es de dimensión $k$ en todos sus puntos, diremos que $A$ es de dimension pura $k$.
+
+Debido a que un conjunto analítico no es una variedad, no es evidente que se puedan realizar ciertas operaciones analíticas en éste, por ejemplo la integración sobre ellas mismas.
+
+Sea $A$ un subconjunto analítico de dimensión pura $k$, definido en un dominio $U\subset\con$. Denotamos por $\Omega_{(p,p)}(U)$ al espacio de formas diferenciales con coeficientes $C^{\infty}$ de soporte compacto de tipo $(p,p)$. Definimos el siguiente operador lineal
+
+\[
+    t(\phi)=\int_{A}\phi
+\]
+
+Si $A$ es un conjunto analítico, el conjunto analítico de puntos no ordinarios de $A$ es $A\setminus A'\subset U\setminus A'=U'$ así diremos que $U'$ es el conjunto (abierto de $\con$) de puntos no ordinarios de $U$, entonces el problema de encontrar $t(\phi)$ es el problema de prolongar el operador
+\[
+    t_0(\phi)=\int_{A}\phi
+\]
+del espacio $\Omega_{(p,p)}(U)$ (donde está bien definido en el sentido clásico) a $\Omega_{(p,p)}(U)$.
+*** Corrientes positivas y corrientes positivas cerradas.
+#+BEGIN_QUOTE
+El operador $t_0(\phi)$ es una corriente en el sentido de De Rham, también conocida como "/forma diferenecial generalizada/" o forma diferencial con coeficientes que son distribuciones. El espacio es describe como el espacio de las expresiones del tipo
+\[
+    t=\sum_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}t_{i_1\dots i_{n-k}j_1\dots j_{n-k}} dz_{i_1}\wedge\dots\wedge dz_{i_{n-k}}\wedge d\overline{z}_{j_1}\wedge\dots\wedge d\overline{z}_{j_{n-k}}.
+\]
+#+END_QUOTE
+Más aún si $\tau_n$ denota a la a forma invariante o "elemento de volumen" en $\con$, es decir $\tau_n=\omega_n^n/n!$, donde
+\[
+    \omega_n=\frac{i}{2}\sum_{j=1}^n dz_j\wedge d\overline{z}_j,
+\]
+la forma de Kaehler en $\con$. El mapeo $t_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}\rightarrow T_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}\tau_n$ asocia de manera canónica los coeficentes de $t$ con distribuciones $T_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}$. Por otra parte, a un subespacio $L^k$, es posible asociarle canonicamente una forma diferencial $\omega(L^k)$ de la siguiente forma: consideremos una transformación $\con\rightarrow L^k$, el cual se define como $z=(z_1,\dots,z_n)\mapsto z'=(z_1,\dots,z_k)$, donde $z_{j+k}\mapsto 0$ para $j\in\{1,\dots,n-k\}$. Definimos
+\[
+    \tau(L^k):=\frac{\omega_n^k}{k!}(dz')=(\frac{i}{2})^k(-1)^{k(k-1)/2}\sum \alpha(s)\overline{\alpha(t)}dz_{s_1}\wedge\dots\wedge dz_{s_k}\wedge d\overline{z}_{t_1}\wedge \dots\wedge d\overline{z}_{t_k}.
+\]
+Donde $\alpha(s)=\Vert(a^{1}_{j},\dots,a^{k}_{j})\Vert$ $j\in(s)=\{A\subset\{1,\dots,n\}\,\vert\, |A|=s\}$ con $1\leq s\leq k$, es decir vemos a $L^k$ como
+\[
+    L^k=\{z_j\,\vert\,z_j=\sum a^{s}_{j}z'_s,\quad 1\leq j\leq n,\quad 1\leq s\leq p \}
+\]
+Así se puede verificar que $L\mapsto\omega(L^k)$ es una mapeo inyectivo de el espacio de subespacios de dimensión $k$ (grassmaniana) en el espacio de formas diferenciales. Se puede verificar que $\omega(L^k)^{*}=\omega(L^{n-k})$ donde $L^{n-k}$ es el complemento ortogonal de $L^k$.
+#+BEGIN_QUOTE
+\begin{def.}
+    Una corriente $t$ es positiva si cumple
+    \begin{itemize}
+        \item[a] Es de tipo $(q,q)$ con $0\leq q\leq n$
+        \item[b] Para todo $L^{n-q}$, $\sigma[t,L^{n-q}]=t\wedge\omega(L^{n-q})$ es una distribucion (funcional) positiva
+    \end{itemize}
+    Eso asegura que $\sigma[t,L^{n-q}]$ es una medida positiva.
+\end{def.}
+#+END_QUOTE
+\begin{prop}
+Se cumplen las siguientes proposiciones para las corrientes positivas:
+    \begin{itemize}
+        \item[1] La aplicación $t\mapsto\sigma[t,L^{n-q}]$ es inyectiva y en la grassmaniana compleja, parta todo punto $L^{n-q}_{0}$ dado, existe una vecindad de éste donde es posible encontrar puntos $L^{n-q}_s,\quad s\in\{1,\dots,{n\choose k}\}$, tal que los coeficientes $t_{I,J}$ de $\omega(L^{n-q}_{0})$ se expresan como combinaciones lineales de $\sigma_s=\sigma[t,L^{n-q}]$. A un sistema que cumple lo anterior le llamaremos \emph{regular}.
+
+        \item[2] En concecuencia del punto antrior, una corriente positiva, los $T_{I,J}$ asociados a $t_{I,J}$ son medidas complejas, entonces $t$ se extiende a el espacio $C^{0}_{(q,q)}$ de formas diferenciales con coeficientes continuos de tipo $(q,q)$.
+
+        \item[3] Sea $T_{>0}^{p}$ el cono de corrientes positivas de tipo $(p,p)$ (El conjunto de corrientes positivas es cerrado bajo multiplicación por una constante posiva). Sea $\Phi^{p}_{>0}$ el cono de corrientes positivas que son representables por formas con coeficientes coninuos (a las corrientes positivas de tipo $(p,p)$ diremos que son de grado $p$ o de dim $n-p$). Si $t\in T^{p}_{>0}$ y $\phi\in\Phi^{1}_{>0}$, entonces $t_1=t\wedge\phi\in T^{1}_{>0}$. En particular las formas $\omega_n$, $\omega^{k}_n$ y $\omega(L^k)$ son positivas, lo mismo para $i\partial\overline{\partial}\eta$ si $\eta$ es una función plurisubharmónica.
+
+        \item[4] Si $t\in T^{n-p}_{>0}$ es una corriente positiva de grado $n-p$, entonces
+        \[
+            \sigma=\frac{1}{p!}t\wedge\omega_n^{p}
+            \quad\text{y}\quad
+            \nu=\frac{1}{\pi^p}t\wedge\Big(\frac{i}{2}\partial\overline{\partial}\log\Vert z-\zeta\Vert\Big)^{p},
+        \]
+        son medidas positivas, donde el lado derecho de $\nu$ es la métrica del espacio proyectivo en el punto $\zeta$, normalmente denotada $\omega_{FS}$. Se verifica que en un abierto $U$
+        \[
+            \Vert\sigma\Vert_{U}=\int_{U}\sigma,
+        \]
+        es una norma equivalente a la norma de operadores en $T^p_{>0}$ definida por
+        \[
+            \Vert t\Vert_U=\sup\{|t(\phi)|\,\vert\,\phi\in \Omega_{(p,p)(U)}\quad\Vert\phi\Vert=1\}.
+        \]
+        Más aún $\Vert t\Vert_U=\sup\{\Vert t\wedge\omega(L^{p})\Vert_U\,\vert\,L^{p}\text{ en un sistema regular}\}$
+        \item[5] Si $t$ es cerrada, es decir
+        \[
+            d(t)[\phi]:=t(d\phi)=0\quad\forall\phi\in\Omega_{*}(U),
+        \]
+        entonces se cumple la siguiente propiedad: Sea
+        \[
+            B_1=B(z,r_1)\quad B_2=B(z,r_2)\quad 0<r_1<r_2.
+        \]
+        Bolas métricas concentricas con centro en $z$. Se tiene entonces,
+        \[
+            0<\int_{B_2\setminus B_1}\nu= \frac{p!}{\pi^{p}}(\frac{\sigma(r_1)}{r^{2p}_2}-\frac{\sigma(r_2)}{r^{2p}_1}).
+        \]
+        donde $\sigma$ y $\nu$ son como se definió previamente. Así resuta que para una corriente positiva $t$ de grado $n-p$, la función $\sigma(r)r^{-2p}$ es una función creciente de $r$ y el límite
+        \[
+            \nu(z,0)=\lim_{r\rightarrow 0}\frac{p!}{\pi^{p}}\sigma(r)r^{-2p},
+        \]
+        existe y extiende la medida $\nu$ de $B\setminus\{z\}$ al punto incluyendo $z$ con una medida puntual positiva en $z$.
+    \end{itemize}
+\end{prop}
+
+*** Corrientes de integración
+En un conjunto analítico complejo $A\subset U\subset\con$, se tiene el siguiente teorema
+\begin{teorema}
+El operador
+\[
+    t(\phi)=\int_A\phi
+\]
+definido por una extensión simple de $\Omega_{(p,p)}(U\setminus A')$ al espacio $\Omega_{(p,p)}(U)$, existe y es única y posée tres propiedades
+\begin{itemize}
+    \item[a] Es la única extensión de $t_0(\phi)$ que tiene norma nua en $A'$ (extensión simple).
+    \item[b] Es cerrado.
+    \item[c] Es positivo definido.
+\end{itemize}
+\end{teorema}
+
+*IMPORTANTE:* La demostración se basa sobre en el "teorema de Stokes de estructuras diferenciales" ver "LELONG P. - Intégration sur un ensemble analytique complexe", el cual basicamente dice que si una corriente cerrada tiene una continuación de orden cero en $U\setminus E$ donde $E$ es un conjunto cerrado, debido a la extensión de ésta de $U\setminus E$ a $U$, es necesario y suficiente que exista una familia de funciones de clase $C^{1}(U)$, digamos $\alpha_s(x)$ tales que $\alpha_s(x)\geq0,\quad\alpha_s(x)=1$ en una vecindad $W_s$ de $E$ y cuyo soporte se encuentre en una vecindad $V_s$ de $E$, donde $V_s\rightarrow E$ cuando $s\rightarrow 0$, además queeremos que
+\[
+    \lim_{s\rightarrow 0}t\wedge d\alpha_s=0.
+\]
+Esta condición es local y es suficiente contruir tales nucleos realtivos a partir de compactos de E. En particular si $E$ es la imagen $C^1$ de $\re^m$ de dimensión real $m$, es suficiente con demostrar
+\[
+    \lim_{r\rightarrow 0}1/r\Vert t\Vert^{r}_K=0,
+\]
+para todo compacto $K$, donde medimos la norma como siempre, pero en
+\[
+ U_r=\{x\in K\,\,\vert\,d_H(x,E)<r\}
+\]
+El siguiente resulltado permite simplificar la demostraci
+\begin{prop}
+Sea $A$ un conjunto analitico de dimensión pura $k$ que contiene el origen
+\end{prop}

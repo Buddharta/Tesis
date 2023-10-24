@@ -1,0 +1,321 @@
+
+\documentclass[A4paper,11pt]{amsart}
+\usepackage[english] {babel}
+\usepackage{amsmath,amssymb,amscd}
+\usepackage{amsthm}
+\usepackage{subfig}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{fancybox}
+\usepackage{caption}
+\usepackage[all]{xy}
+
+\usepackage{bookmark,hyperref}
+\hypersetup{
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor = blue,
+     urlcolor=cyan,
+     }
+
+
+ 
+
+\usepackage{bbm}
+\usepackage{amscd}
+\usepackage[cal=boondoxo]{mathalfa}
+\usepackage[all]{xy}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{enumerate}
+\usepackage{pgf}
+\usepackage{cite}
+\usepackage{pgf,tikz}
+\usepackage{url}
+\usepackage{tikz-cd}
+\usetikzlibrary{arrows}
+ 
+ 
+\usepackage{xcolor}
+\usepackage{hyperref}
+ 
+ 
+\usepackage{bookmark,hyperref}
+\hypersetup{
+     colorlinks=true,
+     linkcolor=blue,
+     filecolor=blue,
+     citecolor = blue,
+     urlcolor=cyan,
+     }
+ 
+\usepackage{enumitem}
+\usepackage{multicol}
+ 
+\newlist{multienum}{enumerate}{1}
+\setlist[multienum]{
+    label=\alph*),
+    before=\begin{multicols}{2},
+    after=\end{multicols}
+}
+ 
+\newlist{multiitem}{itemize}{1}
+\setlist[multiitem]{
+    label=\textbullet,
+    before=\begin{multicols}{2},
+    after=\end{multicols}
+}
+ 
+ 
+ 
+ 
+ 
+ 
+\xyoption{arc}
+\usetikzlibrary{arrows,shapes,calc,positioning}
+\usepackage{manfnt}
+ 
+\newcommand{\red}{\color{red}}
+\newcommand{\blue}{\color{blue}}
+%%
+\newcommand{\noi}{{\noindent}}
+\newcommand{\cF}{\mathcal{F}}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\sE}{\mathbb{E}}
+\newcommand{\sS}{\mathbb{S}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\PSL}{PSL(2,\R)}
+\renewcommand{\H}{\mathbb{H}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cS}{\mathcal{S}}
+\newcommand{\cU}{\mathcal{U}}
+\newcommand{\bu}{{\mathbf{u}}}
+\newcommand{\bd}{{\mathbf{d}}}
+\newcommand{\cA}{\mathcal{A}}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cH}{\mathcal{H}}
+\newcommand{\He}{\mathcal{H}_3(\C)}
+\newcommand{\hz}{\hat\Z}
+\newcommand{\kh}{\mathfrak{h}}
+\newcommand{\kg}{\mathfrak{g}}
+\newcommand{\wg}{\widehat{\Gamma}}
+\newcommand{\wpi}{\widehat{\pi_1(M)}}    
+\newcommand{\disc}{\mathbb{D}}
+\newcommand{\tange} {\mathbf{T}}
+\newcommand{\Lam}{\pmb{\Lambda}}
+\newcommand{\ZLam}{{\pmb{Z}}^{^\C}(\Lam)}
+\newcommand{\Zdel}{{\pmb{Z}}^{^\C}_\delta(\Lam)}
+\newcommand{\Zdelu}{{\pmb{Z}}_{_{(\delta,1)}}^{^\C}}
+\newcommand{\Zdeln}{{\pmb{Z}}_{_{(\delta,n)}}^{^\C}}
+ 
+ 
+%%
+\newcommand{\ie}{{\em i.e.,\,\,}}
+ 
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{conjecture}{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{remark}{Remark}
+\newtheorem{question}{Question}
+ 
+\newtheoremstyle{named}{}{}{\itshape}{}{\bfseries}{.}{.5em}{\thmnote{#3} #1}
+\theoremstyle{named}
+\newtheorem*{namedlemma}{Lemma}
+\newtheorem*{namedtheorem}{Theorem}
+ 
+ 
+
+
+
+
+\title[Foliation by elliptic curves of unbounded area]{A compact 5-dimensional complex manifold with a holomorphic foliation by elliptic curves of unbounded areas}
+
+\author[Alberto Verjovsky, Carlos Martínez Aguilar]{Alberto Verjovsky \& Carlos Martínez Aguilar}
+\date{today}
+\thanks{}
+\keywords{Holomorphic foliation, complex Heisenberg group, unbounded area}
+\subjclass[2010]{32M25 , 37F75}
+
+\begin{document}
+\maketitle
+
+{\footnotesize
+\centerline{\it To Dennis Sullivan on the occasion of his 80th birthday,}
+\centerline{\it and to the memory of André Haefliger  (1929 – 2023). }
+\centerline{\it  Both  made fundamental  contributions to foliation theory.}
+}
+
+
+
+
+\begin{abstract} In this paper, we construct a nonsingular holomorphic foliation on a compact, complex, 5-dimensional manifold, whose 
+leaves are elliptic curves and such that for some points the area function is not locally bounded.
+This example is the holomorphic version of a celebrated example by Dennis Sullivan 
+of a smooth foliation by circles on $\sS^5$. Sullivan’s article contains also a modification by Thurston of his construction. Thurston’s example is real analytic and it is an explicit flow on the quotient of $\mathcal{H}_3(\R)\times\R^2$ by the co-compact lattice $\mathcal{H}_3(\Z)\times\Z^2$ where $\mathcal{H}_3(\R)$ and $\mathcal{H}_3(\Z)$ are the real and integer 3-dimensional Heisenberg groups, respectively. The  leaves of both foliations are not the leaves of a smooth and real-analytic action, 
+respectively,  of the circle $\sS^1$. In the aforementioned paper by Sullivan, he asks if it is possible to find a holomorphic version of his example and one of the main  goals of this paper is to provide such an example.
+\end{abstract} 
+
+\section{Introduction} \label{introduction}
+Theorem 1. Let F be a holomorphic foliation of codimension q on a compact complex Kaehler manifold. If F has a compact leaf with finite holonomy group then every leaf of F is compact with finite holonomy group.
+Another kind of stability problem was posed by Reeb and Haefliger. The question was the stability of compact foliations, that is, if a foliation has all leaves compact is the leaf space Hausdorff? Positive answers to
+this problem arose in the work of Epstein[5], Edwards-Millet-Sullivan[4], Holmann[8], etc. There are plenty situations where the leaf space is not Hausdorff. Sullivan found a example in the $C^\infty$ case[9], Thurston in the analytic case[9] and Müler in the holomorphic case[8]. The examples of Sullivan and Thurston live in compact manifolds, and Müller’s in a non- compact non-Kaehler manifold. As corollary of the theorem we reobtain Holmann’s result and a special case of Edwards-Millet-Sullivan’s outstand- ing Theorem.
+Corollary 2 ([4],[8]). Suppose M is a complex Kaehler manifold, not necessarily compact. If F is a compact foliation, i.e., every leaf is compact, then every leaf has finite holonomy group. Consequently, there is an upper bound on the volume of the leaves, and the leaf space is Hausdorff.
+%%%%%%%
+Since the pioneering works of Ehresmann,  Haefliger and Reeb For a foliation of dimension $0<q<n$ on a compact $n$-dimensional manifoldThe existence of an upper bound on the volume of the leaves has rather important consequences which provide a description of the local, as well as global, structure of the foliation. The boundedness of volume near any given leaf is equivalent to the finiteness of the holonomy group of that leaf, and also to the Hausdroff separation property for the topology of the leaf space near the leaf ([4], [8], see also §4). Hence, in the presence of a bound on the volume, a structure theorem due to Ehresmann [4, Theorem 4.3] provides a nice picture of the local behavior of the foliation. In the absence of such a bound the geometrical possibilities are somewhat formidable.
+In a celebrated paper \cite{Ep2}, D. B. A. Epstein proved the following theorem:
+\begin{theorem}[D. B. A. Epstein 1972] Let $A: M \times \R\rightarrow{M}$ be a $C^r$ action 
+($1 < r < \omega$) of the additive group of real numbers on M, with every orbit a circle. Let $M $be a compact three-dimensional manifold possibly with boundary. Then there is a $C^r $ action
+$A': M \times \sS^1\to{M}$ with the same orbits.
+\end{theorem} 
+This theorem states that the leaves of an oriented foliation by circles of class $C^r$  ($1 < r < \omega$)  on a 3-manifold are the orbits of a
+locally-free action of the circle or, equivalently: any nonsingular vector field tangent to the leaves,
+has the property that all of its orbits are periodic and the periods are uniformly bounded. This latter property is equivalent to the uniform boundedness of the lengths of the orbits. A corollary of Epstein's theorem is that the action of the circle on $M^3$ is locally-free and the orbit space is Hausdorff (\ie it is a surface $\Sigma$) and, therefore, the canonical projection $\pi:M^3\to\Sigma$ is a Seifert fibration.
+
+Soon after the appearance of \cite{Ep2}, it was conjectured that  Epstein's result would be valid in every dimension, however
+in his 1976 paper {\em A counterexample to the periodic orbit conjecture} \cite{Su},
+Dennis Sullivan constructed a foliation by circles on the 5-sphere where the length of the leaves (with respect to any Riemannian metric)  is not locally bounded at some ``bad points''.  The result of both papers \cite{Ep2} and \cite{Su} are landmark results in the theory of foliations. 
+% in particular, by a theorem of Harald Holmann, the foliation is not obtained by integrating a holomorphic
+% vector field. 
+In the case of holomorphic foliations on complex manifolds R. Edwards, K. Millett, D. Sullivan \cite{EMS}
+have shown that if
+
+Suppose M is a compact smooth manifold which is smoothly foliated by compact leaves of dimension d. Suppose that the leaves are oriented in a continuous manner, and that the images of the fundamental classes of the leaves all lie in some open hal[space of the d-dimensional real homology of M. Then there is an upper bound on the volumes of the leaves of M. Consequently, all the holonomy groups of the foliation are finite.
+
+
+A closed complex subspace $Y$ of a compact Kähler manifold $X$ is a minimal submanifold (outside its singular set).  Even more: by the theory of calibrated geometry, Y minimizes volume among all (real) cycles in the same homology class. 
+
+\section{Preliminaries}
+\subsection{Complex 3-dimensional Heisenberg group} The 3-dimensional complex Heisenberg group is the unique simply connected, nonabelian, nilpotent, complex 3-dimensional Lie group. It is represented by upper triangular  $3\times3$ matrices with complex entries as follows:
+
+
+
+\begin{equation}
+G:=\mathcal{H}_3(\C)=\left\{\begin{bmatrix}
+1 & a &  b\\
+0 & 1 & c\\
+0 & 0 & 1\end{bmatrix}\quad : \quad a,b,c \in\C\right\},
+\end{equation}
+under the operation of matrix multiplication given by the rule:
+ 
+\begin{equation}\label{heisenbergmultiplication}{\begin{bmatrix}1&a&c\\0&1&b\\0&0&1\\\end{bmatrix}}{\begin{bmatrix}1&a'&c'\\0&1&b'\\0&0&1\\\end{bmatrix}}={\begin{bmatrix}1&a+a'&c+ab'+c'\\0&1&b+b'\\0&0&1\\\end{bmatrix}}.\end{equation}
+Thus as a complex manifold $\mathcal{H}_3(\C)$ is biholomorphic to $\C^3$. From formula
+\ref{heisenbergmultiplication} we see that the Lie group structure on $\C^3$ is given by the product
+$(a,b,c)(a',b'.c')=(a+a',b+b', c+ab'+c')$. We can denote  the elements of $\He$ by  ordered triplets of complex numbers.  The center of $G=\He$ is the subgroup $Z(G)=\left\{(0,0,c)\,:\, c\in\C\right\}\subset\He$. We have that $Z(G)\simeq\C$ and $\He/Z(G)\simeq{\C\times\C}$. We have the central extension given by the non-split short exact sequence:
+\begin{equation}\label{centerexseq}
+0\longrightarrow{Z(G)}\simeq\C\longrightarrow\He\longrightarrow\C\times\C\longrightarrow0
+\end{equation}
+ 
+ Another equivalent way to represent $G$ is as a pair consisting of a complex number and a column 2-vector:
+ \[
+ G:=\left\{\left(a,\begin{pmatrix}c\\b\end{pmatrix}\right) \quad:\quad a, b, c \in\C \right\}
+ \]
+ with multiplication given by the rule:
+  \begin{equation}\left(a,\begin{pmatrix}c\\b\end{pmatrix}\right)
+ \left(a',\begin{pmatrix}c'\\b'\end{pmatrix}\right)=\left(a+a',\begin{pmatrix}c+ab'+c'\\b+b'\end{pmatrix}\right)
+  \end{equation}
+ \[
+ =\left(a+a',\begin{pmatrix}1&a\\0&1\end{pmatrix}\begin{pmatrix}c'\\b'\end{pmatrix}+\begin{pmatrix}c\\b\end{pmatrix}\right)
+\]
+ \begin{equation}\left(a,\begin{pmatrix}c\\b\end{pmatrix}\right)
+ \left(\mathbf{n}_1,\begin{pmatrix}\mathbf{n}_3\\\mathbf{n}_2\end{pmatrix}\right)=
+ \left(a+\mathbf{n}_1,\begin{pmatrix}1&a\\0&1\end{pmatrix}\begin{pmatrix}\mathbf{n}_3\\\mathbf{n}_2\end{pmatrix}+\begin{pmatrix}c\\b\end{pmatrix}\right)
+ \end{equation}
+ \begin{equation}
+ {\begin{bmatrix}1&a&c\\0&1&b\\0&0&1\\\end{bmatrix}}
+ {\begin{bmatrix}1&\mathbf{n}_1&\mathbf{n}_3\\0&1&\mathbf{n}_2\\0&0&1\\\end{bmatrix}}={\begin{bmatrix}1&a+\mathbf{n}_1&c+a\mathbf{n}_2+\mathbf{n}_3\\0&1&b+\mathbf{n}_2\\0&0&1\\\end{bmatrix}}
+  \end{equation}
+  
+  \begin{equation}
+  {\begin{bmatrix}1&a+a'&c+ab'+c'\\0&1&b+b'\\0&0&1\\\end{bmatrix}}
+   {\begin{bmatrix}1&\mathbf{n}_1&\mathbf{n}_3\\0&1&\mathbf{n}_2\\0&0&1\\\end{bmatrix}}=
+   \end{equation}
+   \[
+  {\begin{bmatrix}1&a+a'+\mathbf{n}_1&c+ab'+c'+(a+a')\mathbf{n}_2+\mathbf{n}_3\\0&1&b+\mathbf{n}_2\\0&0&1\\\end{bmatrix}}=
+  \]
+  \[
+  \left(a+a'+\mathbf{n}_1,\begin{pmatrix}1&a+a'\\0&1\end{pmatrix}\begin{pmatrix}\mathbf{n}_3\\\mathbf{n}_2\end{pmatrix}+\begin{pmatrix}c+ab'+c'\\b+b'\end{pmatrix}\right)
+  \]
+ 
+ \begin{equation}\left(a,\begin{pmatrix}c\\b\end{pmatrix}\right)
+ \left(\mathbf{n}_1,\begin{pmatrix}\mathbf{n}_3\\\mathbf{n}_2\end{pmatrix}\right)=
+ \left(a+\mathbf{n}_1,\begin{pmatrix}1&a\\0&1\end{pmatrix}\begin{pmatrix}\mathbf{n}_3\\\mathbf{n}_2\end{pmatrix}+\begin{pmatrix}c\\b\end{pmatrix}\right)
+ \end{equation}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ %%%%%%%%%%%%%%%%%%%%%%%
+\vskip10cm
+\section{Acknowledgements}
+%%%
+
+	This research paper has been made possible
+		 by grant  IN108120,
+		PAPIIT, DGAPA, Universidad Nacional Aut\'onoma de M\'exico.
+ 
+ \begin{thebibliography}{100000000}
+ 
+  \bibitem{EMS} R. Edwards, K. Millett, D. Sullivan,  {\em Foliations with all leaves compact}. Topology 16 (1977), no. 1, 13--32.
+ 
+ \bibitem{Ep1} D. B. A, Epstein, {\em Periodic flows on three-manifolds}. Ann. of Math. (2) 95 (1972), 66--82. 
+ 
+ \bibitem{Ep2} D. B. A, Epstein, {\em Foliations with all leaves compact}. Ann. Inst. Fourier (Grenoble) 26 (1976), no. 1, viii, 265--282.
+ 
+ \bibitem{Su} D. Sullivan, {\em A counterexample to the periodic orbit conjecture}, Inst. Hautes Études Sci. Publ. Math. No. 46 (1976), 5--14
+ 
+ \bibitem{CC}
+A. Candel and L. Conlon,
+\newblock {\bf Foliations. {I}}, volume 23 of Graduate Studies in
+  Mathematics.
+\newblock American Mathematical Society, Providence, RI, 2000.
+ 
+ \bibitem{MS} P. Mounoud, S. Suhr
+ {\em Pseudo-Riemannian geodesic foliations by circles} Math. Z. (2013) 274:225--238
+DOI 10.1007/s00209-012-1066-0 
+ 
+ \bibitem{Mü}Th.  Müller, Thomas
+{\em Beispiel einer periodischen instabilen holomorphen Strömung. }
+Enseign. Math. (2) 25 (1979), no. 3-4, 309--312 (1980)
+
+ Reeb, Georges Variétés feuilletées, feuilles voisines. (French) C. R. Acad. Sci. Paris 224 (1947), 1613--1614. 
+
+Reeb, Georges Remarque sur les variétés feuilletées contenant une feuille compacte à groupe de Poincaré fini. (French) C. R. Acad. Sci. Paris 226 (1948), 1337–1339.
+
+Reeb, Georges Stabilité des feuilles compactes à groupe de Poincaré fini. (French) C. R. Acad. Sci. Paris 228 (1949), 47–48
+
+ Remarques sur les structures feuilletées
+Reeb, G.
+Bulletin de la Société Mathématique de France, Volume 87 (1959), pp. 445-450. 
+
+\end{thebibliography}
+
+
+\end{document}
