@@ -1,4 +1,4 @@
-% Created 2023-10-19 jue 00:07
+% Created 2023-11-16 jue 17:07
 % Intended LaTeX compiler: pdflatex
 \documentclass[letterpaper]{article}
 \usepackage[utf8]{inputenc}
@@ -61,10 +61,14 @@
 \newcommand{\rp}{\ensuremath{\mathbb{RP}}}
 \newcommand{\re}{\ensuremath{\mathbb R }}
 \newcommand{\hc}{\ensuremath{\widehat{\mathbb C} }}
-\newcommand{\pslz}{\ensuremath{psl(2,\mathbb Z) }}
-\newcommand{\pslr}{\ensuremath{psl(2,\mathbb R) }}
-\newcommand{\pslc}{\ensuremath{psl(2,\mathbb C) }}
+\newcommand{\pslz}{\ensuremath{\mathrm{PSL}(2,\mathbb Z) }}
+\newcommand{\pslr}{\ensuremath{\mathrm{PSL}(2,\mathbb R) }}
+\newcommand{\pslc}{\ensuremath{\mathrm{PSL}(2,\mathbb C) }}
 \newcommand{\hd}{\ensuremath{\mathbb H^2}}
+\newcommand{\slz}{\ensuremath{\mathrm{SL}(2,\mathbb Z) }}
+\newcommand{\slr}{\ensuremath{\mathrm{SL}(2,\mathbb R) }}
+\newcommand{\slc}{\ensuremath{\mathrm{SL}(2,\mathbb C) }}
+\newcommand{\mdlr}{\ensuremath{\mathrm{M}}}
 \author{Carlos Eduardo artínez Aguilar}
 \date{\today}
 \title{Ideas para mi Tesis Doctoral Latex Export}
@@ -82,23 +86,22 @@
 
 
 \section{Temática principal: Estudio de foliaciones holomorfas en variedades compactas Kähler.}
-\label{sec:org4b05e52}
-
-\noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de folaiaciones holomorfas \(\mathrm{F}\) en variedades Kähler \((M,h)\) de tal forma que \(M/F\) sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas \(\{ \nu(L) \,|\,L\in \mathrm{F}\}\), estuviera uniformemente acotado \(\{\nu(L) < M\}\), esto lleva a que la función \(\nu\) sea dicretamente semicontinua superiormente. Es decir que en los límites de hojas \(L_j\rightarrow L\) o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohomología en \(\re\) y ver que pasa con \(\zah\)
+\label{sec:orgff7ff59}
+\noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de foliaciones holomorfas \(\mathfrak{F}\) en variedades Kähler \((M,h)\) de tal forma que \(M/\mathfrak{F}\) sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas \(\{ \nu(L) \,|\,L\in \mathfrak{F}\}\), estuviera uniformemente acotado \(\{\nu(L) < M\}\), esto lleva a que la función \(\nu\) sea discretamente semicontinua superiormente. Es decir que en los límites de hojas \(L_j\rightarrow L\) o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohomología en \(\re\) y ver que pasa con \(\zah\).
 
 \subsection{Ciclos evanecentes y los límites de hojas}
-\label{sec:orgc504c2d}
-Esencialmente creo que si se aproxima una hoja de la foliacion por medio de otras la topologia no deberia crecer y eso refleja que exisen ciclos "loops" evanecentes es decir que generadores del grupo fundamental deberian desaparecer en el limite pues se van haciendo chichos. Ahora en terminos de la ya he investigado, es decir el volumen, esto quiere decir que tenemos un efecto inverso, es decir si el volumen crece y da un brinco, entonces el grupo fundamental se hace chico y estamos en la presencia de un ciclo evanecente, esto deberia verse en por ejemplo regiones fundamentales de curvas hiporbolicas por ejemplo.
+\label{sec:org1117e07}
+\noindent Esencialmente creo que si se aproxima una hoja de la foliacion por medio de otras la topologia no deberia crecer y eso refleja que exisen ciclos ``loops'' evanecentes es decir que generadores del grupo fundamental deberian desaparecer en el limite pues se van haciendo chicos. Ahora en terminos de lo previamente investigado, es decir el volumen. Esto quiere decir que tenemos un efecto inverso a o que sucede con los volúmenes de as hojas, es decir si el volumen crece y da un brinco, entonces el grupo fundamental se hace chico y estamos en la presencia de un ciclo evanecente, esto deberia verse en por ejemplo regiones fundamentales de curvas hiperbólicas por ejemplo.
 \subsection{Numeros de Lelong}
-\label{sec:org51e0013}
-Del examen de candidatura, creo que la idea de ver la taza de crecimiento de los volumenes es una herramienta poderosa y eso nos relaciona directamente con los numeros de lelong. Entonces es necesario ver si hay alguna interpretecion topologica (homologica o cohomologica) de estos. A continuación hay un resumen del artículo "Propiétés Métriques Des Ensembles Analytiques Complexes"
+\label{sec:orged26d3d}
+\noindent Del examen de candidatura, creo que la idea de ver la taza de crecimiento de los volumenes es una herramienta poderosa y eso nos relaciona directamente con los numeros de lelong. Entonces es necesario ver si hay alguna interpretecion topologica (homologica o cohomologica) de estos. A continuación hay un resumen del artículo ``Propiétés Métriques Des Ensembles Analytiques Complexes''.
 \subsubsection{Introducción}
-\label{sec:org6eb426f}
+\label{sec:org587bf07}
 \begin{quote}
-La nocion "d'aire" de los conjuntos analíticos complejos se encuentra ahora claramente establecida. Esta se deriva de la existenncia de la inegral de una forma diferencial sobre tal conjunto. Esto define la base de un método de estudio de las propiedades métricas de los conjuntos analíticos complejos. A su vez en el estudio de estos aparecen una clase particular de operadores lineares: los fluidos (¿corrientes?) o formas diferenciales generalizadas, que son a la vez positivos y cerrados. En términos más abstractos, se busca un functor de la categoría de conjuntos analíticos complejos en la categoría de dichas corrientes. Para la búsqueda de este functor, parace que un punto de vista nuevo y eficaz es mediante los teorema de prolongación de conjuntos analíticos como el resultado de Remmert-Stein y la demostración de la conjetura de W. Stoll, demostrada por E, Bishop. Por otra parte una familia cerrdad de conjuntos analíticos es una familia normal, esto se compara con el teorema clásico de P. Montell de funciones holomorfas.
+La nocion "d`aire" de los conjuntos analíticos complejos se encuentra ahora claramente establecida. Esta se deriva de la existencia de la integral de una forma diferencial sobre tal conjunto. Esto define la base de un método de estudio de las propiedades métricas de los conjuntos analíticos complejos. A su vez en el estudio de estos aparecen una clase particular de operadores lineares: las corrientes o formas diferenciales generalizadas, que son a la vez positivos y cerrados. En términos más abstractos, se busca un functor de la categoría de conjuntos analíticos complejos en la categoría de dichas corrientes. Para la búsqueda de este functor, parace que un punto de vista nuevo y eficaz es mediante los teorema de prolongación de conjuntos analíticos como el resultado de Remmert-Stein y la demostración de la conjetura de W. Stoll, demostrada por E, Bishop. Por otra parte una familia cerrdad de conjuntos analíticos es una familia normal, esto se compara con el teorema clásico de P. Montell de funciones holomorfas.
 \end{quote}
 
-Luego prosigue definir qué es la noción de "d'aire", la cual se aplica a objetos que no son varidades y que la exposición que sigue Lelong proviene del estudio de conjuntos analíticos y semi-analíticos reales hecho por M. Herrera, aunado a esto la herramienta matemática que se utiliza para esto es clásica (medidas y distribuciones).
+\noindent Luego prosigue definir qué es la noción de ``d`aire'', la cual se aplica a objetos que no son varidades y que la exposición que sigue Lelong proviene del estudio de conjuntos analíticos y semi-analíticos reales hecho por M. Herrera, aunado a esto la herramienta matemática que se utiliza para esto es clásica (medidas y distribuciones).
 
 Recordemos que un conjunto \(A\) es un subconjunto analítico complejo de la variedad analítica \(M\) si es cerrado y todo punto \(x\in A\) posée una vecindad \(U_x\) tal que \(A\cap U_x=V(f_1,\dots,f_k)\) donde \(V(F)\) denota el conjunto de ceros de la familia de funciones en \(F\) y \(f_j:U_x\rightarrow\co\). Un conjunto analítico en general no tiene una estructura de variedad diferencial. Por lo que es necesario defeinir un \emph{punto ordinario} de \(A\) como un punto \(x\in A\) tal que en una carta \((U_x,\varphi)\) de \(x\), \(U_x\cap A\) es biholomorfa a una vecindad de un subespacio lineal \(L^{k}\subset\con\) por medio de una restricción de \(\varphi\), la dimensión compleja de \(L^{k}\), \(k\) es la dimensión de \(A\) en \(x\), denotaremos por \(A'\) al conjunto de puntos ordinarios. Los puntos ordianarios forman un subconjunto analítico de \(A\) de dimensión \(k'\leq k\). Si \(A\) es de dimensión \(k\) en todos sus puntos, diremos que \(A\) es de dimension pura \(k\).
 
@@ -116,9 +119,9 @@ Si \(A\) es un conjunto analítico, el conjunto analítico de puntos no ordinari
 \]
 del espacio \(\Omega_{(p,p)}(U)\) (donde está bien definido en el sentido clásico) a \(\Omega_{(p,p)}(U)\).
 \subsubsection{Corrientes positivas y corrientes positivas cerradas.}
-\label{sec:org4d920d0}
+\label{sec:orgb974b8f}
 \begin{quote}
-El operador \(t_0(\phi)\) es una corriente en el sentido de De Rham, también conocida como "\emph{forma diferenecial generalizada}" o forma diferencial con coeficientes que son distribuciones. El espacio es describe como el espacio de las expresiones del tipo
+El operador \(t_0(\phi)\) es una corriente en el sentido de De Rham, también conocida como \emph{forma diferenecial generalizada} o forma diferencial con coeficientes que son distribuciones. El espacio es describe como el espacio de las expresiones del tipo
 \[
     t=\sum_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}t_{i_1\dots i_{n-k}j_1\dots j_{n-k}} dz_{i_1}\wedge\dots\wedge dz_{i_{n-k}}\wedge d\overline{z}_{j_1}\wedge\dots\wedge d\overline{z}_{j_{n-k}}.
 \]
@@ -139,11 +142,11 @@ Así se puede verificar que \(L\mapsto\omega(L^k)\) es una mapeo inyectivo de el
 \begin{quote}
 \begin{def.}
     Una corriente \(t\) es positiva si cumple
-\begin{itemize}
-    \item[a] Es de tipo $(q,q)$ con $0\leq q\leq n$
-    \item[b] Para todo $L^{n-q}$, $\sigma[t,L^{n-q}]=t\wedge\omega(L^{n-q})$ es una distribucion (funcional) positiva
-\end{itemize}
-Eso asegura que \(\sigma[t,L^{n-q}]\) es una medida positiva.
+i    \begin{itemize}
+        \item[a)] Es de tipo \((q,q)\) con \(0\leq q\leq n\)
+        \item[b)] Para todo \(L^{n-q}\), \(\sigma[t,L^{n-q}]=t\wedge\omega(L^{n-q})\) es una distribucion (funcional) positiva
+    \end{itemize}
+    Eso asegura que \(\sigma[t,L^{n-q}]\) es una medida positiva.
 \end{def.}
 \end{quote}
 \begin{prop}
@@ -189,9 +192,8 @@ Se cumplen las siguientes proposiciones para las corrientes positivas:
         existe y extiende la medida $\nu$ de $B\setminus\{z\}$ al punto incluyendo $z$ con una medida puntual positiva en $z$.
     \end{itemize}
 \end{prop}
-
 \subsubsection{Corrientes de integración}
-\label{sec:org5413ee4}
+\label{sec:orgdb30ad8}
 En un conjunto analítico complejo \(A\subset U\subset\con\), se tiene el siguiente teorema
 \begin{teorema}
 El operador
@@ -205,7 +207,8 @@ definido por una extensión simple de $\Omega_{(p,p)}(U\setminus A')$ al espacio
     \item[c] Es positivo definido.
 \end{itemize}
 \end{teorema}
-\textbf{IMPORTANTE:} La demostración se basa sobre en el "teorema de Stokes de estructuras diferenciales" ver "LELONG P. - Intégration sur un ensemble analytique complexe", el cual basicamente dice que si una corriente cerrda tiene una continuación d orden cero en \(U\setminus E\) donde \(E\) es un conjunto cerrado, debido a la extensión de ésta de \(U\setminus E\) a \(U\), es necesario y suficiente que exista una familia de funciones de clase \(C^{1}(U)\), digamos \(\alpha_s(x)\) tales que \(\alpha_s(x)\geq0,\quad\alpha_s(x)=1\) en una vecindad \(W_s\) de \(E\) y cuyo soporte se encuentre en una vecindad \(V_s\) de \(E\), donde \(V_s\rightarrow E\) cuando \(s\rightarrow 0\), además queeremos que
+
+\noindent \textbf{IMPORTANTE:} La demostración se basa sobre en el ``teorema de Stokes de estructuras diferenciales'' ver ``LELONG P. - Intégration sur un ensemble analytique complexe'', el cual basicamente dice que si una corriente cerrada tiene una continuación de orden cero en \(U\setminus E\) donde \(E\) es un conjunto cerrado, debido a la extensión de ésta de \(U\setminus E\) a \(U\), es necesario y suficiente que exista una familia de funciones de clase \(C^{1}(U)\), digamos \(\alpha_s(x)\) tales que \(\alpha_s(x)\geq0,\quad\alpha_s(x)=1\) en una vecindad \(W_s\) de \(E\) y cuyo soporte se encuentre en una vecindad \(V_s\) de \(E\), donde \(V_s\rightarrow E\) cuando \(s\rightarrow 0\), además queeremos que
 \[
     \lim_{s\rightarrow 0}t\wedge d\alpha_s=0.
 \]
@@ -217,4 +220,127 @@ para todo compacto \(K\), donde medimos la norma como siempre, pero en
 \[
  U_r=\{x\in K\,\,\vert\,d_H(x,E)<r\}
 \]
+El siguiente resulltado permite simplificar la demostración
+\begin{prop}
+Sea $A$ un conjunto analitico de dimensión pura $k$ que contiene el origen y sea \(\eta\) el conjunto de espacios \(L^{n-k}\) que tocan a $A$ de manera que el origen NO sea un punto aislado de a intersección. Entonces
+\begin{enumerate}
+\item \(\eta\) se identifica con un subconjunto analítico (en el ágebra de la grassmaniana)
+
+\item Existe un sistema de ejes ortogonales en el origen tal que cualquier subespacio de dimensión compeja \(n-k\), no pertenece a \(\eta\)
+
+\item Existe un policentro relativo a tal sistema de ejes
+\[
+    P=\{z\,|\,|z_j|<a_j,\,j\in\{1,\dots,n\}\,a_j>0\},
+\]
+de manera que las proyecciones de $A\cap P$ en los espacios coordenados $\co^{k}\subset\con$ son propias
+\end{enumerate}
+\end{prop}
+Este enunciado hace evidente a existencia de una bola \(B=\{\Vert z\Vert<r\}\) tal que
+\[
+        \sigma(r)\leq kr^{2k}
+\]
+Es un incremento de a norma del operador \(t_0\) y permite a aplicacion de el teorema de Stokes general.
+\subsubsection{Familias acotadas de conjuntos analíticos}
+\label{sec:orgd99d874}
+Consideremos ahora el siguiente mapeo
+\[
+    A\mapsto t(A)\in T^p_{>0}=\{t\,|\,\text{ corriente positiva}\},
+\]
+\noindent que asocia a un conjunto analítico de dimension pura \(k\), \(A\) una corriente positiva cerrada.
+\textbf{Las familias de corrientes positivas en un dominio \(D\) dan lugar alas mismas propiedades que las familias de medidas positivas}
+\begin{def.}
+Diremos que \(t_n\rightarrow t\) \emph{debilmente} si \(t_n(\varphi)\) tiene un limite para toda \(\varphi\in\om_(p,p)(D)\)
+\end{def.}
+
+\begin{enumerate}
+\item Si \(\{t_n\}\) converge debilmente, entonces \(t=\lim t_n\inT^p_{>0}\). Más aún las normas \(\Vert t_n\Vert\) son \textbf{ACOTADAS} en todo compacto de \(D\).
+\item Si las normas \(\Vert t\Vert\) están acotadas para todo compacto, donde \(t\in F\), entonces diremos que la familia \(F\) es \emph{normal}. Esto significa que toda susesión \(\{t_n\}\subset F\) tiene una subsucesión debimente convergente.
+\obs considere los productos
+\end{enumerate}
+\[
+    t_k\wedge\omega(L^{n-p}_s)\quad\text{donde }L^{n-p}_s\text{ es un sistema regular}.
+\]
+\begin{enumerate}
+\item Sea \(F\) una familia de corrientes positivas cerradas de dimensión \(p\) en \(D\). Entonces para todo compacto \(K\subset D\), os números
+\[
+        \nu(\zeta,0),\nu(\zeta,r)=p!\pi^{-p}\sigma(\zeta,r)r^{-2p},
+   \]
+\noindent son acotados. Donde \(\sigma(\zeta,r)\) es la medida \(\sigma\) en a bola \(\{\Vert z-\zeta\Vert<r\}\) con \(\zeta\in K\).
+\item Si \(t_n\rightarrow t\) debilmente, y \(z_m\rightarrow z\), entonces tenemoss que
+\end{enumerate}
+\begin{equation}
+        \nu_t(z,0)\geq\limsup\nu_{t_k}(z_k,0).
+\end{equation}
+\begin{enumerate}
+\item En particular \(\nu(z,0)\) es unafunción semi continua superiormente.
+\end{enumerate}
+\begin{def.}
+Una familia \(\{A_i\,|\,i\in I\}\) de conjuntos analíticos de dimensión pura \(k\) es localmente acotada en \(D\) si las corrientes \(\{t_i=t[A_i]\}\) forman una familia localmente acotada en \(D\).
+\end{def.}
+\subsubsection{Propiedades de \(\nu(z,0)\) para conjuntos analíticos.}
+\label{sec:org58dc540}
+Para divisores \(\{f=0\}\), es fácil de ver que si
+\[
+    f=P_q+P_{q+1}+\dots\quad\P_j\text{ polinomio homogeneo de grado j},
+\]
+\noindent en una vecindad alrededor del origen, entonces
+\[
+    \nu(0,0)=q.
+\]
+Por otra parte, una demostración elemental, nos otorga el siguiente resultado: si \(z\in A\) es un punto ordinario, entonces \(\nu(z,0)=1\). Así es facil demostrar que \(\nu(z,0)\geq1\) para todo \(x\in A\). Thie probó que \(\nu(z,0)\in\zah\)
+\begin{prop}[Thie]\label{thie}
+Sea \(z\in A\), donde \(A\) es un conjunto analítico de dimensión pura \(k\). Entonces
+\[
+    \nu(z,0)=\sum^{b}_{s=1}m_{s} m_{s}',
+\]
+\noindent donde \(s\in\{1,\dots,b\}\) es el índice reativo a la descomposición de cono tangente en \(z\), \(T\) en componentes \(T_1,\dots T_b\), donde \(m_s'\) es e grado de \(T_s\) y \(m_s\) es el grado de la forma holomorfa de volumen \(A\) sobre \(T_s\) en una vecindad del origen.
+\end{prop}
+\textbf{Consecuencias:}
+si \(\sigma(z,r)\) es ``d'aire'' de \(A\) en la bola \(B_r(z)=\{\Vert z-x\Vert\leq r\}\) y \(l(x,r)\) es el volumen \(2k-1\) dimensional de \(A\cap\partial B_r(z)\), ahora si \(\tau_{2k}\) y \(\omega_{2k-1}\) son las formas de volumen de la bola abierta y de su frontera respectivamente, entonces.
+\begin{align*}
+\sigma(z,r)\geq\nu(z,0)\tau_{2k}r^{2k}\geq\tau_{2k}r^{2k}\\
+l(z,r)\geq\nu(z,0)\omega_{2k-1}r^{2k-1}\geq\omega_{2k-1}r^{2k-1}
+\end{align*}
+\noindent En particular si \(A\) es de dimensión uno, \(l(z,r)\geq2\pi r\).
+
+Así, la clase de corrientes positivas que son corrientes provenientes de un conjunto anaítico complejo \(t=t[A]\), se distinguen por las siguientes propiedades:
+\begin{enumerate}
+\item \(t\in T^p_{>0}\) obvi
+\item \(t\) es cerrada (operador)
+\item El número \(\nu(z,0)\) con \(z\in \mathrm{supp}(t)\) (soporte) tiene una cota inferior \(c\in\re^{+}\).
+\item El número \(\nu(z,0)\) con \(z\in \mathrm{supp}(t)\) es entero.$\backslash$
+\end{enumerate}
+Naturalmente surge la pregunta: ¿Existen corrientes positivas que tengan las primeras tres propiedades pero no provengan de conjuntos analíticos? a estas corrientes les llamaremos de clase \(\Lambda\).
+\begin{prop}
+Si \(\{t_n\}\subset\Lambda\) y \(t_n\rightarrow t\) debilmente, entonces \(t\in\Lambda\) y \(\lim \mathrm{supp}(t_n)=\mathrm{supp}(t)\).
+\end{prop}
+Para \(t\in\Lambda\), la medida de Hausdorff de \(\mathrm{supp}(t)\) de dimensión \(2k+1\) es nula, es decir la dimensión de Haussdorff de \(\mathrm{supp}(t)\) es menor a \(2k+1\). Resulta que el conjunto de espacios \(L^{n-k}\) que intersectan \(\mathrm{supp}(t)\) en un punto y ta que su intersección contiene un continuo, es de primera categoría, es decir es unión numerable de densos en ninguna parte.
+\begin{prop}[Bishop]
+Sea \(\{A_n\}_{n\in\nat}\) una sucesión de variedades anaíticas de dimensión pura \(k\) en un dominio \(D\) tales que \(\{t(A_n)\}\) forman una familia acotada en todo compacto, además suponga que \(A_n\rightarrow A\) en el sentido de la mérica de Haussdorff, entonces \(A\) es un conjunto analítico.
+\end{prop}
+
+\obs Hay que notar que existen ejes coordenados tales que \(\{z_1=0,\cdots,z_k=0\}\cap A\) es un conjunto disconexo. Un punto de \(A\) tiene una vecindad tubular ahuecada, de tipo \(S\times bT\) de tal forma que \((S\times bT)\cap A=\emptyset\), lo que implica que \((S\times bT)\cap A_n=\emptyset\) para toda \(n>N\). Se sigue que casi todas las secciones de las \(A_n\) por \(S\times\{x\in T\}\) son de dimensión cero, es decir las aplicaciones de ``proyección'' \(\pi:A_n\rightarrow S\) son propias. Estas aplicaciones tienen un grado \(\lambda_n\) que evidentemente es acotado. Por lo tanto si \(z_0\in(S\timesT)\setminus A\), definimos \(f_n(z)=\pi[g(z)-g(z_{i,n})]\) donde los puntos \(\{z_{i,n}\}\) se definene como
+\[
+\{z_{i,n}\}=\pi^{-1}[\pi(z)]\cap A_n,
+\]
+y donde \(g(z)\) es una función holomorfa en \(S\times T\) con \(g(z_0)\neq0\). Las funciones \(f_n\) son holomorfas en \(S\times T\) y convergen uniformemente a \(f(z)\) (la correspondiente a \(A\)). Así \(A\subset\{z\,|\,f(z)=0\}\) y \(f(z_0)\neq0\). Por o tanto \(A\) es un conjunto analítico.
+i\begin{teorema}
+Las familias \(F\) locamente acotadas de conjuntos analíticos complejos son normales.
+\end{teorema}
+En efecto, toda sucesión \(\{A_n\}\subset F\) tienen una subsucesión \(\{A_m\}\) tal que \(t_m=t(A_m)\) converge. Sea \(t=\lim t_m\), entonces
+\[
+    A_n=\mathrm{supp}[t(A_m)]\rightarrow\mathrm{supp}t=A
+\]
+y como sabemos \(A\) es un conjunto analítico.
+\begin{enumerate}
+\item Consecuencias
+\label{sec:org02bb745}
+\begin{enumerate}
+\item \textbf{El teorema de Remmert-Stein:} Si \(B\) es un conjunto analítico de \(D\) de dimensión \(\dim(B)\leq k-1\) y \(A\) es un conjunto analítico de dimensión pura \(k\) en \(D\setminus B\), entonces \(\overline{A}\) es un conjunto analítico en \(D\).
+\item \textbf{La conjetura de Stoll:} Si \(B\) es un conjunto analítico de \(D\) y \(A\) es un conjunto analítico de dimensión pura \(k\) en \(D\setminus B\) y además \(\Vert t(A)\Vert_{D\setminus B}\leq\infty\) entonces \(\overline{A}\) es un conjunto analítico en \(D\).
+\end{enumerate}
+\end{enumerate}
+\subsubsection{Qué quiere decir esto para las foliaciones.}
+\label{sec:orgcfd4ce9}
+\noindent Yo propongo que en una variedad Kaehler compacata o incluso solo holomorfa compacta con una foliación holomorfa, vamos a poder definir representaciones de su álgebra de Von-Neumann usando corrientes, que nos van a demostrar que dicha álgebra es un tensor.
 \end{document}

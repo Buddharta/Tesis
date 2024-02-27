@@ -6,4 +6,7 @@
 *.toc
 *.dvi
 *.ps
+*.fls
+*.fdb_latexmk
 .auctex-auto/
+Articulos Tesis de Doctorado/*
