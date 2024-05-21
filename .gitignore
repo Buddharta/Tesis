@@ -10,3 +10,4 @@
 *.fdb_latexmk
 .auctex-auto/
 Articulos Tesis de Doctorado/*
+*.lof

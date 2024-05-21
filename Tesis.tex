@@ -1,13 +1,26 @@
-% Created 2022-12-27 mar 00:56
-% Intended LaTeX compiler: pdflatex
-\documentclass[letterpaper]{book}
-\usepackage[spanish, activeacute, english]{babel}
+\documentclass[12pt,twoside,a4paper]{report}
+
+\usepackage{graphicx} % Required for inserting image
+\usepackage{subcaption} % Required for subfigures
+\usepackage[T1]{fontenc} %%% for bold small cap
+
+\graphicspath{{./figs/}}
+\usepackage[margin=2.5cm]{geometry}  % to adjust margin 
+\usepackage{hyperref}   % for hyper references
+%\usepackage{biblatex} % for bibliograpghy
+% \addbibresource{Reference.bib}
+
+%%%%%%% Header-Footer %%%%%%%%%%%%%%%
+\usepackage{fancyhdr}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[activeacute, english]{babel}
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
 \usepackage[table, xcdraw]{xcolor}
 \usepackage[utf8]{inputenc}
 \usepackage[normalem]{ulem}
-\usepackage[T1]{fontenc}
-\usepackage{graphicx}
 \usepackage{grffile}
 \usepackage{longtable}
 \usepackage{wrapfig}
@@ -25,7 +38,6 @@
 \usepackage{makeidx}
 \usepackage{afterpage}
 \usepackage{array}
-\graphicspath{{./figs/}}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{prop}[theorem]{Proposition}
@@ -38,7 +50,6 @@
 \renewcommand{\figurename}{Figure}
 \newcommand{\zah}{\ensuremath{ \mathbb Z }}
 \newcommand{\nat}{\ensuremath{ \mathbb N }}
-%%\newcommand{\dem}{{\sc Demostraci\'on. }}
 \newcommand{\bg}{\ensuremath{\overline \Gamma}}
 \newcommand{\ga}{\ensuremath{\Gamma}}
 \newcommand{\fb}{\ensuremath{\overline f}}
@@ -58,16 +69,121 @@
 \newcommand{\pslc}{\ensuremath{PSL(2,\mathbb C) }}
 \newcommand{\hd}{\ensuremath{\mathbb H^2}}
 
-
+%%%%%%%%% Title,Author,Date    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \author{Carlos Eduardo Martinez Aguilar}
-\title{Tesis: Holomorphic Foliations with bounded volumes in Kähler Manifolds}
+\title{Complex-Analytic aspects of Holomorphic Foliations with bounded volumes in Kähler Manifolds}
+\date{July 2024}
+%%%%%%%%%%%%%%%%%%%%% Personal details as New commands %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\thesistitle}{Complex-Analytic aspects of Holomorphic Foliations with bounded volumes in Kähler Manifolds}
+\newcommand{\myname}{Carlos Eduardo Martínez Aguilar}
+\newcommand{\thesisdate}{July 2024}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\pagenumbering{gobble} % Turns off page numbering
+\begin{titlepage}
+    \centering
+     {\huge \textbf{\thesistitle} \par}
+      \vspace{2cm}
+     {\large \sc A Thesis \par}
+      \vspace{0.2cm}
+     {\large \sc Submitted For The Degree Of \par}
+     \vspace{0.2cm}
+      {\large \sc {\textbf{Doctor of Philosophy}} \par} 
+     \vspace{0.2cm}
+     {\large \sc Instituto de Matemáticas UNAM  \par}
+     
+     \vspace{1cm}
+     {\large  by \par}
+     \vspace{0.5cm}
+     {\large \textbf{\myname} \par}
+     \vspace{2cm}
+    \includegraphics[width=0.3\textwidth]{figs/unam.jpg}\par
+    \vspace{1cm}
+    {\large \sc Department of Mathematics \par}
 
-\maketitle
-\tableofcontents
-\newpage
+     {\large \sc IMATE UNAM  \par}
 
-\chapter{Preliminaries}
+     {\large \sc Mexico City, Mexico \par}
+    \vspace{0.5cm}
+    {\large \sc \thesisdate \par}
+    \vspace{2cm}
+   
+\end{titlepage}
+
+%%%%%%%% Blank Page  %%%%%%%%%%%%%%%%
+\clearpage
+\thispagestyle{empty}
+\
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%% Dedication page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\thispagestyle{empty}
+\begin{center}
+    \vspace*{\fill}
+    This thesis is dedicated to\\
+    xxxx,xxxx, and xxxx
+    \vspace*{\fill}
+\end{center}
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%% Acknowledgemnents Page %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\clearpage
+\thispagestyle{plain}
+\pagenumbering{roman} % Turns off page numbering
+\begin{center} 
+    \huge\textbf{Acknowledgements}\\
+\end{center}
+    \normalsize
+    I would like to acknowledge everyone in my lab.
+\clearpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% Contents, Abbreviations, ListofFigures %%%%%%%%%%%%%%%%%%%%%
+
+
+\tableofcontents %%%%% Table of contents %%%%%%%%
+\listoffigures  %%%%% List of figures %%%%%%%%
+\listoftables   %%%%%% List of Tables %%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%   New Chapter   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\rightmark}
+\fancyhead[RO]{\leftmark}
+\fancyfoot[C]{\thepage}
+The Purpose of this work is to show how the study of analytic aspects of the leaves of holomorphic foliations shows the
+analogies between the foliations and holomorphic maps. In this sense one can think of holomorphic foliations as the geometric
+version of the classical theory of holomophic/meromorphic functions. Also this thesis should give its author the title of Doctor
+in mathematics as a side effect.
+First, the basic propperties of analytic sets and holomorphic manifolds are stablished, then there is a discussion on their
+analytic propperties, particularly about integration, volume and dimension of this spaces. This naturarly leads to the
+definitions of the so called ''\emph{Lelong numbers}´´ and of ''\emph{currents}´´ as integration operators on analytic sets,
+which serve as analogues of residues and .
+Then, these propperties are used in the contexts of holomphic foliations, to study foliations with all leaves compact in Kähler 
+manifolds, subsequently the spaces of Douady and Bartlet are introduced as a sort of universal leaf space.
+These special spaces serve the purposse of stablishing the analytic structure of the leaf space of a holomorphic foliation in
+a compact holomorphic manifolds for which the leaf space is hausdorff beyond just a metric stucture given by the
+Gromov-Hausdorff metric.
+The consequences of this are dicussed in terms of the holonomy groupoid also called the ''graph´´ of the foliation
+(Ehressmann connection?) and their $\co^{*}$-algebras á la Cohn (possibly).
+
+
+
+
+\chapter{Complex Analytic Varieties and Manifolds}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\rightmark}
+\fancyhead[RO]{\leftmark}
+\fancyfoot[C]{\thepage}
 Some notation that will be used throughout the thesis: $\con$ will be the vector space of dimension $n$ over $\co$ the set of complex numbers. Given an open set $U\subset\con$ the set of holomorphic functions $f:U\rightarrow\co$ will be denoted as $\mathcal{H(U)}$ and $\mathcal{O}_{U}$ will represent the sheaf of holomorphic germs over $U$.
 For a set of functions $\{f_{1},\dots,f_{k}\}\subset\mathcal{O}_{U}$ its vanishing set is denoted and defined as
 \[
@@ -87,7 +203,7 @@ Similarly the space of $(p,q)$-forms on a complex manifold $M$ is denoted as $\O
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
 A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defined in a numerous of distict and interesting ways, depending on the application needed a foliation will be understood as
 \begin{itemize}
-  \item A decomposition of $M$ into disjoint connected submanifolds called \emph{leafs},
+  \item A decomposition of $M$ into disjoint connected submanifolds called \emph{leaves},
         \[
           M=\bigcup_{\alpha}\mathcal{L_{\alpha}},
         \]
@@ -99,7 +215,7 @@ A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defin
   \item An \emph{involutive} distribution of the tangent bundle $TM$, i. e. A $\mathcal{C}^{\infty}(M)$-module $\mathfrak{F}\subset\mathcal{T}M$ closed under the lie bracket $[\cdot,\cdot]$.
   \item The dual poin of view from the previous viewpoint will also be adopted, i. e. as a set of $k$-forms that null over an involutive disribution.
 \end{itemize}
-If all the leafs are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimensionof the leafs. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.
+If all the leaves are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimensionof the leaves. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.
 The \emph{holonomy grupoid} also called the \emph{graph} of a foliation $(M,\mathcal{F})$ is the set of all curves cointained in the leaves of the foliation \textit{modulo homotopy} and will be denoted as $G(M,\mathcal{F})$.
 
 \section{Complex manifolds and analytic varieties}
@@ -281,7 +397,7 @@ theorem and we give a sketch of the proof.
 \end{theorem}
 \section{Foliations on Kähler manifolds}
 \subsection{Compact leaves and finite volume}
-\noindent In this section I apply Bishop's results to study foliated compact Kähler manifolds with compact leafs.
+\noindent In this section I apply Bishop's results to study foliated compact Kähler manifolds with compact leaves.
 \begin{theorem}\label{kahlerEMS}
         Let $M$ be a compact connected Kähler manifold
         of complex dimension $n$ and $\mathfrak{F}$ a holomorphic foliation
@@ -393,7 +509,7 @@ Let $M$ be a compact connected K\"ahler manifold of dimension $n$ and $\mathfrak
 clearly by the previous $\mathcal{U}$ is not just a non-empty set but it is also an non-empty open subset of $M$. We show that this set is also closed to finish the proof. Let $\{z_{n}\}\subset U$ be a convergent sequence with limit $z_{n}\rightarrow z_{0}$.
 Moreover let $\mathcal{L}_{n}$ be the leaf of the foliation through $z_{n}$ and $\mathcal{L}$ the leaf through $z_{0}$.
 To show $z_{0}\in\mathcal{U}$ is enough to show $\mathcal{L}$ is compact, but this is clear since for any foliated chart $V$ around $z_{0}$ there is a subsecuence $(z_{k},\mathcal{L}_{k})$ in the intersection $V\cap\mathcal{U}$.
-By hypothesis all leafs $\mathcal{L}_{k}$ are compact with finite holonomy group and therefore have all bounded volume, and by the same arguments previously discussed in the proof of \ref{kahlerEMS} it is clear that $V\cap\mathcal{L}_{k}\rightarrow V\cap\mathcal{L}$.
+By hypothesis all leaves $\mathcal{L}_{k}$ are compact with finite holonomy group and therefore have all bounded volume, and by the same arguments previously discussed in the proof of \ref{kahlerEMS} it is clear that $V\cap\mathcal{L}_{k}\rightarrow V\cap\mathcal{L}$.
 Therefore by Bishop´s theorem \ref{bishop sequence} $\{\mathcal{L}_{k}\}$ converges to a closed analytic subset that is tangent to the foliation, since $M$ is compact, this means that $\mathcal{L}_{k}\rightarrow\mathcal{L}$ and therefore $\mathcal{L}$ is a closed leaf with finite volume and therfore is compact with finite holonomy group. Therefore $z_{0}\in\mathcal{U}$ and therefore $\mathcal{U}=M$  since it is both open and closed.
 \end{proof}
 

@@ -1,4 +1,4 @@
-% Created 2023-11-16 jue 17:07
+% Created 2024-03-18 Mon 22:45
 % Intended LaTeX compiler: pdflatex
 \documentclass[letterpaper]{article}
 \usepackage[utf8]{inputenc}
@@ -46,7 +46,7 @@
 \newcommand{\obs}{{\newline \noindent \sc \textbf{Observación. }}}
 \newcommand{\dem}{{\noindent \sc Demostraci\'on. }}
 \newcommand{\bg}{\ensuremath{\overline \Gamma}}
-\newcommand{\ga}{\ensuremath{\gamma}}
+\newcommand{\ga}{\ensuremath{\Gamma}}
 \newcommand{\fb}{\ensuremath{\overline F}}
 \newcommand{\la}{\ensuremath{\Lambda}}
 \newcommand{\om}{\ensuremath{\Omega}}
@@ -61,14 +61,15 @@
 \newcommand{\rp}{\ensuremath{\mathbb{RP}}}
 \newcommand{\re}{\ensuremath{\mathbb R }}
 \newcommand{\hc}{\ensuremath{\widehat{\mathbb C} }}
+\newcommand{\slz}{\ensuremath{\mathrm{SL}(2,\mathbb Z) }}
+\newcommand{\slr}{\ensuremath{\mathrm{SL}(2,\mathbb R) }}
+\newcommand{\slc}{\ensuremath{\mathrm{SL}(2,\mathbb C) }}
 \newcommand{\pslz}{\ensuremath{\mathrm{PSL}(2,\mathbb Z) }}
 \newcommand{\pslr}{\ensuremath{\mathrm{PSL}(2,\mathbb R) }}
 \newcommand{\pslc}{\ensuremath{\mathrm{PSL}(2,\mathbb C) }}
 \newcommand{\hd}{\ensuremath{\mathbb H^2}}
-\newcommand{\slz}{\ensuremath{\mathrm{SL}(2,\mathbb Z) }}
-\newcommand{\slr}{\ensuremath{\mathrm{SL}(2,\mathbb R) }}
-\newcommand{\slc}{\ensuremath{\mathrm{SL}(2,\mathbb C) }}
-\newcommand{\mdlr}{\ensuremath{\mathrm{M}}}
+\newcommand{\hol}{\ensuremath{\mathrm{Hol}}}
+\newcommand{\mdlr}{\ensuremath{\mathpzc{M}}}
 \author{Carlos Eduardo artínez Aguilar}
 \date{\today}
 \title{Ideas para mi Tesis Doctoral Latex Export}
@@ -77,7 +78,7 @@
  pdftitle={Ideas para mi Tesis Doctoral Latex Export},
  pdfkeywords={},
  pdfsubject={},
- pdfcreator={Emacs 29.1 (Org mode 9.7)}, 
+ pdfcreator={Emacs 28.1 (Org mode 9.6.21)}, 
  pdflang={Esp}}
 \begin{document}
 
@@ -86,17 +87,17 @@
 
 
 \section{Temática principal: Estudio de foliaciones holomorfas en variedades compactas Kähler.}
-\label{sec:orgff7ff59}
+\label{sec:org8e50cf2}
 \noindent Como ya vimos en el examen de candidatura el propósito es un estudio comprensivo de foliaciones holomorfas \(\mathfrak{F}\) en variedades Kähler \((M,h)\) de tal forma que \(M/\mathfrak{F}\) sea un espacio interesante. Nuesto primer acercamiento como vimos en el examen, fue mediante la hipótesis de que el volumen de las hojas \(\{ \nu(L) \,|\,L\in \mathfrak{F}\}\), estuviera uniformemente acotado \(\{\nu(L) < M\}\), esto lleva a que la función \(\nu\) sea discretamente semicontinua superiormente. Es decir que en los límites de hojas \(L_j\rightarrow L\) o el volumen converge o crece de forma predecible discreta (ver el examen o artículo). Ahora pretendo ver que exiten otras propiedades que se comportan de forma similar en foliaciones holomorfas de variedades Kähler, por ejemplo, una idea es ver qué sucede con los grupos fundamentales de las hojas, en este caso me parece que debe de haber un efecto inverso. Es decir semicontinuidad inferior, por lo que el grupo no debe crecer. Es posible que para ver esto sea mejor pasar a la homología/cohomología en \(\re\) y ver que pasa con \(\zah\).
 
 \subsection{Ciclos evanecentes y los límites de hojas}
-\label{sec:org1117e07}
+\label{sec:orgb5efe58}
 \noindent Esencialmente creo que si se aproxima una hoja de la foliacion por medio de otras la topologia no deberia crecer y eso refleja que exisen ciclos ``loops'' evanecentes es decir que generadores del grupo fundamental deberian desaparecer en el limite pues se van haciendo chicos. Ahora en terminos de lo previamente investigado, es decir el volumen. Esto quiere decir que tenemos un efecto inverso a o que sucede con los volúmenes de as hojas, es decir si el volumen crece y da un brinco, entonces el grupo fundamental se hace chico y estamos en la presencia de un ciclo evanecente, esto deberia verse en por ejemplo regiones fundamentales de curvas hiperbólicas por ejemplo.
 \subsection{Numeros de Lelong}
-\label{sec:orged26d3d}
+\label{sec:orgbdd612b}
 \noindent Del examen de candidatura, creo que la idea de ver la taza de crecimiento de los volumenes es una herramienta poderosa y eso nos relaciona directamente con los numeros de lelong. Entonces es necesario ver si hay alguna interpretecion topologica (homologica o cohomologica) de estos. A continuación hay un resumen del artículo ``Propiétés Métriques Des Ensembles Analytiques Complexes''.
 \subsubsection{Introducción}
-\label{sec:org587bf07}
+\label{sec:org2efdab1}
 \begin{quote}
 La nocion "d`aire" de los conjuntos analíticos complejos se encuentra ahora claramente establecida. Esta se deriva de la existencia de la integral de una forma diferencial sobre tal conjunto. Esto define la base de un método de estudio de las propiedades métricas de los conjuntos analíticos complejos. A su vez en el estudio de estos aparecen una clase particular de operadores lineares: las corrientes o formas diferenciales generalizadas, que son a la vez positivos y cerrados. En términos más abstractos, se busca un functor de la categoría de conjuntos analíticos complejos en la categoría de dichas corrientes. Para la búsqueda de este functor, parace que un punto de vista nuevo y eficaz es mediante los teorema de prolongación de conjuntos analíticos como el resultado de Remmert-Stein y la demostración de la conjetura de W. Stoll, demostrada por E, Bishop. Por otra parte una familia cerrdad de conjuntos analíticos es una familia normal, esto se compara con el teorema clásico de P. Montell de funciones holomorfas.
 \end{quote}
@@ -119,7 +120,7 @@ Si \(A\) es un conjunto analítico, el conjunto analítico de puntos no ordinari
 \]
 del espacio \(\Omega_{(p,p)}(U)\) (donde está bien definido en el sentido clásico) a \(\Omega_{(p,p)}(U)\).
 \subsubsection{Corrientes positivas y corrientes positivas cerradas.}
-\label{sec:orgb974b8f}
+\label{sec:org61c3412}
 \begin{quote}
 El operador \(t_0(\phi)\) es una corriente en el sentido de De Rham, también conocida como \emph{forma diferenecial generalizada} o forma diferencial con coeficientes que son distribuciones. El espacio es describe como el espacio de las expresiones del tipo
 \[
@@ -193,7 +194,7 @@ Se cumplen las siguientes proposiciones para las corrientes positivas:
     \end{itemize}
 \end{prop}
 \subsubsection{Corrientes de integración}
-\label{sec:orgdb30ad8}
+\label{sec:org9982aa5}
 En un conjunto analítico complejo \(A\subset U\subset\con\), se tiene el siguiente teorema
 \begin{teorema}
 El operador
@@ -241,7 +242,7 @@ Este enunciado hace evidente a existencia de una bola \(B=\{\Vert z\Vert<r\}\) t
 \]
 Es un incremento de a norma del operador \(t_0\) y permite a aplicacion de el teorema de Stokes general.
 \subsubsection{Familias acotadas de conjuntos analíticos}
-\label{sec:orgd99d874}
+\label{sec:org50c0940}
 Consideremos ahora el siguiente mapeo
 \[
     A\mapsto t(A)\in T^p_{>0}=\{t\,|\,\text{ corriente positiva}\},
@@ -278,7 +279,7 @@ Diremos que \(t_n\rightarrow t\) \emph{debilmente} si \(t_n(\varphi)\) tiene un 
 Una familia \(\{A_i\,|\,i\in I\}\) de conjuntos analíticos de dimensión pura \(k\) es localmente acotada en \(D\) si las corrientes \(\{t_i=t[A_i]\}\) forman una familia localmente acotada en \(D\).
 \end{def.}
 \subsubsection{Propiedades de \(\nu(z,0)\) para conjuntos analíticos.}
-\label{sec:org58dc540}
+\label{sec:org81bac70}
 Para divisores \(\{f=0\}\), es fácil de ver que si
 \[
     f=P_q+P_{q+1}+\dots\quad\P_j\text{ polinomio homogeneo de grado j},
@@ -334,13 +335,13 @@ En efecto, toda sucesión \(\{A_n\}\subset F\) tienen una subsucesión \(\{A_m\}
 y como sabemos \(A\) es un conjunto analítico.
 \begin{enumerate}
 \item Consecuencias
-\label{sec:org02bb745}
+\label{sec:org6dba31e}
 \begin{enumerate}
 \item \textbf{El teorema de Remmert-Stein:} Si \(B\) es un conjunto analítico de \(D\) de dimensión \(\dim(B)\leq k-1\) y \(A\) es un conjunto analítico de dimensión pura \(k\) en \(D\setminus B\), entonces \(\overline{A}\) es un conjunto analítico en \(D\).
 \item \textbf{La conjetura de Stoll:} Si \(B\) es un conjunto analítico de \(D\) y \(A\) es un conjunto analítico de dimensión pura \(k\) en \(D\setminus B\) y además \(\Vert t(A)\Vert_{D\setminus B}\leq\infty\) entonces \(\overline{A}\) es un conjunto analítico en \(D\).
 \end{enumerate}
 \end{enumerate}
 \subsubsection{Qué quiere decir esto para las foliaciones.}
-\label{sec:orgcfd4ce9}
+\label{sec:orgecf9c22}
 \noindent Yo propongo que en una variedad Kaehler compacata o incluso solo holomorfa compacta con una foliación holomorfa, vamos a poder definir representaciones de su álgebra de Von-Neumann usando corrientes, que nos van a demostrar que dicha álgebra es un tensor.
 \end{document}
