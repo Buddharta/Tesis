@@ -7,7 +7,6 @@
 \graphicspath{{./figs/}}
 \usepackage[margin=2.5cm]{geometry}  % to adjust margin 
 \usepackage{hyperref}   % for hyper references
-\usepackage{biblatex} % for bibliograpghy
 % \addbibresource{Reference.bib}
 
 %%%%%%% Header-Footer %%%%%%%%%%%%%%%
@@ -39,11 +38,11 @@
 \usepackage{afterpage}
 \usepackage{array}
 
+\newtheorem{definition}{Definition}[section]
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{prop}[theorem]{Proposition}
 \newtheorem{cor}[theorem]{Corollary}
 \newtheorem{lema}[theorem]{Lema}
-\newtheorem{definition}{Definition}[section]
 \newtheorem{conjeture}{Conjeture}
 \newtheorem{example}{Example}
 
@@ -95,9 +94,9 @@
      {\large  by \par}
      \vspace{0.5cm}
      {\large \textbf{\myname} \par}
-     \vspace{2cm}
-     \includegraphics[width=2.5cm,height=2.5cm]{~/Templates/figs/unam.jpg} % Logo
-    \vspace{1cm}
+     \vspace{0.5cm}
+    \includegraphics[width=2.5cm,height=2.5cm]{~/Templates/figs/unam.jpg}\\ % Logo
+    \vspace{2cm}
     {\large \sc Department of Mathematics \par}
      {\large \sc IMATE UNAM  \par}
      {\large \sc Mexico City, Mexico \par}
@@ -117,7 +116,7 @@
 \begin{center}
     \vspace*{\fill}
     This thesis is dedicated to\\
-    xxxx,xxxx, and xxxx
+    My parents, Midori and Alberto Verjovsky.
     \vspace*{\fill}
 \end{center}
 \clearpage
@@ -152,24 +151,19 @@
 \fancyhead[LE]{\rightmark}
 \fancyhead[RO]{\leftmark}
 \fancyfoot[C]{\thepage}
-The Purpose of this work is to show how the study of analytic aspects of the leaves of holomorphic foliations shows the
-analogies between the foliations and holomorphic maps. In this sense one can think of holomorphic foliations as the geometric
-version of the classical theory of holomophic/meromorphic functions. Also this thesis should give its author the title of Doctor
-in mathematics as a side effect.
-First, the basic propperties of analytic sets and holomorphic manifolds are stablished, then there is a discussion on their
-analytic propperties, particularly about integration, volume and dimension of this spaces. This naturarly leads to the
-definitions of the so called ''\emph{Lelong numbers}´´ and of ''\emph{currents}´´ as integration operators on analytic sets,
-which serve as analogues of residues and .
-Then, these propperties are used in the contexts of holomphic foliations, to study foliations with all leaves compact in Kähler 
-manifolds, subsequently the spaces of Douady and Bartlet are introduced as a sort of universal leaf space.
-These special spaces serve the purposse of stablishing the analytic structure of the leaf space of a holomorphic foliation in
-a compact holomorphic manifolds for which the leaf space is hausdorff beyond just a metric stucture given by the
-Gromov-Hausdorff metric.
-The consequences of this are dicussed in terms of the holonomy groupoid also called the ''graph´´ of the foliation
-(Ehressmann connection?) and their $\co^{*}$-algebras á la Cohn (possibly).
+\noindent The Purpose of this work is to show how the study of analytic aspects of the leaves of holomorphic foliations shows the analogies between the foliations and holomorphic maps. But more importantly, this thesis main purpose is to give its author the title of doctor in mathematics.
 
+This work is the result of the research conducted during the course of my doctoral studies, both as a doctoral student and PhD candidate later, the main idea behind that I've worked on and developed durring this period is; analytic varieties, foliations and holomorphic functions are the same type of objects but of different kind. By being the same type of object I mean that they share a core of proposition that are true for all of them if they are enunciated properly. In this sense one can think of holomorphic foliations as the geometric version of the classical theory of holomophic/meromorphic functions. 
 
+Together with my thesis advisor Dr.Santiago Alberto Verjovsky Solá, we studied holomorphic foliations $\mathfrak{F}$ whose leaves satisfy certain geometric properties that ensure a certain regularity in the structure of the leaf space of the foliation. We refer to regularity in the sense that normally the leaf space is topologically complex (non-Hausdorff), making it necessary to restrict the type of dynamics on the leaves of the foliation to guarantee some topological regularity in the leaf space. An example of these properties is the case of foliations whose leaves have bounded volumes in K\"ahler manifolds $(M,h)$.
 
+The historical basis for studying foliations with bounded volume comes from previous works by mathematicians such as Epstein, Edwards, Millet, Reeb, Sullivan, Haefliger, J.C. Alexander, and Dr. Verjovsky himself, among others; see \cite{EMS}, \cite{V-A}, \cite{E-V}, \cite{Epstein1}, \cite{Epstein2}. However, the research we have proposed so far is supported by the previous work of J.C. Alexander and Dr. Verjovsky \cite{A-V}, which in turn is based on works by Errett Bishop \cite{Bishop} on extensions and Hausdorff limits of sequences of analytic varieties and follows the spirit of the presentation of Bishop's results found in the book "Volumes, Limits, and Extensions of Analytic Varieties" by Gabriel Stolzenberg \cite{Stolzenberg}.
+
+More precisely, we have been investigating ways to extend the range of possible applications of these results to various areas of complex analysis and complex geometry, with an emphasis on the theory of holomorphic foliations. We have found connections between known theorems of complex analysis and complex geometry. One of the first findings of these connections is, for example, a novel proof of Chow's theorem \cite{Chow}.
+
+First, the basic propperties of analytic sets and holomorphic manifolds are stablished, then there is a discussion on their analytic propperties, particularly about integration, volume and dimension of this spaces. This naturarly leads to the definitions of the so called ``\emph{Lelong numbers}'' and of ``\emph{currents}'' as integration operators on analytic sets, which serve as analogues of residues and differential forms.
+
+Then, these propperties are used in the contexts of holomphic foliations, to study foliations with all leaves compact in Kähler manifolds, subsequently the spaces of Douady and Bartlet are introduced as a sort of universal leaf space. These special spaces serve the purposse of stablishing the analytic structure of the leaf space of a holomorphic foliation in a compact holomorphic manifolds for which the leaf space is hausdorff beyond just a metric stucture given by the Gromov-Hausdorff metric.
 
 \chapter{Complex Analytic Varieties and Manifolds}
 \pagenumbering{arabic}
@@ -178,22 +172,22 @@ The consequences of this are dicussed in terms of the holonomy groupoid also cal
 \fancyhead[LE]{\rightmark}
 \fancyhead[RO]{\leftmark}
 \fancyfoot[C]{\thepage}
-Some notation that will be used throughout the thesis: $\con$ will be the vector space of dimension $n$ over $\co$ the set of complex numbers. Given an open set $U\subset\con$ the set of holomorphic functions $f:U\rightarrow\co$ will be denoted as $\mathcal{H(U)}$ and $\mathcal{O}_{U}$ will represent the sheaf of holomorphic germs over $U$.
-For a set of functions $\{f_{1},\dots,f_{k}\}\subset\mathcal{O}_{U}$ its vanishing set is denoted and defined as
-\[
-  V(f_{1},\dots,f_{k}):=\{x\in U\,\vert\,f_{1}=\dots =f_{k}=0\}.
-\]
-The set of complex lines in a $d$ dimensional complex vector spaces, also known as the complex projective space, will be denoted as $\cp^{d-1}$. Complex and real manifolds will be denoted usually with the letters $L, N, Ñ, M,$. etc. The tanget space of a manifold wil be denoted as $TM$ and the space of smooth sections (vector fields) of $TM$ will be denoted as $\mathcal{T}M$.
-An (almost)-complex structure of an even dimenstional real manifold will be denoted as $J:TM\rightarrow TM$, with $J²=-id_{TM}$.Moreover the complexification of a even dimentional real manifold will be denoted as $TM_{\co}:=TM\otimes\co$, and the complex conjugate splitting will be denoted as $TM_{\co}=TM^{1,0}\oplus TM^{0,1}$ of isomorphic vector spaces.
+This chapter is for stablishing the basic definitions, notations and conventions that will be used throughout the thesis. 
+
+The complex vector space of simension $n$ will be denoted as $\con$ and the set of complex numbers naturally will be denoted as $\co$. Given an open set $U\subset\con$ the set of holomorphic functions $f:U\rightarrow\co$ will be denoted as $\mathcal{H}(U)$ and $\mathcal{O}_{U}$ will represent the sheaf of holomorphic germs over $U$. Similarly, the set of \emph{biholomorphic} funtions between two spaces $U$ and $V$ i.e. the set of biyective holomorphic mappings with holomorphic inverse between $U$ and $V$ as $\mathrm{Bil}(U,V)$, if $U=V$, then it will be denoted as $\mathrm{Bil}(U).$
+
+The set of complex lines in a $d$ dimensional complex vector spaces, also known as the complex projective space, will be denoted as $\cp^{d-1}$. Complex and real manifolds will be denoted usually with the letters $L, N, Ñ, M,\dots$. etc. The tanget space of a manifold wil be denoted as $TM$ and the space of smooth sections (vector fields) of $TM$ will be denoted as $\mathcal{T}M$.
+
+An (almost)-complex structure of an even dimenstional real manifold will be denoted as $J:TM\rightarrow TM$, with $J²=-id_{TM}$. Moreover the complexification of a even dimentional real manifold will be denoted as $TM_{\co}:=TM\otimes\co$, and the complex conjugate splitting will be denoted as $TM_{\co}=TM^{1,0}\oplus TM^{0,1}$.
 Similarly the space of $(p,q)$-forms on a complex manifold $M$ is denoted as $\Omega^{(p,q)}(M)$, defined as the section space of the vector bundles
 \[
-  \bigwedge^{p,q}T^{*}M=\bigwedge^{p}T^{*}M\otimes_{\co}\bigwedge^{q}T^{*}M.
+  \bigwedge^{p,q}T^{*}M=\bigwedge^{p}T^{*}M\otimes_{\co}\bigwedge^{q}T^{*}M,
 \]
 \noindent where the following \emph{``conjugation''} convention is asumed: $\overline{\Omega^{(p,q)}(M)}=\Omega^{(q,p)}(M)$, with the space of complex differential forms given as the space
 \[
   \Omega^{k}_{\co}(M)=\bigoplus_{p+q=k}\Omega^{p,q}(M).
 \]
-\noindent The differential operator is defined as $d=\partial + \overline{\partial}$, where $\partial:\Omega^{(p,q)}(M)\rightarrow \Omega^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\Omega^{(p,q)}(M)\rightarrow\Omega^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.\\
+\noindent The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\Omega^{(p,q)}(M)\rightarrow \Omega^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\Omega^{(p,q)}(M)\rightarrow\Omega^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.\\
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
 A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defined in a numerous of distict and interesting ways, depending on the application needed a foliation will be understood as
 \begin{itemize}
@@ -201,20 +195,38 @@ A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defin
         \[
           M=\bigcup_{\alpha}\mathcal{L_{\alpha}},
         \]
-        \noindent such that for every point $p\in M$ there exists an open set and a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) function $(U,\phi)$, with $\phi\rightarrow\re^{m}$ and such that every $\mathcal{L}_{\alpha}\cap U$ is a level set of $\phi$.
-  \item A \emph{foliated chart}, meaning a set $\{(U_{i},\varphi_{i})\}$ such that $\{U_{i}\}$ is a covering of $M$ and $\varphi_{i}:U_{i}\rightarrow\re^{n}$ is a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) chart such that
+        \noindent such that for every point $p\in M$ there exists an open set and a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) function $(U,\phi)$, with $\phi\rightarrow\re^{m}$, such that every $\mathcal{L}_{\alpha}\cap U$ is a level set of $\phi$.
+  \item A \emph{foliated chart} $\{(U_{i},\varphi_{i})\}$ such that $\{U_{i}\}$ is a covering of $M$ and $\varphi_{i}:U_{i}\rightarrow\re^{n}$ is a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) chart such that
         \[
           \varphi_{i}(U_{i})=W_{i}\times\re^{m},\text{ with }W_{i}\subset\re^{n-m}.
         \]
-  \item An \emph{involutive} distribution of the tangent bundle $TM$, i. e. A $\mathcal{C}^{\infty}(M)$-module $\mathfrak{F}\subset\mathcal{T}M$ closed under the lie bracket $[\cdot,\cdot]$.
-  \item The dual poin of view from the previous viewpoint will also be adopted, i. e. as a set of $k$-forms that null over an involutive disribution.
+      \item An \emph{involutive} distribution of the tangent bundle $TM$, i.e. A $\mathcal{C}^{\infty}(M)$-module $\mathfrak{F}\subset\mathcal{T}M$ closed under the lie bracket
+        \[
+          [X,Y]\in\mathfrak{F}\text{ for any } \{X,Y\}\subset\mathfrak{F}
+        \]
+  \item The dual poin of view from the previous viewpoint will also be adopted, i.e. a foliation $\mathfrak{F}$ is a set of $k$-forms that nulls on an involutive disribution.
 \end{itemize}
-If all the leaves are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimensionof the leaves. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.
-The \emph{holonomy grupoid} also called the \emph{graph} of a foliation $(M,\mathcal{F})$ is the set of all curves cointained in the leaves of the foliation \textit{modulo homotopy} and will be denoted as $G(M,\mathcal{F})$.
+If all the leaves are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimension of the leaves. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.\\
 
+The \emph{holonomy grupoid} also called the \emph{graph} of a foliation $(M,\mathcal{F})$ is the set of all curves contained in the leaves of the foliation \textit{modulo homotopy} and will be denoted as 
+\[
+G(M,\mathfrak{F}):=\{[\gamma],\,\gamma:[0,1]\rightarrow\mathcal{L}\,\,\vert\,\,\mathcal{L}\in\mathfrak{F}\}.
+\]
+Since grupoids are a difficult structure to work with, there is also the easier to work with \emph{holonomy group}, defined at a point $z\in L$ as
+\[
+\mathcal{H}_z(L):=\{[\gamma]\in G(M,\mathfrak{F})\,|\,\gamma(0)=\gamma(1)=z\}.
+\]
+This is naturally a group and can be representen via a surjective homomorphism of the fondamental group of $L$, said surjective homomorphism is called the \emph{holonomy morphism}
+\[
+H:\pi_{1}(L,z)\rightarrow\mathcal{H}_z(L).
+\]
+The prefix on the holonomy groups will be preserved in order to not confuse it with the set of holomorphic functions on a set.
 \section{Complex manifolds and analytic varieties}
-An \emph{analytic variety} is defined as a paracompact Hausdorff space $X$ with a locally ringed structure $\mathcal{H}_{X}$ modeled by the local ring structure of
-a vanishing set in some finite dimensional complex vector space, that is, $(X,\mathcal{H}_{X})$ locally isomorphic to a local model $(Z,\mathcal{O}_{U}/(f_{1},\dots,f_{k}))$, where $U\subset\con$ is an open set and $Z=V(f_{1},\dots,f_{k})$, and $(f_{1},\dots,f_{k})$ denotes the ideal generated by the functions $\{f_{1},\dots,f_{k}\}$. Given a open set $V\subset X$ and an open set $U\subset\co$ and an isomorphism between ringed structures as discussed, $\varphi:U\rightarrow V$, sometimes the pair $(V,\varphi)$ will be called a \emph{chart}.
+For a set of functions $A\subset\mathcal{O}_{U}$, where $U\subset M$ is an open set on a complex manifold, the vanishing set of is denoted and defined as
+\[
+  V(A):=\{x\in U\,\vert\,f(x)=0,\,\forall\,f\in A\}.
+\]
+An \emph{analytic variety} is defined as a paracompact Hausdorff space $X$ with a locally ringed structure $\mathcal{H}_{X}$ modeled by the local ring structure of a vanishing set in some finite dimensional complex vector space, that is, $(X,\mathcal{H}_{X})$ locally isomorphic to a local model $(Z,\mathcal{O}_{U}/(f_{1},\dots,f_{k}))$, where $U\subset\con$ is an open set and $Z=V(f_{1},\dots,f_{k})$, and $(f_{1},\dots,f_{k})$ denotes the ideal generated by the functions $\{f_{1},\dots,f_{k}\}$. Given a open set $V\subset X$ and an open set $U\subset\co$ and an isomorphism between ringed structures as discussed, $\varphi:U\rightarrow V$, sometimes the pair $(V,\varphi)$ will be called a \emph{chart}.
 
 Moreover it is said that an analytic variety $X$ is of pure dimension $k$ if all of its irreducible components are of the same dimension. Similarly the definition of a complex algebraic variety is the same, only considering the ring of polynomials $\co[z_{1},\dots,z_{n}]$ as its structure ring.
 
@@ -227,6 +239,10 @@ An \emph{analytic subspace} of an analytic variety $(X,\mathcal{H}_{X})$ consist
 Note that using projective coordinates, the set of vanishing points of homogeneous polynomials are well defined on $\cp^n$. Analytic and algebraic subsets of $\cp^n$ are going to be called  \emph{\textbf{projective} analytic subsets} and \emph{\textbf{projective} algebraic subsets} respectively.
 
 \subsection{Kähler manifolds}
+A K\"ahler manifold is a complex manifold $(M,I)$ with an additional Hermitian structure $h=g-i\omega$ such that the (1,1)-form defined by $\omega=-\Im (h)$ is closed $d\,\omega=0$. This closed form is denoted as the \emph{K\"ahler form}, i.e., $M$ is a real differentiable manifold of dimension $2d$ and $I$ is a complex structure $I^2=-1$, furthermore $h$ is a Hermitian product on the tangent space of $M$.
+
+It is worth mentioning that $g=\Re (h)$ is a Riemannian metric with the same volume form as the one induced by $\omega$, this is due to the natural relation between $\omega$ and $g$ given by $g(\cdot,\cdot)=\omega(\cdot,I(\cdot))$. The most important prototypical examples of K\"ahler manifolds are manifolds that I have already mentioned, these are $\con$ with the traditional Hermitian inner product and $\cp^{n}$ with the metric known as the Fubini-Study metric.
+
 Kähler manifolds are special because of the relationship between their riemannian metrics and their associated symplectic $(1,1)$-forms, one aspect of this relationship is the fact that both both asociated volume forms coincide.
 \begin{definition}
         Let $M$ be a complex manifold with with respect to the integrable complex structure
@@ -260,7 +276,13 @@ a natural Hermitian metric given by
     \omega_{FS}=\frac{i}{2}\partial \overline{\partial}\log(|Z|^{2})=\frac{i}{2}\partial \overline{\partial}\log(1+|\zeta|^{2}).
   \]
 \end{example}
-Kähler manifolds have some strong topological restrictions, for example, powers of the Kähler form $\omega^k$ are non trivial representatives of cohomology classes in $H^{2k}(M ;\re)$, meaning these groups are never trivial. More importantly complex submanifolds of a Kähler manifold are also K\"ahler.
+
+It is common to definitionne a K\"ahler metric via its K\"ahler form, in the case of the Fubini-Study metric, it is defined in coordinates $Z=[1:\zeta_{1},\dots,\zeta_{n}]=[1:\zeta]$ as (see \cite[p. 154]{Chirka})
+\[
+    \omega=\frac{i}{2}\partial\overline{\partial}\log(|Z|^{2})=\frac{i}{2}\partial\overline{\partial}\log(1+|\zeta|^{2}).
+\]
+
+Likewise, it is important to mention that every complex submanifold of a K\"ahler manifold is K\"ahler. Similarly, compact complex submanifolds of a K\"ahler manifold minimize the volume in their homology class. This is some evidence that Kähler manifolds have some strong topological restrictions, another way to express this is the fact that powers of the Kähler form $\omega^k$ are non trivial representatives of cohomology classes in $H^{2k}(M ;\re)$, meaning these groups are never trivial. More importantly complex submanifolds of a Kähler manifold are also K\"ahler.
 Another important consequence is the following famous result
 \begin{theorem}[Wirtinger's inequality]
         Let $M$ be a Kähler manifold with Kähler form $\omega_M$ and let $f:N\rightarrow M$ be a closed oriented immersion
@@ -318,14 +340,155 @@ Related to the Hausdorff measure is the Hausdorff metric defined for $K_1$
 and $K_2$ compact subsets of a metric space $(X,d)$ as $$
 d_h(K_1,K_2):= \max_{x\in K_1}\left\{d(x,K_2)\right\}+\max_{y\in K_2}\left\{d(y,K_1)\right\}.$$
 
-The Hausdorff metric allows to define a convenient notion of convergence of closed subsets: let $\{S_n \}$ be anysequence of closed subsets of $X$, then $S_n$ converges to the closed subset $S$ in the Hausdorff metric $S_n\overset{h}\rightarrow S$, if for every $K\subset X$ compact we have
+The Hausdorff metric allows to definitionne a convenient notion of convergence of closed subsets: let $\{S_n \}$ be anysequence of closed subsets of $X$, then $S_n$ converges to the closed subset $S$ in the Hausdorff metric $S_n\overset{h}\rightarrow S$, if for every $K\subset X$ compact we have
 \[
   d_h(K\cap S_n,K\cap S)\rightarrow 0.
 \]
 \section{Bishop's theorems}
+\subsection{Analytic and Algebraic Varieties}
+\begin{theorem}[Chow]\label{Chow}
+        Every closed analytic subspace of complex projective space $\cp^{n}$ is algebraic.
+\end{theorem}
+\noindent We demonstrated this based on the little-known results of Bishop about analytic varieties of pure dimension $k$. Here, an \emph{analytic space} or \emph{analytic variety} is a Hausdorff paracompact topological space $X$ with a ringed structure $\mathcal{H}_X$, i.e., a sheaf of rings on $X$ that is locally isomorphic to an analytic subset of $\con$. More precisely, a set $X$ is analytic if for each $x\in X$ there is an open neighborhood $V$ and a homeomorphism $\varphi_V:V\rightarrow Z,$ where $Z\subset U$, $U$ is an open subset of $\con$ and $Z=Z(f_1,\dots,f_k)(U)$ represents the analytic subset of the zeros of the holomorphic functions $f_i:U\rightarrow\co$. Furthermore, it must be that the pullback $\varphi^{*}:\mathcal{H}(U)/\mathcal{I}(Z)\rightarrow \mathcal{H}_X(V)$
+is an isomorphism of rings between $\mathcal{H}_X(V)$ and the quotient ring of
+\[
+        \mathcal{H}(U)=\{f:U\rightarrow\co\,|\,f \text{ is holomorphic}\}\quad\text{with}\quad\mathcal{I}(Z)=\{f\in\mathcal{H}(U)\,|\,f|_{Z}=0\}.
+\]
+Thus, an analytic subspace $Y$ of $X$ is a ringed space $(Y,\mathcal{H}_Y)$ with a closed embedding $\iota:Y\rightarrow X$ such that locally the ring
+$\mathcal{H}_Y$ is isomorphic to the quotient ring of $\mathcal{H}$ with the ideal of functions that are zero on the image of $Y$, where the isomorphism is given by the
+pullback $\iota^{*}$. Similarly, the definition of an algebraic set is obtained by replacing the ring of analytic functions $\mathcal{H}(U)$ with the ring of
+polynomials in $\con$ denoted by $\co[z_1,\dots,z_n]$.
+\subsection{Volume Growth a messure for algebraicity}
+\noindent Following Stolzenberg's presentation (see \cite{Stolzenberg}), the result linking
+Bishop's results with Chow's theorem is a result that states the following:
+\begin{theorem}[Bishop]\label{Bishop1}
+        Let $X\subset\con$ be an analytic subvariety of pure complex dimension $k$. If for every $R\in\re^+$
+        $$\textrm{Vol}_{2k}(X\cap B_R(0))\leq CR^{2k},$$
+        where $B_R(0)$ denotes the ball centered at the origin with radius $R$, $C\in\re^{+}$ is a positive constant
+        and $\textrm{Vol}_{2k}$ is the $2k$-dimensional volume, then $X$ is algebraic.
+\end{theorem}
+\noindent The proof we gave in our article of Chow's theorem is of a very different character from Serre's famous proof (see \cite{GAGA}) and speaks of an interesting connection between analysis and algebraic geometry.
+
+\subsection{Bishop's Sequential Theorem}
+\noindent The connections between complex analysis and complex geometry have guided us to explore further the possible connections between these two branches,
+as well as other results with complex analysis. One example is the following classical result that we proved
+based on Bishop's results.
+\begin{theorem}[Montel]\label{Montel}
+        Let $B\subset\con$ be the unit ball, if $\mathcal{H}(\overline{B})$ is the Banach algebra of holomorphic functions that are continuous
+        on the boundary of $B$, then every locally bounded family of functions $F\subset\mathcal{H}(\overline{B})$ is a \textit{normal} family.
+\end{theorem}
+As a reminder, a family of functions $F$ is \textit{normal} if and only if its closure is sequentially compact.
+If we think of Montel's theorem from the perspective of Bishop's theorems, we can consider that the following Bishop's theorem is a
+generalization (see \cite[p. 30]{Stolzenberg}).
+
+\begin{theorem}[Bishop]\label{Bishop2}
+        Let $\{ V_n \}_{n\in\nat}$ be a sequence of analytic subvarieties of pure complex dimension $k$ in a region
+        $\Omega\subset\con$ with volume uniformly bounded by a constant $C\in\re^{+}$.
+        If the sequence $V_n\rightarrow V$ converges to a closed set $V\subset\con$ in the Hausdorff sense, then $V$ is an
+        analytic variety.
+\end{theorem}
+This is because Dr. Verjovsky and I proved Montel's result using theorem \ref{Bishop2} by considering the graphs of the
+functions as analytic varieties
+\[
+        \Gamma_{f}=\{(z,w)\in B\times\co\,|\,w=f(z)\}=Z(w-f(z)),
+\]
+\noindent where $B$ is the unit ball in $\con$ and $Z(g)=\{z\in B\,|\,g(z)=0\}$ denotes the zero set of a holomorphic function $g:B\rightarrow\co$. Here, we think of $\Gamma_{f}$ as pure-dimensional analytic varieties in an open subset of $\co^{n+1}$, and we proved
+that for every sequence $\{f_n\}_{n\in\nat}\subset F$ of functions in a locally bounded family, there is a subsequence
+whose graphs converge in the sense of the Hausdorff metric. Additionally, we proved that its limit set
+is in turn the graph of a holomorphic function in $B$.
+
+The convergence of a sequence of sets $S_n\rightarrow S$ \emph{in the Hausdorff sense} for closed sets of a metric space $(X,d)$
+occurs when $S_n\cap K\rightarrow S\cap K$ in the Hausdorff metric $d_H$ for every compact $K\subset X$, where it is defined as
+\[
+        d_H(K_1,K_2):= \max_{x\in K_1}\left\{d(x,K_2)\right\}+\max_{y\in K_2}\left\{d(y,K_1)\right\}.
+\]
+
+\subsection{Similarities between the theories of holomorphic functions and complex analytic sets}
+
+\noindent From the perspective that I have shown so far, it can be appreciated that Bishop's results can be thought of as generalizations of classical results from complex analysis, but in the context of the theory of analytic varieties.
+
+\begin{table}[hpt]
+        \caption{Table with similarities between classical theorems of complex variable and Bishop's theorems.}\label{Tab}
+        \centering
+        \begin{tabular}{|m{5.5cm}|m{5.5cm}|} \hline
+                        \begin{center} \vspace*{0.2cm}
+                                \underline{\textbf{Complex Analysis}}
+                        \end{center} &
+                        \begin{center} \vspace*{0.2cm}
+                                \underline{\textbf{Analytic sets in $\con$}}
+                        \end{center} \\
+                \hline
+                \begin{center}
+                        \textit{Liouville's Theorem.}
+                \end{center} &
+                \begin{center}
+                        \textit{Bishop's Theorem (Theorem \ref{Bishop1}).}
+                \end{center}\\
+                        \hline If $\vert f(z)\vert\leq C\,R^k$ in the set $\{\vert z\vert\leq R\}$
+                        for all $R\in\re^{+}$ with $f$ entire and $k\in\zah^{+}$, then
+                        $f$ is a polynomial.
+                        &
+                        \vspace{0.1cm}
+                        If $\textrm{Vol}_{2k}(X\cap B(R,0))\leq CR^{2k}$ for all
+                        $R\in\re^{+}$, where $X$ is an analytic subvariety in $\con$, then $X$ is algebraic.\\
+                        \hline
+                        \vspace{0.1cm}
+                        \begin{center}
+                        \textit{Riemann's Extension Theorem.}
+                \end{center}
+                        &
+                \begin{center}
+                        \textit{Bishop's generalization of the Remmert-Stein theorem (see \cite{R-S} and \cite[p. 34]{Stolzenberg}).}
+                \end{center} \\
+                        \hline If $f:(\Omega\setminus E)\subset\co\rightarrow\co$ is a holomorphic function and $E$ is a compact subset
+                        of capacity $0$, then $f$ can be extended to a holomorphic function
+                        in the entire region $\Omega$.
+                        &
+                        \vspace{0.1cm}
+                        Let $U\subset\con$ be a bounded open subset of $\con$ and let $B\subset U$ be a closed subset
+                        such that $X\subset U\setminus B$ is a pure dimensional subvariety of dimension $k$ with $B\subset\overline{X}$.
+                        If $B$ has capacity $0$ relative to the algebra of analytic functions on $X$ that are
+                        continuous on $\overline{X}$ and if there exists a proper map $f:U\rightarrow\co^k$ on $B$ such that $f(B)$
+                        is not an open connected subset of $\co^k$, then $\overline{X}\cap U$ is an analytic subset
+                        of $U$ (see \cite[Theorem 4]{Bishop}).\\
+                        \hline
+                \begin{center}
+                        \textit{Montel's Compactness Theorem.}
+                \end{center}
+                        &
+                \begin{center}
+                        \textit{Bishop's theorem on sequences of analytic varieties with uniformly bounded volume.}
+                \end{center}\\
+                \hline
+                \vspace{0.1cm}
+                Let $\lbrace\Gamma_i\rbrace$ be a sequence of graphs of uniformly bounded holomorphic
+                functions, $f_i:\Delta\rightarrow\co$ such that $\Gamma_i\overset{d_H}\longrightarrow\Gamma$ (Hausdorff convergence),
+                where $\Gamma\subset\co^2$ is a closed subset and $\Delta$ is the unit disk in $\co$,
+                then $\Gamma$ is the graph of a holomorphic function.
+                        &
+                Let $\lbrace V_i\rbrace$ be a sequence of analytic subvarieties of $\Omega\subset\con$ with uniformly
+                bounded volumes such that $V_i\overset{d_H}\longrightarrow V\subset\Omega$ in the Hausdorff sense, then
+                $V$ is an analytic subvariety of $\con$ (\cite[p. 30]{Stolzenberg}). \\ \hline
+        \end{tabular}
+\end{table}
+
+Moreover, analytic varieties themselves can clearly be thought of as a generalization of holomorphic functions,
+since each holomorphic function $f:\Omega\subset\con\rightarrow\co$ has associated to it the analytic variety given by its zero divisor $[Z]=Z(g)$
+or as previously mentioned, by its graph $\Gamma_{f}\subset\Omega\times\co$, the first being an analytic subvariety of
+dimension $n-1$ and the second being
+an analytic subvariety of pure dimension $n$. In addition to this, it is widely known that in the classical context
+of the complex variable, every holomorphic function on a compact holomorphic variety is constant, for example $\cp^n$ is compact,
+and therefore every global holomorphic function is constant. However, as we know, $\cp^n$ has many analytic subvarieties, as many
+as sets of algebraically independent homogeneous polynomial functions. Table \ref{Tab} lists a series of
+versions of classical theorems from complex analysis and their counterparts in the context of analytic varieties.
+
+
+
+
 \subsection{Analytic varieties and their Hausdorff limits}
 The first of Bishop's results that is very useful for understanding some of the analytical properties of purely $k$-dimensional subvarieties is the following convergence theorem
-\begin{theorem}[Sequence theorem] \label{bishop sequence}Let $\lbrace
+\begin{theorem}[Sequence theorem] \label{bishop sequence}
+  Let $\lbrace
         V_n\rbrace$ be a sequence of purely $k$-dimensional subvarieties of a
         domain $\Omega\subset\con$ such that $V_n\overset{h}\rightarrow V$, with
         $V\subset\Omega$ a closed subset. If $$ \textrm{Vol}_{2k}(V_n)\leq M
@@ -350,7 +513,7 @@ As a direct application of this result, one can show the following very useful p
 subvarieties implies the regular coordinates theorem, meaning the proper
 mapping is a finite sheeted analytic covering.
 
-\subsection{Applications of Bishop's reults}
+\chapter{Applications of Bishop's theorems}
 
 \noindent As mentioned, this result by Bishop can be used to prove many other important
 results (see \cite{Stolzenberg}) one of the most significant is the proof of
@@ -496,7 +659,7 @@ Now, in compact Kähler manifolds, the statents ``there is at least \emph{one} c
 Let $M$ be a compact connected K\"ahler manifold of dimension $n$ and $\mathfrak{F}$ be a holomorphic foliation of codimension $q<n$ for which there is at least one compact leaf with finite holonomy, then all leaves are compact with finite holonomy an therefore their volumes are uniformly bounded.
 \end{theorem}
 \begin{proof}
-  Let us denote by $\mathcal L$ to the compact leaf of $\mathfrak F$, by generalized Reeb stability there exist a saturated neighborhood $U$ of $\mathcal{L}$ such that $U$ is biholomorphic to a product $\mathcal{L}\times D$ with $D\subset\co^{q}$ an open connected set, and such that every leaf in $U$ is a finitely sheeted covering of $\mathcal{L}$. Now, let us define the following set
+  Let us denote by $\mathcal L$ to the compact leaf of $\mathfrak F$, by generalized Reeb stability there exist a saturated neighborhood $U$ of $\mathcal{L}$ such that $U$ is biholomorphic to a product $\mathcal{L}\times D$ with $D\subset\co^{q}$ an open connected set, and such that every leaf in $U$ is a finitely sheeted covering of $\mathcal{L}$. Now, let us definitionne the following set
 \[
     \mathcal{U}:=\{x\in M\,\vert\, \text{ the leaf through $x$ is compact with finite holonomy}\},
 \]
@@ -508,192 +671,13 @@ Therefore by Bishop´s theorem \ref{bishop sequence} $\{\mathcal{L}_{k}\}$ conve
 \end{proof}
 
 
-\LARGE\textbf{Here I need to work in fitting for these adecuately:}
-
-
-
-\noindent Below I present the syllabus and progress of the research conducted during the first five semesters
-of my pre-candidacy as a doctoral student as part of the process for the doctoral candidacy examination.
-During the specified period, both Dr. Santiago Alberto Verjovsky Solá (my thesis advisor) and I dedicated ourselves to studying
-holomorphic foliations $\mathfrak{F}$ whose leaves satisfy certain geometric properties that ensure a certain regularity in
-the structure of the leaf space of the foliation. We refer to regularity in the sense that normally the
-leaf space is topologically complex (non-Hausdorff), making it necessary to restrict the type of dynamics on the leaves
-of the foliation to guarantee some topological regularity in the leaf space. An example of these properties is the case of foliations whose leaves have
-bounded volumes in K\"ahler manifolds $(M,h)$.
-The historical basis for studying foliations with bounded volume comes from previous works by mathematicians such as
-Epstein, Edwards, Millet, Reeb, Sullivan, Haefliger, J.C. Alexander, and Dr. Verjovsky himself, among others; see \cite{EMS}, \cite{V-A}, \cite{E-V}, \cite{Epstein1}, \cite{Epstein2}.
-However, the research we have proposed so far is supported by the previous work of J.C. Alexander and
-Dr. Verjovsky \cite{A-V}, which in turn is based on works by Errett Bishop \cite{Bishop} on extensions and Hausdorff limits
-of sequences of analytic varieties and follows the spirit of the presentation of Bishop's results found in the
-book "Volumes, Limits, and Extensions of Analytic Varieties" by Gabriel Stolzenberg \cite{Stolzenberg}.
-
-More precisely, we have been investigating ways to extend the range of possible applications of these results to
-various areas of complex analysis and complex geometry, with an emphasis on the theory of holomorphic foliations. In the work
-already done, we have found connections between known theorems of complex analysis and complex geometry and have even
-written a short dissemination article with these findings, which is currently in a stage of corrections
-and possible expansions. One of the first findings of these connections is, for example, a novel proof of Chow's theorem \cite{Chow}.
-
-\section{Bishop's Results}
-\subsection{Analytic and Algebraic Varieties}
-\begin{theorem}[Chow]\label{Chow}
-        Every closed analytic subspace of complex projective space $\cp^{n}$ is algebraic.
-\end{theorem}
-\noindent We demonstrated this based on the little-known results of Bishop about analytic varieties of pure dimension $k$. Here, an \emph{analytic space} or \emph{analytic variety} is a Hausdorff paracompact topological space $X$ with a ringed structure $\mathcal{H}_X$, i.e., a sheaf of rings on $X$ that is locally isomorphic to an analytic subset of $\con$. More precisely, a set $X$ is analytic if for each $x\in X$ there is an open neighborhood $V$ and a homeomorphism $\varphi_V:V\rightarrow Z,$ where $Z\subset U$, $U$ is an open subset of $\con$ and $Z=Z(f_1,\dots,f_k)(U)$ represents the analytic subset of the zeros of the holomorphic functions $f_i:U\rightarrow\co$. Furthermore, it must be that the pullback $\varphi^{*}:\mathcal{H}(U)/\mathcal{I}(Z)\rightarrow \mathcal{H}_X(V)$
-is an isomorphism of rings between $\mathcal{H}_X(V)$ and the quotient ring of
-\[
-        \mathcal{H}(U)=\{f:U\rightarrow\co\,|\,f \text{ is holomorphic}\}\quad\text{with}\quad\mathcal{I}(Z)=\{f\in\mathcal{H}(U)\,|\,f|_{Z}=0\}.
-\]
-Thus, an analytic subspace $Y$ of $X$ is a ringed space $(Y,\mathcal{H}_Y)$ with a closed embedding $\iota:Y\rightarrow X$ such that locally the ring
-$\mathcal{H}_Y$ is isomorphic to the quotient ring of $\mathcal{H}$ with the ideal of functions that are zero on the image of $Y$, where the isomorphism is given by the
-pullback $\iota^{*}$. Similarly, the definition of an algebraic set is obtained by replacing the ring of analytic functions $\mathcal{H}(U)$ with the ring of
-polynomials in $\con$ denoted by $\co[z_1,\dots,z_n]$.
-\subsection{Volume Growth as a Measure to Determine if a Set is Algebraic}
-\noindent Following Stolzenberg's presentation (see \cite{Stolzenberg}), the result linking
-Bishop's results with Chow's theorem is a result that states the following:
-\begin{theorem}[Bishop]\label{Bishop1}
-        Let $X\subset\con$ be an analytic subvariety of pure complex dimension $k$. If for every $R\in\re^+$
-        $$\textrm{Vol}_{2k}(X\cap B_R(0))\leq CR^{2k},$$
-        where $B_R(0)$ denotes the ball centered at the origin with radius $R$, $C\in\re^{+}$ is a positive constant
-        and $\textrm{Vol}_{2k}$ is the $2k$-dimensional volume, then $X$ is algebraic.
-\end{theorem}
-\noindent The proof we gave in our article of Chow's theorem is of a very different character from Serre's famous proof (see \cite{GAGA}) and speaks of an interesting connection between analysis and algebraic geometry.
-
-\subsection{Bishop's Sequential Theorem, the Hausdorff Metric, and a Proof of Montel's Theorem}
-\noindent The connections between complex analysis and complex geometry have guided us to explore further the possible connections between these two branches,
-as well as other results with complex analysis. One example is the following classical result that we proved
-based on Bishop's results.
-\begin{theorem}[Montel]\label{Montel}
-        Let $B\subset\con$ be the unit ball, if $\mathcal{H}(\overline{B})$ is the Banach algebra of holomorphic functions that are continuous
-        on the boundary of $B$, then every locally bounded family of functions $F\subset\mathcal{H}(\overline{B})$ is a \textit{normal} family.
-\end{theorem}
-As a reminder, a family of functions $F$ is \textit{normal} if and only if its closure is sequentially compact.
-If we think of Montel's theorem from the perspective of Bishop's theorems, we can consider that the following Bishop's theorem is a
-generalization (see \cite[p. 30]{Stolzenberg}).
-
-\begin{theorem}[Bishop]\label{Bishop2}
-        Let $\{ V_n \}_{n\in\nat}$ be a sequence of analytic subvarieties of pure complex dimension $k$ in a region
-        $\Omega\subset\con$ with volume uniformly bounded by a constant $C\in\re^{+}$.
-        If the sequence $V_n\rightarrow V$ converges to a closed set $V\subset\con$ in the Hausdorff sense, then $V$ is an
-        analytic variety.
-\end{theorem}
-This is because Dr. Verjovsky and I proved Montel's result using theorem \ref{Bishop2} by considering the graphs of the
-functions as analytic varieties
-\[
-        \Gamma_{f}=\{(z,w)\in B\times\co\,|\,w=f(z)\}=Z(w-f(z)),
-\]
-\noindent where $B$ is the unit ball in $\con$ and $Z(g)=\{z\in B\,|\,g(z)=0\}$ denotes the zero set of a holomorphic function $g:B\rightarrow\co$. Here, we think of $\Gamma_{f}$ as pure-dimensional analytic varieties in an open subset of $\co^{n+1}$, and we proved
-that for every sequence $\{f_n\}_{n\in\nat}\subset F$ of functions in a locally bounded family, there is a subsequence
-whose graphs converge in the sense of the Hausdorff metric. Additionally, we proved that its limit set
-is in turn the graph of a holomorphic function in $B$.
-
-The convergence of a sequence of sets $S_n\rightarrow S$ \emph{in the Hausdorff sense} for closed sets of a metric space $(X,d)$
-occurs when $S_n\cap K\rightarrow S\cap K$ in the Hausdorff metric $d_H$ for every compact $K\subset X$, where it is defined as
-\[
-        d_H(K_1,K_2):= \max_{x\in K_1}\left\{d(x,K_2)\right\}+\max_{y\in K_2}\left\{d(y,K_1)\right\}.
-\]
-
-\subsection{Similarities between the theories of holomorphic functions and complex analytic sets}
-
-\noindent From the perspective that I have shown so far, it can be appreciated that Bishop's results can be thought of as generalizations of classical results from complex analysis, but in the context of the theory of analytic varieties.
-
-\begin{table}[hpt]
-        \caption{Table with similarities between classical theorems of complex variable and Bishop's theorems.}\label{Tab}
-        \centering
-        \begin{tabular}{|m{5.5cm}|m{5.5cm}|} \hline
-                        \begin{center} \vspace*{0.2cm}
-                                \underline{\textbf{Complex Analysis}}
-                        \end{center} &
-                        \begin{center} \vspace*{0.2cm}
-                                \underline{\textbf{Analytic sets in $\con$}}
-                        \end{center} \\
-                \hline
-                \begin{center}
-                        \textit{Liouville's Theorem.}
-                \end{center} &
-                \begin{center}
-                        \textit{Bishop's Theorem (Theorem \ref{Bishop1}).}
-                \end{center}\\
-                        \hline If $\vert f(z)\vert\leq C\,R^k$ in the set $\{\vert z\vert\leq R\}$
-                        for all $R\in\re^{+}$ with $f$ entire and $k\in\zah^{+}$, then
-                        $f$ is a polynomial.
-                        &
-                        \vspace{0.1cm}
-                        If $\textrm{Vol}_{2k}(X\cap B(R,0))\leq CR^{2k}$ for all
-                        $R\in\re^{+}$, where $X$ is an analytic subvariety in $\con$, then $X$ is algebraic.\\
-                        \hline
-                        \vspace{0.1cm}
-                        \begin{center}
-                        \textit{Riemann's Extension Theorem.}
-                \end{center}
-                        &
-                \begin{center}
-                        \textit{Bishop's generalization of the Remmert-Stein theorem (see \cite{R-S} and \cite[p. 34]{Stolzenberg}).}
-                \end{center} \\
-                        \hline If $f:(\Omega\setminus E)\subset\co\rightarrow\co$ is a holomorphic function and $E$ is a compact subset
-                        of capacity $0$, then $f$ can be extended to a holomorphic function
-                        in the entire region $\Omega$.
-                        &
-                        \vspace{0.1cm}
-                        Let $U\subset\con$ be a bounded open subset of $\con$ and let $B\subset U$ be a closed subset
-                        such that $X\subset U\setminus B$ is a pure dimensional subvariety of dimension $k$ with $B\subset\overline{X}$.
-                        If $B$ has capacity $0$ relative to the algebra of analytic functions on $X$ that are
-                        continuous on $\overline{X}$ and if there exists a proper map $f:U\rightarrow\co^k$ on $B$ such that $f(B)$
-                        is not an open connected subset of $\co^k$, then $\overline{X}\cap U$ is an analytic subset
-                        of $U$ (see \cite[Theorem 4]{Bishop}).\\
-                        \hline
-                \begin{center}
-                        \textit{Montel's Compactness Theorem.}
-                \end{center}
-                        &
-                \begin{center}
-                        \textit{Bishop's theorem on sequences of analytic varieties with uniformly bounded volume.}
-                \end{center}\\
-                \hline
-                \vspace{0.1cm}
-                Let $\lbrace\Gamma_i\rbrace$ be a sequence of graphs of uniformly bounded holomorphic
-                functions, $f_i:\Delta\rightarrow\co$ such that $\Gamma_i\overset{d_H}\longrightarrow\Gamma$ (Hausdorff convergence),
-                where $\Gamma\subset\co^2$ is a closed subset and $\Delta$ is the unit disk in $\co$,
-                then $\Gamma$ is the graph of a holomorphic function.
-                        &
-                Let $\lbrace V_i\rbrace$ be a sequence of analytic subvarieties of $\Omega\subset\con$ with uniformly
-                bounded volumes such that $V_i\overset{d_H}\longrightarrow V\subset\Omega$ in the Hausdorff sense, then
-                $V$ is an analytic subvariety of $\con$ (\cite[p. 30]{Stolzenberg}). \\ \hline
-        \end{tabular}
-\end{table}
-
-Moreover, analytic varieties themselves can clearly be thought of as a generalization of holomorphic functions,
-since each holomorphic function $f:\Omega\subset\con\rightarrow\co$ has associated to it the analytic variety given by its zero divisor $[Z]=Z(g)$
-or as previously mentioned, by its graph $\Gamma_{f}\subset\Omega\times\co$, the first being an analytic subvariety of
-dimension $n-1$ and the second being
-an analytic subvariety of pure dimension $n$. In addition to this, it is widely known that in the classical context
-of the complex variable, every holomorphic function on a compact holomorphic variety is constant, for example $\cp^n$ is compact,
-and therefore every global holomorphic function is constant. However, as we know, $\cp^n$ has many analytic subvarieties, as many
-as sets of algebraically independent homogeneous polynomial functions. Table \ref{Tab} lists a series of
-versions of classical theorems from complex analysis and their counterparts in the context of analytic varieties.
+{\huge\noindent\textbf{Here I need to work in fitting for these adecuately:}}
 
 \section{Limits of compact leaves of foliations in K\"ahler Manifolds}
-\subsection{K\"ahler Manifolds, foliations and their volumes}
 \noindent In addition to complex geometry and complex analysis, another application of Bishop's theorems and in particular Theorem
 \ref{Bishop2}, is the following result on holomorphic foliations in K\"ahler varieties with compact leaves and uniformly bounded volume.
 
-A K\"ahler manifold is defined as a complex manifold $(M,I)$ with an additional Hermitian structure $h=g-i\omega$ such that the (1,1)-form defined by $\omega=-\Im (h)$ is closed $d\,\omega=0$. This closed form is denoted as the \emph{K\"ahler form}, i.e., $M$ is a real differentiable manifold of dimension $2d$ and
-$I$ is a complex structure $I^2=-1$, furthermore $h$ is a Hermitian product on the tangent space of $M$.
-It is worth mentioning that $g=\Re (h)$ is a Riemannian metric with the same volume form as the one induced by $\omega$, this is due to the natural relation between $\omega$ and $g$ given by $g(\cdot,\cdot)=\omega(\cdot,I(\cdot))$. The most important prototypical examples of K\"ahler manifolds are manifolds that I have already mentioned, these are $\con$ with the traditional Hermitian inner product and $\cp^{n}$ with the metric known as the Fubini-Study metric.
-It is common to define a K\"ahler metric via its K\"ahler form, in the case of the Fubini-Study metric, it is defined in coordinates $Z=[1:\zeta_{1},\dots,\zeta_{n}]=[1:\zeta]$ as (see \cite[p. 154]{Chirka})
-\[
-    \omega=\frac{i}{2}\partial\overline{\partial}\log(|Z|^{2})=\frac{i}{2}\partial\overline{\partial}\log(1+|\zeta|^{2}).
-\]
-
-Likewise, it is important to mention that every complex submanifold of a K\"ahler manifold is K\"ahler. Similarly, compact complex submanifolds of a K\"ahler manifold minimize the volume in their homology class.
-
-In addition to the previous definitions, it must be mentioned that a holomorphic foliation $\mathfrak{F}$ on a complex manifold $(M,I)$ of complex dimension
-$n$ is an involutive distribution of subspaces of the tangent bundle with constant complex dimension $k$. Geometrically, the foliation is described as a
-partition $M=\bigcup\mathcal{L}_z$, where each $\mathcal{L}_z$ is a holomorphic submanifold of $(M,I)$ of a given dimension. The
-holonomy of a leaf $\mathcal{L}$ of the foliation is defined as the group morphism $H:\pi_{1}(\mathcal{L})\rightarrow\textrm{Bih}(\co^{n-k},0)$ given by the
-action of closed curves on the transverse dynamics (see \cite{Thurston}). Where $\pi_{1}$ denotes the fundamental group of a topological space and
-    $\textrm{Bih}(\co^{n-k},0)$ is the group of germs of biholomorphisms centered at $0$ of $\co^{n-k}$.
-
-\subsection{Stability in K\"ahler Manifolds and Beauville's Conjecture}
+\subsection{Stability in K\"ahler Manifolds and Beauville's Theorem}
 
 \noindent Thus, the description of the following theorem is clear, which Dr. Verjovsky and I proved as part of the previously mentioned paper:
 \begin{theorem}[Edwards, Millet and Sullivan]\label{EMS}
@@ -735,8 +719,8 @@ Something important to highlight from this example is that the codimension is la
 to guarantee that the volume (length) is not uniformly bounded and it also happens that the length function of the leaves
 is not locally bounded.
 
-The aforementioned puts us in the context of Beauville's conjecture (see \cite{Beuville}).
-\begin{conjecture}[Beauville]\label{Beauville}
+The aforementioned puts us in the context of Beauville's theorem (see \cite{Beuville}).
+\begin{theorem}[Beauville]\label{Beauville}
         Let $M$ be a compact Kähler variety such that there exists a holomorphic decomposition of its tangent bundle
         \[
         TM=\bigoplus_{i\in I}\mathcal{F}_i\hspace{0.2cm}\text{such that each}\hspace{0.2cm}\bigoplus_{i\in J}\mathcal{F}_i\,,\,J\subset I\hspace{0.2cm}\text{is involutive},
@@ -746,8 +730,8 @@ The aforementioned puts us in the context of Beauville's conjecture (see \cite{B
         \widetilde{M}\cong\prod_{i\in I}U_i\hspace{0.2cm}\text{in such a way that this induces an isomorphism}\hspace{0.2cm}T\widetilde{M}\cong\bigoplus_{i\in I}\widetilde{\mathcal{F}_i}
       \]
       where $\widetilde{\mathcal{F}_{i}}$ projects onto $\mathcal{F}_{i}$ under the covering map.
-\end{conjecture}
-Recently, Druel, Pereira, Pym and Touzet proved a version of this conjecture in the context that we previously exposed,
+\end{theorem}
+Recently, Druel, Pereira, Pym and Touzet proved a version of this theorem in the context that we previously exposed,
 but with the particular focus on Poisson varieties, see \cite{DPPT}.
 \begin{theorem}[Druel, Pereira, Pym and Touzet]\label{DPPT}
         Suppose that $M$ is a compact Kähler manifold such that its tangent bundle splits $TM=\mathfrak{F}\oplus\mathfrak{G}$, where
@@ -791,14 +775,14 @@ that satisfies the following properties
 \item $\{f,gh\}=\{f,g\}h + g\{f,h\}$
 \item $\{f,\{g,h\}\}+\{g,\{h,f\}\} + \{h,\{ f,g\}\}=0$.
 \end{enumerate}
-\noindent It is observed that a germ of a fixed function $H\in\mathcal{O}_M$ defines a vector field given by $\xi_H(\cdot)=\{H,\cdot\}$.
+\noindent It is observed that a germ of a fixed function $H\in\mathcal{O}_M$ definitionnes a vector field given by $\xi_H(\cdot)=\{H,\cdot\}$.
 We call this vector field the \emph{Hamiltonian} field defined by $H$. Using the notation of \emph{multivector} fields,
 an alternative definition of the Poisson bracket is the following: denoting the holomorphic vector fields as $\mathcal{T}M=H^0(M,TM)$,
 then the space of \emph{$p$-vectors} is defined by
 \[
         \Lambda^{p}(\mathcal{T}M):=\{\mathcal{O}_M\times\dots\times\mathcal{O}_M\rightarrow\mathcal{O}_M\,\vert\,\text{anti-symmetric}\}.
 \]
-Then, a Poisson bracket is a \emph{bivector} field, which we can define via the pairing $\langle\cdot,\cdot\rangle$
+Then, a Poisson bracket is a \emph{bivector} field, which we can definitionne via the pairing $\langle\cdot,\cdot\rangle$
 between the $p$-vector fields and the space of \emph{holomorphic $p$-differential forms} $\Omega^{p}(M)$ by
 \[
         \pi\in H^0(M,\Lambda^2(\mathcal{T}M))\,\text{ then }\,\{f,g\}=\langle \pi,df\wedge dg\rangle.
@@ -807,10 +791,10 @@ Therefore, generalizing this we have the following map defined by a Poisson brac
 \[
         \pi^{\#}:\Omega^1_M\rightarrow\mathcal{T}M,\hspace{0.2cm}\pi^{\#}(\alpha):=\iota_{\alpha}(\pi):=\langle\pi,\alpha\wedge\cdot\rangle.
 \]
-\noindent With this, the rank of $\pi$ at a point $p\in M$ is defined as the positive integer $r\in \zah^{+}$ that defines the dimension of the
+\noindent With this, the rank of $\pi$ at a point $p\in M$ is defined as the positive integer $r\in \zah^{+}$ that definitionnes the dimension of the
 maximum space where $\pi^{\#}_p$ is non-degenerate, i.e., it is the dimension of the largest space such that $\pi^{\#}$ is a
-bijection. If $\pi^{\#}$ is non-degenerate, its rank is $2n=\dim(M)$, then $\pi^{-1}$, the inverse of $\pi^{\#}$, defines a symplectic form
-on $M$. Weinstein's splitting theorem defines a natural foliation on a Poisson variety $(M,\pi)$, but first
+bijection. If $\pi^{\#}$ is non-degenerate, its rank is $2n=\dim(M)$, then $\pi^{-1}$, the inverse of $\pi^{\#}$, definitionnes a symplectic form
+on $M$. Weinstein's splitting theorem definitionnes a natural foliation on a Poisson variety $(M,\pi)$, but first
 we recall that a holomorphic map between two Poisson varieties $(M_1,\{\cdot,\cdot\}_1)$ and $(M_2,\{\cdot,\cdot\}_2)$ is a Poisson morphism
 $\phi:M_1\rightarrow M_2$ if $\{f,g\}_1\circ\phi=\{f\circ\phi,g\circ\phi\}_2$.
 \begin{theorem}[Weinstein]\label{weins}
@@ -822,20 +806,20 @@ $\phi:M_1\rightarrow M_2$ if $\{f,g\}_1\circ\phi=\{f\circ\phi,g\circ\phi\}_2$.
                 \pi=\sum_{i=1}^r \partial{p_i}\wedge\partial{q_i}+\sum_{1\leq j\leq k\leq 2n-2r} f^{jk}(z)\partial{z_j}\wedge\partial{z_k}.
         \]
 \end{theorem}
-\noindent We observe from the previous theorem that $f^{jk}(x)=0$. This theorem clearly defines a natural foliation on $(M,\pi)$ by
+\noindent We observe from the previous theorem that $f^{jk}(x)=0$. This theorem clearly definitionnes a natural foliation on $(M,\pi)$ by
 symplectic leaves. However, not all leaves have the same dimension, so it is necessary to note that the definition of foliation
 can be expanded to this more general context, i.e., a foliation is simply an involutive $\mathcal{O}_M$-submodule of $\mathcal{T}M$.
-Now, this defines a filtration $X_0\subset X_2\subset X_4\subset\dots\subset M$, where $X_{2k}=\{x\in M\,|\,\textrm{rank}(\pi_x)\leq 2k\}$,
+Now, this definitionnes a filtration $X_0\subset X_2\subset X_4\subset\dots\subset M$, where $X_{2k}=\{x\in M\,|\,\textrm{rank}(\pi_x)\leq 2k\}$,
 if we denote the symplectic leaves of $(M,\pi)$ as $\mathcal{L}$, then we can also think of $X_{2k}$ as
 $$
 X_{2k}=\bigcup_{\dim(\mathcal{L})\leq 2k}\mathcal{L}.
 $$
 
 \subsection{Fano-Poisson Varieties from the Perspective of Kähler Geometry}
-\noindent With this established, we will present a conjecture posed in 1993 by Bondal for Fano-Poisson varieties that we hope to shed new light on using the volume function. A variety $M$ is Fano if it satisfies the following
+\noindent With this established, we will present a theorem posed in 1993 by Bondal for Fano-Poisson varieties that we hope to shed new light on using the volume function. A variety $M$ is Fano if it satisfies the following
 (see \cite{S-Yau} and \cite{ZB}):
 \begin{itemize}
-        \item $M$ admits a Kähler-Einstein metric, i.e., if we define the metric via its Kähler symplectic form
+        \item $M$ admits a Kähler-Einstein metric, i.e., if we definitionne the metric via its Kähler symplectic form
         $\omega$, then
                 $$\textrm{Ric}_{\omega}=\lambda\omega\hspace{0.2cm}\lambda\in\re,$$
         where in coordinates we can calculate the Ricci curvature for the metric
@@ -850,13 +834,13 @@ $$\textrm{Ric}_{\omega}=\frac{i}{2\pi}\sum_{ij}R_{i\overline{j}}\,dz_i\wedge d\o
 \noindent It should be mentioned that usually in the literature a Fano variety is defined as a complete algebraic variety $X$
 in the sense that every projection $X\times Y\rightarrow Y$ is proper for every algebraic variety $Y$, such that its anti-canonical divisor/sheaf
 $K^{*}_{X}$ is ample, thus every Fano variety is \emph{projective}. The discrepancy between the definition we gave and the one widely used in
-the literature comes from Yau's proof of the Calabi conjecture (see \cite{S-Yau}). A
+the literature comes from Yau's proof of the Calabi theorem (see \cite{S-Yau}). A
 \emph{Fano-Poisson} variety is then a complex manifold with these two structures. By the Bonnet-Myers theorem, such manifolds
 are compact Kähler (see \cite{Myers}).
-\begin{conjecture}[Bondal]\label{Bondal}
+\begin{theorem}[Bondal]\label{Bondal}
   Let $M$ be a Fano-Poisson variety, if $X_{2k}$ is the union of the symplectic leaves defined by Weinstein's theorem (Theorem \ref{weins})
   of real dimension (or rank) less than $2k$, then $X_{2k}$ has a component of dimension greater than $2k$ (see \cite{Bondal}).
-\end{conjecture}
+\end{theorem}
 \noindent We do not know if it is true or false or if it is possible to prove it with what we propose, but we believe that as an
 investigation into the relationship between complex-differential geometry and algebraic geometry, what we propose is interesting.
 We believe that this connection is relevant to the geometric approach that we propose, inspired by previous works
@@ -867,7 +851,7 @@ Kähler manifolds, with particular application to Fano varieties.
 \section{Speculations and Problems to be Solved}
 \begin{itemize}
 %\textcolor{red}{\centerline{Problem to be solved, hypothesis:}}
-        \item In the case of Beauville's conjecture \ref{Beauville}, we first intend to prove the case where
+        \item In the case of Beauville's theorem \ref{Beauville}, we first intend to prove the case where
         the leaves are compact, using Bishop's methods. Thus, we would obtain an alternative proof of
         Theorem \ref{DPPT}.
 
@@ -877,7 +861,7 @@ Kähler manifolds, with particular application to Fano varieties.
         assumption, we can guarantee that the leaf space is a complex analytic space, and the foliation is
         locally a fibration (see \cite{A-V}).
 
-        \item Under these assumptions, we believe it is possible to define a biholomorphism between the universal covers
+        \item Under these assumptions, we believe it is possible to definitionne a biholomorphism between the universal covers
         of the leaves by means of liftings of curves and work with the holonomy groupoid of the foliation
         similar to what was done in \cite{DPPT}. Furthermore, we believe it is possible to extract metric information from the
         leaves (or their cover) if we lift geodesics instead of arbitrary curves, where we simply use the
@@ -912,41 +896,27 @@ Kähler manifolds, with particular application to Fano varieties.
         allow us to calculate the volume of subvarieties in Fano manifolds. If this is possible, find
         what kind of properties the volume function has on a foliation of a Fano variety.
 
-        \item Make a contrast between the geometric aspects found and the proofs of Conjecture \ref{Bondal} in the
+        \item Make a contrast between the geometric aspects found and the proofs of Theorem \ref{Bondal} in the
         cases already proven as in \cite{Gua-Pym}.
 
 \end{itemize}
 
-
-
-
-
-
-Here is my translation of the provided LaTeX text to English while preserving the LaTeX format:
-
-\section{Main Theme: Study of Holomorphic Foliations on Compact Kähler Manifolds}
-\label{sec:org8e50cf2}
-\noindent As we saw in the candidacy exam, the purpose is a comprehensive study of holomorphic foliations $\mathfrak{F}$ on Kähler manifolds $(M,h)$ such that $M/\mathfrak{F}$ is an interesting space. Our first approach, as we saw in the exam, was through the hypothesis that the volume of the leaves $\{\nu(L) \,|\,L\in\mathfrak{F}\}$ was uniformly bounded $\{\nu(L) < M\}$, which leads to the function $\nu$ being discretely upper semicontinuous. That is, at the limits of leaves $L_j\rightarrow L$, either the volume converges or grows in a predictable discrete manner (see the exam or article). Now I intend to see that there are other properties that behave similarly in holomorphic foliations of Kähler manifolds, for example, one idea is to see what happens with the fundamental groups of the leaves, in which case it seems to me that there must be an inverse effect. That is, lower semicontinuity, so the group should not grow. It is possible that to see this it is better to move to homology/cohomology in $\mathbb{R}$ and see what happens with $\zah$.
-
 \subsection{Vanishing Cycles and Leaf Limits}
-\label{sec:orgb5efe58}
 \noindent Essentially, I believe that if a leaf of the foliation is approximated by others, the topology should not grow, and this reflects that there are vanishing "loops" cycles, meaning that generators of the fundamental group should disappear in the limit as they become small. Now, in terms of what has been previously investigated, that is, the volume. This means that we have an inverse effect to what happens with the volumes of the leaves, that is, if the volume grows and takes a jump, then the fundamental group becomes small and we are in the presence of a vanishing cycle, this should be seen for example in fundamental regions of hyperbolic curves for example.
 \subsection{Lelong Numbers}
-\label{sec:orgbdd612b}
 \noindent From the candidacy exam, I believe that the idea of seeing the growth rate of volumes is a powerful tool and that directly relates us to the Lelong numbers. So it is necessary to see if there is any topological (homological or cohomological) interpretation of these. Below is a summary of the article "Propiétés Métriques Des Ensembles Analytiques Complexes".
 \subsubsection{Introduction}
-\label{sec:org2efdab1}
 \begin{quote}
-The notion of "area" of complex analytic sets is now clearly established. It derives from the existence of the integral of a differential form over such a set. This defines the basis of a method for studying the metric properties of complex analytic sets. In turn, in the study of these, a particular class of linear operators appears: currents or generalized differential forms, which are at once positive and closed. In more abstract terms, one seeks a functor from the category of complex analytic sets to the category of such currents. For the search of this functor, it seems that a new and effective viewpoint is provided by the theorems of the extension of analytic sets such as the Remmert-Stein theorem and the proof of W. Stoll's conjecture, proved by E. Bishop. On the other hand, a closed family of analytic sets is a normal family, which is compared with P. Montel's classical theorem for holomorphic functions.
+The notion of "area" of complex analytic sets is now clearly established. It derives from the existence of the integral of a differential form over such a set. This definitionnes the basis of a method for studying the metric properties of complex analytic sets. In turn, in the study of these, a particular class of linear operators appears: currents or generalized differential forms, which are at once positive and closed. In more abstract terms, one seeks a functor from the category of complex analytic sets to the category of such currents. For the search of this functor, it seems that a new and effective viewpoint is provided by the theorems of the extension of analytic sets such as the Remmert-Stein theorem and the proof of W. Stoll's theorem, proved by E. Bishop. On the other hand, a closed family of analytic sets is a normal family, which is compared with P. Montel's classical theorem for holomorphic functions.
 \end{quote}
 
-\noindent It then proceeds to define what the notion of "area" is, which applies to objects that are not varieties, and that Lelong's exposition that follows comes from the study of real analytic and semi-analytic sets done by M. Herrera, together with this the mathematical tool that is used for this is classical (measures and distributions).
+\noindent It then proceeds to definitionne what the notion of "area" is, which applies to objects that are not varieties, and that Lelong's exposition that follows comes from the study of real analytic and semi-analytic sets done by M. Herrera, together with this the mathematical tool that is used for this is classical (measures and distributions).
 
-Recall that a set $A$ is a complex analytic subset of the analytic manifold $M$ if it is closed and every point $x\in A$ possesses a neighborhood $U_x$ such that $A\cap U_x=V(f_1,\dots,f_k)$ where $V(F)$ denotes the zero set of the family of functions in $F$ and $f_j:U_x\rightarrow\mathbb{C}$. An analytic set in general does not have a differential manifold structure. So it is necessary to define an \emph{ordinary point} of $A$ as a point $x\in A$ such that in a chart $(U_x,\varphi)$ of $x$, $U_x\cap A$ is biholomorphic to a neighborhood of a linear subspace $L^{k}\subset\mathbb{C}^n$ by means of a restriction of $\varphi$, the complex dimension of $L^{k}$, $k$ is the dimension of $A$ at $x$, we will denote the set of ordinary points by $A'$. The ordinary points form an analytic subset of $A$ of dimension $k'\leq k$. If $A$ is of dimension $k$ at all its points, we will say that $A$ is of pure dimension $k$.
+Recall that a set $A$ is a complex analytic subset of the analytic manifold $M$ if it is closed and every point $x\in A$ possesses a neighborhood $U_x$ such that $A\cap U_x=V(f_1,\dots,f_k)$ where $V(F)$ denotes the zero set of the family of functions in $F$ and $f_j:U_x\rightarrow\mathbb{C}$. An analytic set in general does not have a differential manifold structure. So it is necessary to definitionne an \emph{ordinary point} of $A$ as a point $x\in A$ such that in a chart $(U_x,\varphi)$ of $x$, $U_x\cap A$ is biholomorphic to a neighborhood of a linear subspace $L^{k}\subset\mathbb{C}^n$ by means of a restriction of $\varphi$, the complex dimension of $L^{k}$, $k$ is the dimension of $A$ at $x$, we will denote the set of ordinary points by $A'$. The ordinary points form an analytic subset of $A$ of dimension $k'\leq k$. If $A$ is of dimension $k$ at all its points, we will say that $A$ is of pure dimension $k$.
 
 Since an analytic set is not a manifold, it is not evident that certain analytic operations can be performed on it, for example, integration over itself.
 
-Let $A$ be a pure dimension $k$ analytic subset defined in a domain $U\subset\mathbb{C}^n$. We denote by $\Omega_{(p,p)}(U)$ the space of differential forms with $C^{\infty}$ coefficients of compact support of type $(p,p)$. We define the following linear operator
+Let $A$ be a pure dimension $k$ analytic subset defined in a domain $U\subset\mathbb{C}^n$. We denote by $\Omega_{(p,p)}(U)$ the space of differential forms with $C^{\infty}$ coefficients of compact support of type $(p,p)$. We definitionne the following linear operator
 
 \[
     t(\phi)=\int_{A}\phi
@@ -970,7 +940,7 @@ Moreover, if $\tau_n$ denotes the invariant or "volume element" form on $\mathbb
     \omega_n=\frac{i}{2}\sum_{j=1}^n dz_j\wedge d\overline{z}_j,
 \]
 the Kähler form on $\mathbb{C}^n$. The mapping $t_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}\rightarrow T_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}\tau_n$ canonically associates the coefficients of $t$ with distributions $T_{i_1,\dots i_{n-p},j_1,\dots j_{n-p}}$. On the other hand, to a subspace $L^k$,
-\noindent it is possible to canonically associate a differential form $\omega(L^k)$ as follows: consider the transformation $\mathbb{C}^n\rightarrow L^k$, which is defined as $z=(z_1,\dots,z_n)\mapsto z'=(z_1,\dots,z_k)$, where $z_{j+k}\mapsto 0$ for $j\in\{1,\dots,n-k\}$. We define
+\noindent it is possible to canonically associate a differential form $\omega(L^k)$ as follows: consider the transformation $\mathbb{C}^n\rightarrow L^k$, which is defined as $z=(z_1,\dots,z_n)\mapsto z'=(z_1,\dots,z_k)$, where $z_{j+k}\mapsto 0$ for $j\in\{1,\dots,n-k\}$. We definitionne
 \[
     \tau(L^k):=\frac{\omega_n^k}{k!}(dz')=(\frac{i}{2})^k(-1)^{k(k-1)/2}\sum \alpha(s)\overline{\alpha(t)}dz_{s_1}\wedge\dots\wedge dz_{s_k}\wedge d\overline{z}_{t_1}\wedge \dots\wedge d\overline{z}_{t_k}.
 \]
@@ -980,14 +950,14 @@ Where $\alpha(s)=\Vert(a^{1}_{j},\dots,a^{k}_{j})\Vert$ $j\in(s)=\{A\subset\{1,\
 \]
 Thus it can be verified that $L\mapsto\omega(L^k)$ is an injective mapping from the space of subspaces of dimension $k$ (Grassmannian) into the space of differential forms. It can be verified that $\omega(L^k)^{*}=\omega(L^{n-k})$ where $L^{n-k}$ is the orthogonal complement of $L^k$.
 \begin{quote}
-\begin{def.}
+\begin{definition}
     A current $t$ is positive if it satisfies
     \begin{itemize}
         \item[a)] It is of type $(q,q)$ with $0\leq q\leq n$
         \item[b)] For every $L^{n-q}$, $\sigma[t,L^{n-q}]=t\wedge\omega(L^{n-q})$ is a positive distribution (functional)
     \end{itemize}
     This ensures that $\sigma[t,L^{n-q}]$ is a positive measure.
-\end{def.}
+\end{definition}
 \end{quote}
 \begin{prop}
 The following propositions hold for positive currents:
@@ -1038,7 +1008,7 @@ The following propositions hold for positive currents:
 \label{sec:org9982aa5}
 On a complex analytic set $A\subset U\subset\mathbb{C}^n$, we have the following theorem:
 
-\begin{teorema}
+\begin{theorem}
 The operator
 \[
     t(\phi)=\int_A\phi
@@ -1047,9 +1017,9 @@ defined by a simple extension of $\Omega_{(p,p)}(U\setminus A')$ to the space $\
 \begin{itemize}
     \item[a] It is the unique extension of $t_0(\phi)$ that has zero norm on $A'$ (simple extension).
     \item[b] It is closed.
-    \item[c] It is positive definite.
+    \item[c] It is positive definitionnite.
 \end{itemize}
-\end{teorema}
+\end{theorem}
 
 \noindent \textbf{IMPORTANT:} The proof is based on the "Stokes theorem for differential structures", see "LELONG P. - Intégration sur un ensemble analytique complexe", which basically says that if a closed current has a zero-order continuation in $U\setminus E$ where $E$ is a closed set, due to its extension from $U\setminus E$ to $U$, it is necessary and sufficient that there exists a family of $C^{1}(U)$ functions, say $\alpha_s(x)$ such that $\alpha_s(x)\geq0$, $\alpha_s(x)=1$ in a neighborhood $W_s$ of $E$ and whose support lies in a neighborhood $V_s$ of $E$, where $V_s\rightarrow E$ as $s\rightarrow 0$, and we also want
 \[
@@ -1094,14 +1064,14 @@ Now consider the following mapping
 
 \textbf{Families of positive currents in a domain $D$ give rise to the same properties as families of positive measures}
 
-\begin{def}
+\begin{definition}
 We will say that $t_n\rightarrow t$ \emph{weakly} if $t_n(\varphi)$ has a limit for every $\varphi\in\Omega_{(p,p)}(D)$
-\end{def}
+\end{definition}
 
 \begin{enumerate}
-\item If $\{t_n\}$ converges weakly, then $t=\lim t_n\inT^p_{>0}$. Moreover, the norms $\Vert t_n\Vert$ are \textbf{BOUNDED} on every compact set of $D$.
+\item If $\{t_n\}$ converges weakly, then $t=\lim t_n\in T^p_{>0}$. Moreover, the norms $\Vert t_n\Vert$ are \textbf{BOUNDED} on every compact set of $D$.
 \item If the norms $\Vert t\Vert$ are bounded for every compact set, where $t\in F$, then we will say that the family $F$ is \emph{normal}. This means that every sequence $\{t_n\}\subset F$ has a weakly convergent subsequence.
-\obs Consider the products
+Consider the products
 \end{enumerate}
 \[
     t_k\wedge\omega(L^{n-p}_s)\quad\text{where }L^{n-p}_s\text{ is a regular system}.
@@ -1121,9 +1091,9 @@ We will say that $t_n\rightarrow t$ \emph{weakly} if $t_n(\varphi)$ has a limit 
 \item In particular, $\nu(z,0)$ is an upper semicontinuous function.
 \end{enumerate}
 
-\begin{def}
+\begin{definition}
 A family $\{A_i\,|\,i\in I\}$ of analytic sets of pure dimension $k$ is locally bounded in $D$ if the currents $\{t_i=t[A_i]\}$ form a locally bounded family in $D$.
-\end{def}
+\end{definition}
 
 \subsubsection{Properties of $\nu(z,0)$ for Analytic Sets}
 \label{sec:org81bac70}
@@ -1176,15 +1146,15 @@ For $t\in\Lambda$, the $(2k+1)$-dimensional Hausdorff measure of $\mathrm{supp}(
 Let $\{A_n\}_{n\in\mathbb{N}}$ be a sequence of pure dimension $k$ analytic varieties in a domain $D$ such that $\{t(A_n)\}$ form a bounded family on every compact set, and further suppose that $A_n\rightarrow A$ in the sense of the Hausdorff metric, then $A$ is an analytic set.
 \end{prop}
 
-\obs It should be noted that there exist coordinate axes such that $\{z_1=0,\cdots,z_k=0\}\cap A$ is a disconnected set. A point of $A$ has a hollow tubular neighborhood, of type $S\times bT$ such that $(S\times bT)\cap A=\emptyset$, which implies that $(S\times bT)\cap A_n=\emptyset$ for all $n>N$. It follows that almost all sections of the $A_n$ by $S\times\{x\in T\}$ are of dimension zero, i.e. the "projection" maps $\pi:A_n\rightarrow S$ are proper. These maps have a degree $\lambda_n$ which is evidently bounded. Therefore if $z_0\in(S\timesT)\setminus A$, we define $f_n(z)=\pi[g(z)-g(z_{i,n})]$ where the points $\{z_{i,n}\}$ are defined as
+It should be noted that there exist coordinate axes such that $\{z_1=0,\cdots,z_k=0\}\cap A$ is a disconnected set. A point of $A$ has a hollow tubular neighborhood, of type $S\times bT$ such that $(S\times bT)\cap A=\emptyset$, which implies that $(S\times bT)\cap A_n=\emptyset$ for all $n>N$. It follows that almost all sections of the $A_n$ by $S\times\{x\in T\}$ are of dimension zero, i.e. the "projection" maps $\pi:A_n\rightarrow S$ are proper. These maps have a degree $\lambda_n$ which is evidently bounded. Therefore if $z_0\in(S\times T)\setminus A$, we define $f_n(z)=\pi[g(z)-g(z_{i,n})]$ where the points $\{z_{i,n}\}$ are defined as
 \[
 \{z_{i,n}\}=\pi^{-1}[\pi(z)]\cap A_n,
 \]
 and where $g(z)$ is a holomorphic function on $S\times T$ with $g(z_0)\neq0$. The functions $f_n$ are holomorphic on $S\times T$ and converge uniformly to $f(z)$ (the corresponding one to $A$). Thus $A\subset\{z\,|\,f(z)=0\}$ and $f(z_0)\neq0$. Therefore $A$ is an analytic set.
 
-\begin{teorema}
+\begin{theorem}
 Locally bounded families $F$ of complex analytic sets are normal.
-\end{teorema}
+\end{theorem}
 
 Indeed, every sequence $\{A_n\}\subset F$ has a subsequence $\{A_m\}$ such that $t_m=t(A_m)$ converges. Let $t=\lim t_m$, then
 \[
@@ -1197,102 +1167,8 @@ and as we know $A$ is an analytic set.
 \label{sec:org6dba31e}
 \begin{enumerate}
 \item \textbf{The Remmert-Stein Theorem:} If $B$ is an analytic set of $D$ of dimension $\dim(B)\leq k-1$ and $A$ is a pure dimension $k$ analytic set in $D\setminus B$, then $\overline{A}$ is an analytic set in $D$.
-\item \textbf{Stoll's Conjecture:} If $B$ is an analytic set of $D$ and $A$ is a pure dimension $k$ analytic set in $D\setminus B$ and moreover $\|t(A)\|_{D\setminus B}\leq\infty$ then $\overline{A}$ is an analytic set in $D$.
+\item \textbf{Stoll's Theorem:} If $B$ is an analytic set of $D$ and $A$ is a pure dimension $k$ analytic set in $D\setminus B$ and moreover $\|t(A)\|_{D\setminus B}\leq\infty$ then $\overline{A}$ is an analytic set in $D$.
 \end{enumerate}
 \end{enumerate}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{thebibliography}
-\bibitem{A-V} Alexander J.C., Verjovsky A., (1988) \textit{First Integrals for Singular Holomorphic Foliations With Leaves of Bounded Volume}
-Holomorphic Dynamics. Lecture Notes in Mathematics, vol 1345. Springer, Berlin, Heidelberg, pp. 1–10.
-
-\bibitem{Beuville} Beauville, A. (2000) \textit{Complex manifolds with split tangent bundle}, Complex analysis and algebraic geometry
-, de Gruyer, Berlin, 61-70.
-
-\bibitem{ZB} Blocki, Z. (2011) \textit{The Complex Monge-Amp\`ere Equation in K\"ahler Geometry} Lecture Notes in Mathematics 2075
-part of Pluripotential Theory, Springer-Verlag, pp. 95-143.
-
-\bibitem{Bishop} Bishop, E. (1964) \textit{Conditions for the Analyticity  of certain sets}, Michigan Math. J. 11, No. 4, 289--304.
-
-\bibitem{Bondal} Bondal, A. I,. (1993) \textit{Non-commutative deformations and Poisson brackets on projetive spaces},
-Max-Planck-Institut f\"ur Matematik, Germany, 93–67.
-
-\bibitem{brunella} Brunella, M., (2015) \textit{Birational Geometry of Foliations}, IMPA Monographs,
-Springer International Publishing, Switzerland.
-
-\bibitem{Chirka} Chirka E. M. (1989) \textit{Complex Analytic Sets}, Kluwer
-Academic, Dordrecht, The Netherlands.
-
-\bibitem{Chow} Chow, W-L. (1949) \textit{On Compact Complex Analytic Varieties},
-American Journal of Mathematics, Vol. 71, No. 4, pp. 893-914.
-
-\bibitem{D-SS} Donaldson, S., Sun, S. (2014) \textit{Gromov-Hausdorff Limits of K\"ahler Manifolds and Algebraic Geometry I},
- Acta Math 213, Springer-Verlag, 63-106.
-
-\bibitem{DPPT}Druel S., Pereira J V., Pym B., Touzet F. \textit{A global Weinstein splitting theorem for
-holomorphic Poisson manifolds}, Por publicarse.
-
-\bibitem{EMS} Edwards, R., Millet, K., Sullivan, D. (1975) \textit{Foliations
-With All Leaves Compact}, Topology Vol. 16, Pergamon Press, 1977, pp. 13-32.
-
-\bibitem{V-A} Epstein, D. B. A., Millet, K. C., Tischler D.
-(1977) \textit{Leaves Without Holonomy}, Journal of The London Mathematical Society-second Series, 548-552.
-
-\bibitem{E-V} Epstein, D. B. A., Voght, E. (1978) \textit{A Counterexample to the Periodic Orbit Conjecture},
-Annals of Mathematics, Vol. 108, pp. 539-552.
-
-\bibitem{Epstein1} Epstein, D. B. A. (1976) \textit{Foliations with all leaves compact, Annales de Institute Fourier},
-tome 26 no. 1, pp. 265-282.
-
-\bibitem{Epstein2} Epstein, D. B. A. (1972) \textit{Periodic Flows on Three-Manifolds}, Annals of Mathematics,
-Second Series, Vol. 95, No. 1 (Jan., 1972), pp. 66-82.
-
-\bibitem{Gua-Pym} Gualtieri, M., Pym, B. (2012) \textit{Poisson modules and degeneracy loci},
-Proceedings of the London Mathematical Society 107(3), pp. 627-654.
-
-\bibitem{R-S} Remmert R., Stein, K. (1953) \textit{Über die wesentlichen
-Singulariäten analyscher Mengen}. Math. Annalen, Bd. 126, S. 263--306.
-
-\bibitem{GAGA} Serre, J.-P. (1956) \textit{G\'eom\'etrie alg\'ebrique et g\'eom\'etrie analytique}, Annales de Institut Fourier, Vol. 6, pp. 1-42.
-
-\bibitem{Myers} Myers, S. B. (1941), \textit{Riemannian manifolds with positive mean curvature}, Duke Mathematical Journal,
-8 (2): 401–404.
-
-\bibitem{SCHARK} Schark, I. J.(1961), \textit{Maximal Ideals in an Algebra of Bounded Analytic Functions}, The Institute for Advanced Study
-Princeton, New Jersey,pp. 735-746.
-
-\bibitem{Stolzenberg} Stolzenberg G. (1966) \textit{Volumes, Limits and
-Extensions of Analytic Varieties}, Lecture Notes in Mathematics,
-Springer-Verlag, Berlin.
-
-\bibitem{Thurston} Thurston W., P. (1974) \textit{A Generalization of Reeb Stability Theorem}, Topology Vol. 13,
-Pergamon Press, Great Britain, pp. 347-352.
-
-\bibitem{Pereira} Pereira J. V., (2001) \textit{Global Stability for Holomorphic Foliations in Kaehler Manifolds}.
-Qualitative Theory of Dynamical Systems volume 2, pp. 381–384.
-
-\bibitem{S-Yau} Yau, S-T., (1978) \textit{On The Ricci Curvature of a Compact K\"ahler Manifold and the Complex Monge-Amp\`ere Equation, I*},
-Communications on Pure and Applied Mathenatics, Vol. XXXXI, John Wiley \& Sons. Inc, 339-411.
-\end{thebibliography}
 \end{document}

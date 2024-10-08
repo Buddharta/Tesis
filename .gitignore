@@ -12,3 +12,7 @@
 Articulos Tesis de Doctorado/*
 *.lof
 *.lof
+*~
+#*
+*.lot
+examen-de-candidatura
