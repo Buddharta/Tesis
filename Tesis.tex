@@ -405,20 +405,20 @@ The Hausdorff metric allows to define a convenient notion of convergence of clos
         and $\textrm{Vol}_{2k}$ is the $2k$-dimensional volume, then $X$ is algebraic.
 \end{theorem}
 
-I will show how this theorem can be used to prove Chow's theorem in a straightfoward manner. With straightfoward I mean within the theory of analytic sets and their structure without referencing Hilbert's basis theorem or quasi coherent sheafs as other proofs of Chow's thorem utilize these kinds of machinery (see \cite{GAGA},\cite{chow-proofs}). A thing to note about this result is that is very similar to a widely known consequence of Liouville's theorem that states that an analytic function $f$ that grows polynomially i.e. if the norm of the function $|f(z)|$ is $\osheaf(|z|^{k})$ for some $k\in\nat$, then the function is a polynomial. This will be a theme throughout this section, the Bishop's theorems shown here offer similies between analytic functions and analytic varieties. Another similarity to note about this result is with Gromov's theorem on groups of polynomial growth although here the similarities are a bit looser.
+I will show how this theorem can be used to prove Chow's theorem in a straightfoward manner, with straightfoward I mean within the theory of analytic sets and their structure without referencing Hilbert's basis theorem or quasi coherent sheafs as other proofs of Chow's theorem utilize this kinds of theories (see \cite{GAGA},\cite{chow-proofs}). A thing to note about this result is that is very similar to a widely known consequence of Liouville's theorem that states that an analytic function $f$ that grows polynomialy, that is, $f$ is $\osheaf(z^{k})$ for some $k\in\nat$, then the $f$ is a polynomial. This will be a theme throughout this section, the Bishop's theorems shown here show the similarities between analytic functions and analytic varieties. Another similarity to note about is with Gromov's theorem on groups of polynomial growth, although in this case the similarities are a bit looser.
 
 \subsection{Bishop's Sequence Theorem}
-\noindent One of the most consecuental theorems of Bishop shows how the stucture of compact analytic sets are stable under Haussdorff convergence. In the following chapters I will show how this resut can be applied to the theory of holomorphic function on the unit ball of $\con$, the theory of holomorphic foliations on Kähler manifolds and the theory of currents on analytic sets to show similar stability properties on each thory respectively
+\noindent One of the most consecuential theorems of Bishop shows how the stucture of compact analytic sets are stable under Haussdorff convergence. In the following chapters I will show how this resut can be applied to the theory of holomorphic function on the unit ball of $\con$, the theory of holomorphic foliations on Kähler manifolds and the theory of currents on analytic sets to show similar stability properties on each thory respectively
 
 \begin{theorem}[Sequence theorem] \label{bishop sequence}
-  Let $\lbrace V_n\rbrace$ be a sequence of purely $k$-dimensional subvarieties of a domain $\Omega\subset\con$ such that $V_n\overset{h}\rightarrow V$, with $V\subset\Omega$ a closed subset. If
+  Let $\{V_n\}$ be a sequence of purely $k$-dimensional subvarieties of a domain $\Omega\subset\con$ such that $V_n\overset{h}\rightarrow V$, with $V\subset\Omega$ a closed subset. If
   \[
     \textrm{Vol}_{2k}(V_n)\leq M \hspace*{0.2cm}\forall n\in\nat,
   \]
   for $M\in\re$ a positive constant, then for the Hausdorff measure we have $\mathcal{H}_{2k+1}(V)=0$, moreover $V$ is a purely $k$-dimensional analytic subvariety of $\Omega$.
 \end{theorem}
 
-This theorem is clearly very interesting from various points of views. First it shows how stable are the structure of analytic varieties of pure dimension $k$, a fact that will be useful when studying holomorphic foliations. Another way this theorem is interesting is that it shows that analytic subvarieties with bounded volume do not grow dimensionally and in a way form a closed subset of the Gromov-Hausdorf space.
+This theorem is clearly very interesting from various perspectives, first it shows how stable are the structure of analytic varieties of pure dimension $k$, a fact that will be useful when studying holomorphic foliations. Second, this theorem is interesting because it shows that analytic subvarieties with bounded volume do not grow dimentionally and in a way, they form a closed subset of the Gromov-Hausdorf space.
 
 \subsection{Bishop's regular coordinates theorem}
 \noindent The last theorem to be exposed in this section is what I call ``Bishop's regular coordinates theorem'', the reason I chose this name will be explained after exposing some of the results that compliment this theorem when its applied to analytic subvarieties of pure dimension $k$ instead of just closed subsets with a certain bound on their Hausdorff dimension.
@@ -1166,5 +1166,13 @@ and as we know $A$ is an analytic set.
 \item \textbf{Stoll's Theorem:} If $B$ is an analytic set of $D$ and $A$ is a pure dimension $k$ analytic set in $D\setminus B$ and moreover $\|t(A)\|_{D\setminus B}\leq\infty$ then $\overline{A}$ is an analytic set in $D$.
 \end{enumerate}
 \end{enumerate}
+\HUGE\textbf{IDEAS:}
+\begin{enumerate}
+  \item Regresar MARLGRANGE ``Frobenious Avec Singulariés'' y la Bibliografía.
+  \item Let $M$ be a Complex possibly singurar Kähler variety and \(\mathfrak{F}\) a possibly singular foliation on $M$, assume all leaves have bounded volumes, is EMS valid (à la Bishop)?
+  \item Una foliación con singularidades en una variedad Kähler compacta y una foliación singular de hojas compactas en la variedad,
+  \item Sea \(\mathfrak{F}\) foliacón holomorfa en el disco unitario de \(\co^n\) de hojas de volumen unif acotado, entonces ¿Qué pasa con las foliaciones de codimensión arbitraria en términos del teorema Alexander-Verjovsky.
+\end{enumerate}
+
 
 \end{document}
