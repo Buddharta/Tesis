@@ -79,6 +79,9 @@
 \newcommand{\rp}{\ensuremath{\mathbb{RP}}}
 \newcommand{\bg}{\ensuremath{\overline \Gamma}}
 
+\newcommand{\om}{\ensuremath{\Omega}}
+\newcommand{\sig}{\ensuremath{\Sigma}}
+
 \newcommand{\osheaf}{\ensuremath{\mathcal O }}
 \newcommand{\psheaf}{\ensuremath{\mathcal P }}
 \newcommand{\fsheaf}{\ensuremath{\mathcal F }}
@@ -202,18 +205,18 @@ This chapter is for stablishing the basic definitions, notations and conventions
 
 The set of complex numbers denoted as $\co$ and naturally complex vector space of dimension $n$ will be denoted as $\con$. Given an open set $U\subset\con$ the set of holomorphic functions $f:U\rightarrow\co$ will be denoted as $\mathcal{H}(U)$ and $\osheaf_{U}$ will represent the sheaf of holomorphic germs over $U$. Similarly, the set of \emph{biholomorphic} funtions between two spaces $U$ and $V$ i.e. the set of biyective holomorphic mappings with holomorphic inverse between $U$ and $V$ as $\mathrm{Bil}(U,V)$, if $U=V$, then it will be denoted as $\mathrm{Bil}(U).$
 
-The set of complex lines in a $d$ dimensional complex vector spaces, also known as the complex projective space, will be denoted as $\cp^{d-1}$. Complex and real manifolds will be denoted usually with the letters $L, N, Ñ, M,\dots$. etc. The tanget space of a manifold wil be denoted as $TM$ and the space of smooth sections (vector fields) of $TM$ will be denoted as $\mathcal{T}M$.
+The set of complex lines in a $d$ dimensional complex vector spaces, also known as the complex projective space, will be denoted as $\cp^{d-1}$. Complex and real manifolds will be denoted usually with the letters $L, N, M,\dots$. etc. The tanget space of a manifold wil be denoted as $TM$ and the space of smooth sections (vector fields) of $TM$ will be denoted as $\mathcal{T}M$.
 
 An almost complex structure of an even dimensional real manifold will be denoted as $J:TM\rightarrow TM$, with $J²=-Id_{TM}$. Moreover the complexification of a even dimentional real manifold will be denoted as $TM_{\co}:=TM\otimes\co$, and the complex conjugate splitting will be denoted as $TM_{\co}=TM^{1,0}\oplus TM^{0,1}$.
 Similarly the space of $(p,q)$-forms on a complex manifold $M$ is denoted as $\Omega^{(p,q)}(M)$, defined as the section space of the vector bundles
 \[
   \bigwedge^{p,q}T^{*}M=\bigwedge^{p}T^{*}M\otimes_{\co}\bigwedge^{q}T^{*}M,
 \]
-\noindent where the following \emph{``conjugation''} convention is asumed: $\overline{\Omega^{(p,q)}(M)}=\Omega^{(q,p)}(M)$, with the space of complex differential forms given as the space
+\noindent where the following \emph{``conjugation''} convention is asumed: $\overline{\om^{(p,q)}(M)}=\om^{(q,p)}(M)$, with the space of complex differential forms given as the space
 \[
-  \Omega^{k}_{\co}(M)=\bigoplus_{p+q=k}\Omega^{p,q}(M).
+  \om^{k}_{\co}(M)=\bigoplus_{p+q=k}\om^{p,q}(M).
 \]
-\noindent The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\Omega^{(p,q)}(M)\rightarrow \Omega^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\Omega^{(p,q)}(M)\rightarrow\Omega^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.\\
+\noindent The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\om^{(p,q)}(M)\rightarrow \om^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\om^{(p,q)}(M)\rightarrow\om^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.\\
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
 \begin{definition}{Foliation}
 A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defined in a numerous of distict and interesting ways, depending on the application needed a foliation will be understood as
@@ -411,11 +414,11 @@ I will show how this theorem can be used to prove Chow's theorem in a straightfo
 \noindent One of the most consecuental theorems of Bishop shows how the stucture of compact analytic sets are stable under Haussdorff convergence. In the following chapters I will show how this resut can be applied to the theory of holomorphic function on the unit ball of $\con$, the theory of holomorphic foliations on Kähler manifolds and the theory of currents on analytic sets to show similar stability properties on each thory respectively
 
 \begin{theorem}[Sequence theorem] \label{bishop sequence}
-  Let $\lbrace V_n\rbrace$ be a sequence of purely $k$-dimensional subvarieties of a domain $\Omega\subset\con$ such that $V_n\overset{h}\rightarrow V$, with $V\subset\Omega$ a closed subset. If
+  Let $\lbrace V_n\rbrace$ be a sequence of purely $k$-dimensional subvarieties of a domain $\om\subset\con$ such that $V_n\overset{h}\rightarrow V$, with $V\subset\om$ a closed subset. If
   \[
     \textrm{Vol}_{2k}(V_n)\leq M \hspace*{0.2cm}\forall n\in\nat,
   \]
-  for $M\in\re$ a positive constant, then for the Hausdorff measure we have $\mathcal{H}_{2k+1}(V)=0$, moreover $V$ is a purely $k$-dimensional analytic subvariety of $\Omega$.
+  for $M\in\re$ a positive constant, then for the Hausdorff measure we have $\mathcal{H}_{2k+1}(V)=0$, moreover $V$ is a purely $k$-dimensional analytic subvariety of $\om$.
 \end{theorem}
 
 This theorem is clearly very interesting from various points of views. First it shows how stable are the structure of analytic varieties of pure dimension $k$, a fact that will be useful when studying holomorphic foliations. Another way this theorem is interesting is that it shows that analytic subvarieties with bounded volume do not grow dimensionally and in a way form a closed subset of the Gromov-Hausdorf space.
@@ -423,30 +426,37 @@ This theorem is clearly very interesting from various points of views. First it 
 \subsection{Bishop's regular coordinates theorem}
 \noindent The last theorem to be exposed in this section is what I call ``Bishop's regular coordinates theorem'', the reason I chose this name will be explained after exposing some of the results that compliment this theorem when its applied to analytic subvarieties of pure dimension $k$ instead of just closed subsets with a certain bound on their Hausdorff dimension.
 \begin{theorem}[Bishop's proper mapping theorem]\label{bishop mapping}
-  Let $\Omega\subset\con$ be a domain that contains $0$ and let $S\subset\Omega$ be a closed subset. If $\mathcal{H}^{2k+1}(S)=0$, then there is a suitable coordinate change of $\con$, $(z_1,\ldots,z_n)$ and neighborhoods $\Omega_k\subset\co^k$ and $\Omega_{n-k}\subset\co^{n-k}$, such that $0\in\Omega_k\times\Omega_{n-k}\subset\Omega$ and the projection
+  Let $\om\subset\con$ be a domain that contains $0$ and let $S\subset\om$ be a closed subset. If $\mathcal{H}^{2k+1}(S)=0$, then there is a suitable coordinate change of $\con$, $(z_1,\ldots,z_n)$ and neighborhoods $\om_k\subset\co^k$ and $\om_{n-k}\subset\co^{n-k}$, such that $0\in\om_k\times\om_{n-k}\subset\om$ and the projection
         \[
-          \pi_k:S\cap(\Omega_k\times\Omega_{n-k})\rightarrow\Omega_k\, ,\hspace{0.3cm}\pi_k(z,w):=z,
+          \pi_k:S\cap(\om_k\times\om_{n-k})\rightarrow\om_k\, ,\hspace{0.3cm}\pi_k(z,w):=z,
         \]
         \noindent is a proper map.
-\end{theorem}
-\noindent This applied to purely $k$-dimensional analytic subvarieties of $\con$ implies that meaning the projection $\pi$ is not just a proper mapping, its a finite sheeted analytic covering, first lets consider the following
+\end{theorem}\label{analytic-cover}
+\noindent This theorem applied to purely $k$-dimensional analytic subvarieties of $\con$ implies that the projection $\pi$ is not just a proper mapping, but a finitely sheeted analytic covering outside of a singular set, this is a way to look a desigularization from a geometric point of view, consider the following
 \begin{theorem}
-  Let $\Omega=\Omega_{k}\times\Omega_{n-k}\subset\con$ be an open subset and $\pi_{k}:\Omega\rightarrow\Omega_{k}$ the cannonical projection onto $\Omega_{k}$. Let $A\subset\Omega$ be an analytic subset such that $\pi=\pi_{k}\vert_{A}:A\rightarrow\Omega_{k}$ is a proper mapping. Then $A'=\pi(A)\subset\Omega_{k}$ is an analytic subset and $|\pi^{-1}[z_{k}]\cap A|$ is locally finite.
-  \end{theorem}
-  \begin{definition}
+  Let $\om=\om_{k}\times\om_{n-k}\subset\con$ be an open subset and $\pi_{k}:\om\rightarrow\om_{k}$ the cannonical projection onto $\om_{k}$. Let $A\subset\om$ be a purely $k$-dimensional analytic subset such that $\pi=\pi_{k}\vert_{A}:A\rightarrow\om_{k}$ is a proper mapping. Then $A'=\pi(A)\subset\om_{k}$ is an analytic subset and $\pi^{-1}[z_{k}]\cap A$ is locally finite. More over in fact, there is analytic subset $\sigma\subset\om_{k}$ of dimension $\dim(\sigma)<k$ and a natural number $N\in\nat$ such that
+  \begin{enumerate}
+    \item $\pi:A\setminus\pi^{-1}(\sigma)\to\om_{k}\setminus\sigma$ is a locally biholomorphic $N$-sheeted cover
+    \item $\pi^{-1}(\sigma)$ is nowhere dense in $A$.
+  \end{enumerate}
+  Any function that satifies the previous two points is called an \emph{analytic cover}.
+\end{theorem}
 
-Let $\osheaf_{n}$ be the sheaf of holomorphic functions near $0\in\con$ and let $\psheaf\subset\osheaf$ be a prime ideal, we say that the cannonial projections $\pi(z_{k},z_{n-k})=z_{k}$ are a set of \emph{regular coordinates} if
+This implies that the Hausdorff dimension of an analytic variety is twice its \emph{Krull Dimension} and that the singular part of a vaiety $S=\mathrm{Sing}(A)$ has Hausdorff dimension less than $2\dim(A)-2$, see \cite{Chirka}[pp.38-40]. There is also the connection between proper maps and \emph{regular coordinates of analytic varieties}
+
+\begin{definition}
+Let $\osheaf_{n}$ be the sheaf of holomorphic functions near $0\in\con$ and let $\psheaf\subset\osheaf$ be a prime ideal, we say that the cannonial projections $\pi_{k}(z_{k},z_{n-k})=z_{k}$ are a set of \emph{regular coordinates} if
     \begin{enumerate}
-      \item[1] $\mathcal{P}\cap\osheaf_{K}=0$
+      \item[1] $\mathcal{P}\cap\osheaf_{k}=0$
       \item[2] $\mathcal{F}_{n}=\osheaf_{n}/\mathcal{P}$ is integral over $\mathcal{O}_{k}$
       \item[3] $\mathcal{F}_{n}$ is generated over $\mathcal{F}_{k}=\osheaf_{k}/\mathcal{P}$ by the polynomials $\eta_{k+1}=\pi(z_{k+1})$
     \end{enumerate}
   \end{definition}
-  See (\cite{Gunning-Rossi})\\
-\vspace{1cm}
-{\Large\noindent\textbf{From here on this text needs much more work}}
-\clearpage
-
+  See (\cite{Gunning-Rossi}[pp. 93]). Therefore by the previously discussed theorem, we can prove the existence of a set of reguar coordinates of any purely $k$-dimensional analytic set $A\subset\con$ near $0$ at each of its irreducible components. Lets supose $X\subset\om$ is an \emph{irreducible analytic set of dimension \(k\)}, where $\om=\om_{k}\times\om_{n-k}$ therefore, by Bishop's proper mappping theorem \(\pi=\pi_{k}|_{X}\to\om_{k}\) the usual projection is a \emph{proper mapping}. By theorem \ref{analytic-cover} there  is an anaytic variety $\sigma\subset\om_{k}$ of dimension strictly less than $k$ such that $\pi:X\setminus\pi^{-1}(\sigma)\to\omega\setminus\sigma$ is a covering map and in particular $\pi$ is surjective. Since $X$ is irreducible, its \emph{vanishing ideal} $P=I(X)$ is a \emph{prime ideal}. Now if $f\in\osheaf_{k}\cap P$, then $f(z_{1},\dots,z_{n})=f(z_{1},\dots,z_{k})$ and $f$ vanishes on $X$, i.e. $f$ does not depend on the last $n-k$ variables, we can abuse notation and write this as $f=f\circ\pi_{k}$, now
+  \[
+    f^{-1}(0)=\pi_{k}^{-1}(f^{-1}(0))\supseteq\pi_{k}^{-1}(\pi(X))=\pi_{k}^{-1}(\om_{k})=\om_{k}\times\om_{n-k}=\om.
+  \]
+Therfore $f\equiv0$, or $\osheaf_{k}\cap P=0$, points $2$ and $3$ follow from Weiertrass's division and preparation theorems and the fact that $\pi$ is an \emph{analytic cover}.
 \subsection{Similarities between the theories of holomorphic functions and complex analytic sets}
 
 \noindent From the perspective that I have shown so far, it can be appreciated that Bishop's results can be thought of as generalizations of classical results from complex analysis, but in the context of the theory of analytic
@@ -487,9 +497,9 @@ Let $\osheaf_{n}$ be the sheaf of holomorphic functions near $0\in\con$ and let 
                                 \textit{Bishop's generalization of Remmert-Stein's theorem.}
                             \end{center} \\
                             \midrule
-                                If $f:(\Omega\setminus E)\subset\co\rightarrow\co$ is a holomorphic function and
+                                If $f:(\om\setminus E)\subset\co\rightarrow\co$ is a holomorphic function and
                                 $E$ is a compact subset of capacity $0$, then $f$ is extendible to a holomorphic
-                                function on the whole region $\Omega$.
+                                function on the whole region $\om$.
                                          &
                                 %\vspace*{0.1cm}
                                 Let $U\subset\con$ be a bounded open
@@ -522,9 +532,15 @@ Let $\osheaf_{n}$ be the sheaf of holomorphic functions near $0\in\con$ and let 
             \end{tabular}
 \end{table}
 
-Moreover, analytic varieties themselves can clearly be thought of as a generalization of holomorphic functions, since each holomorphic function $f:\Omega\subset\con\rightarrow\co$ has associated to it the analytic variety given by its zero divisor $[Z]=Z(g)$ or as previously mentioned, by its graph $\Gamma_{f}\subset\Omega\times\co$, the first being an analytic subvariety of dimension $n-1$ and the second being an analytic subvariety of pure dimension $n$. In addition to this, it is widely known that in the classical context of the complex variable, every holomorphic function on a compact holomorphic variety is constant, for example $\cp^n$ is compact, and therefore every global holomorphic function is constant. However, as we know, $\cp^n$ has many analytic subvarieties, as many as sets of algebraically independent homogeneous polynomial functions. Table \ref{Tab} lists a series of versions of classical theorems from complex analysis and their counterparts in the context of analytic varieties.
+Moreover, analytic varieties themselves can clearly be thought of as a generalization of holomorphic functions, since each holomorphic function $f:\om\subset\con\rightarrow\co$ has associated to it the analytic variety given by its zero divisor $[Z]=Z(g)$ or as previously mentioned, by its graph $\Gamma_{f}\subset\om\times\co$, the first being an analytic subvariety of dimension $n-1$ and the second being an analytic subvariety of pure dimension $n$. In addition to this, it is widely known that in the classical context of the complex variable, every holomorphic function on a compact holomorphic variety is constant, for example $\cp^n$ is compact, and therefore every global holomorphic function is constant. However, as we know, $\cp^n$ has many analytic subvarieties, as many as sets of algebraically independent homogeneous polynomial functions. Table \ref{Tab} lists a series of versions of classical theorems from complex analysis and their counterparts in the context of analytic varieties.
 
 \chapter{Applications of Bishop's theorems}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\rightmark}
+\fancyhead[RO]{\leftmark}
+\fancyfoot[C]{\thepage}
 \subsection{Analytic varieties and Complex Analysis}
 
 \begin{theorem}[Chow]\label{Chow}
@@ -537,10 +553,10 @@ Remmert-Stein's theorem, this was generalized and proved by Bishop in
 \cite{Bishop}.
 
 \begin{theorem}[Remmert-Stein]\label{Rem-Stein}
-        Let $\Omega\subset\con$ be an open subset and $Y$ an analytic subset
-        of $\Omega$ and let $X$ be a analytic subset of
-        $\Omega\setminus Y$. If $Y$ is of dimension at most $k-1$ and $X$ is of pure dimension $k$,
-        then the closure of $X$, $\overline{X}\cap\Omega$ is an analytic subset of $\Omega$.
+        Let $\om\subset\con$ be an open subset and $Y$ an analytic subset
+        of $\om$ and let $X$ be a analytic subset of
+        $\om\setminus Y$. If $Y$ is of dimension at most $k-1$ and $X$ is of pure dimension $k$,
+        then the closure of $X$, $\overline{X}\cap\om$ is an analytic subset of $\om$.
 \end{theorem}
 This is an essential step towards the proof of Chow's theorem if one is trying to avoid using categorical methods and
 quasi-coherent sheaves. This is because Remmert and Stein's result imply that the $\textrm{Cone}(X)$ of a projective analytic
@@ -775,13 +791,13 @@ then the space of \emph{$p$-vectors} is defined by
         \Lambda^{p}(\mathcal{T}M):=\{\osheaf_M\times\dots\times\mathcal{O}_M\rightarrow\mathcal{O}_M\,\vert\,\text{anti-symmetric}\}.
 \]
 Then, a Poisson bracket is a \emph{bivector} field, which we can definitionne via the pairing $\langle\cdot,\cdot\rangle$
-between the $p$-vector fields and the space of \emph{holomorphic $p$-differential forms} $\Omega^{p}(M)$ by
+between the $p$-vector fields and the space of \emph{holomorphic $p$-differential forms} $\om^{p}(M)$ by
 \[
         \pi\in H^0(M,\Lambda^2(\mathcal{T}M))\,\text{ then }\,\{f,g\}=\langle \pi,df\wedge dg\rangle.
 \]
 Therefore, generalizing this we have the following map defined by a Poisson bracket $\pi$
 \[
-        \pi^{\#}:\Omega^1_M\rightarrow\mathcal{T}M,\hspace{0.2cm}\pi^{\#}(\alpha):=\iota_{\alpha}(\pi):=\langle\pi,\alpha\wedge\cdot\rangle.
+        \pi^{\#}:\om^1_M\rightarrow\mathcal{T}M,\hspace{0.2cm}\pi^{\#}(\alpha):=\iota_{\alpha}(\pi):=\langle\pi,\alpha\wedge\cdot\rangle.
 \]
 \noindent With this, the rank of $\pi$ at a point $p\in M$ is defined as the positive integer $r\in \zah^{+}$ that definitionnes the dimension of the
 maximum space where $\pi^{\#}_p$ is non-degenerate, i.e., it is the dimension of the largest space such that $\pi^{\#}$ is a
@@ -900,6 +916,12 @@ Kähler manifolds, with particular application to Fano varieties.
 \end{itemize}
 
 \chapter{Currents}
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE]{\rightmark}
+\fancyhead[RO]{\leftmark}
+\fancyfoot[C]{\thepage}
 \noindent I believe that the idea of seeing the growth rate of volumes is a powerful tool and that directly relates us to the Lelong numbers. So it is necessary to see if there is any topological (homological or cohomological) interpretation of these. Below is a summary of the article "Propiétés Métriques Des Ensembles Analytiques Complexes".
 \subsection{Lelong Numbers}
 \begin{quote}
@@ -912,7 +934,7 @@ Recall that a set $A$ is a complex analytic subset of the analytic manifold $M$ 
 
 Since an analytic set is not a manifold, it is not evident that certain analytic operations can be performed on it, for example, integration over itself.
 
-Let $A$ be a pure dimension $k$ analytic subset defined in a domain $U\subset\mathbb{C}^n$. We denote by $\Omega_{(p,p)}(U)$ the space of differential forms with $C^{\infty}$ coefficients of compact support of type $(p,p)$. We definitionne the following linear operator
+Let $A$ be a pure dimension $k$ analytic subset defined in a domain $U\subset\mathbb{C}^n$. We denote by $\om_{(p,p)}(U)$ the space of differential forms with $C^{\infty}$ coefficients of compact support of type $(p,p)$. We definitionne the following linear operator
 
 \[
     t(\phi)=\int_{A}\phi
@@ -922,7 +944,7 @@ If $A$ is an analytic set, the analytic set of non-ordinary points of $A$ is $A\
 \[
     t_0(\phi)=\int_{A}\phi
 \]
-from the space $\Omega_{(p,p)}(U)$ (where it is well-defined in the classical sense) to $\Omega_{(p,p)}(U)$.
+from the space $\om_{(p,p)}(U)$ (where it is well-defined in the classical sense) to $\om_{(p,p)}(U)$.
 \subsubsection{Positive Currents and Closed Positive Currents}
 \label{sec:org61c3412}
 \begin{quote}
@@ -976,12 +998,12 @@ The following propositions hold for positive currents:
         \]
         is a norm equivalent to the operator norm on $T^p_{>0}$ defined by
         \[
-            \Vert t\Vert_U=\sup\{|t(\phi)|\,\vert\,\phi\in \Omega_{(p,p)(U)}\quad\Vert\phi\Vert=1\}.
+            \Vert t\Vert_U=\sup\{|t(\phi)|\,\vert\,\phi\in \om_{(p,p)(U)}\quad\Vert\phi\Vert=1\}.
         \]
         Moreover $\Vert t\Vert_U=\sup\{\Vert t\wedge\omega(L^{p})\Vert_U\,\vert\,L^{p}\text{ in a regular system}\}$
         \item[5] If $t$ is closed, that is
         \[
-            d(t)[\phi]:=t(d\phi)=0\quad\forall\phi\in\Omega_{*}(U),
+            d(t)[\phi]:=t(d\phi)=0\quad\forall\phi\in\om_{*}(U),
         \]
         then the following property holds: Let
         \[
@@ -1009,7 +1031,7 @@ The operator
 \[
     t(\phi)=\int_A\phi
 \]
-defined by a simple extension of $\Omega_{(p,p)}(U\setminus A')$ to the space $\Omega_{(p,p)}(U)$, exists and is unique and has three properties:
+defined by a simple extension of $\om_{(p,p)}(U\setminus A')$ to the space $\om_{(p,p)}(U)$, exists and is unique and has three properties:
 \begin{itemize}
     \item[a] It is the unique extension of $t_0(\phi)$ that has zero norm on $A'$ (simple extension).
     \item[b] It is closed.
@@ -1061,7 +1083,7 @@ Now consider the following mapping
 \textbf{Families of positive currents in a domain $D$ give rise to the same properties as families of positive measures}
 
 \begin{definition}
-We will say that $t_n\rightarrow t$ \emph{weakly} if $t_n(\varphi)$ has a limit for every $\varphi\in\Omega_{(p,p)}(D)$
+We will say that $t_n\rightarrow t$ \emph{weakly} if $t_n(\varphi)$ has a limit for every $\varphi\in\om_{(p,p)}(D)$
 \end{definition}
 
 \begin{enumerate}
