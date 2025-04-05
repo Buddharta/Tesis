@@ -19,7 +19,7 @@
 \usepackage[activeacute, english]{babel}
 \usepackage{multirow}%
 \usepackage{amsmath, amsthm, amssymb, amsfonts}
-\usepackage{amsthm}%
+\usepackage{mathtools}
 \usepackage{mathrsfs}%
 \usepackage[title]{appendix}%
 \usepackage[table, xcdraw]{xcolor}
@@ -203,78 +203,69 @@ Then, these propperties are used in the contexts of holomphic foliations, to stu
 \fancyfoot[C]{\thepage}
 This chapter is for stablishing the basic definitions, notations and conventions that will be used throughout the thesis. 
 
-The set of complex numbers denoted as $\co$ and naturally complex vector space of dimension $n$ will be denoted as $\con$. Given an open set $U\subset\con$ the set of holomorphic functions $f:U\rightarrow\co$ will be denoted as $\mathcal{H}(U)$ and $\osheaf_{U}$ will represent the sheaf of holomorphic germs over $U$. Similarly, the set of \emph{biholomorphic} funtions between two spaces $U$ and $V$ i.e. the set of biyective holomorphic mappings with holomorphic inverse between $U$ and $V$ as $\mathrm{Bil}(U,V)$, if $U=V$, then it will be denoted as $\mathrm{Bil}(U).$
+The set of complex numbers denoted as $\co$ and naturally the complex vector space of dimension $n$ will be denoted as $\con$. Given an open set $U\subset\con$ the sheaf of holomorphic functions at $U$, $f:U\rightarrow\co$ will be denoted as $\mathcal{H}(U)$ and $\osheaf_{z}$ will represent the sheaf of holomorphic germs near a point $z$, i.e. $\osheaf_{z}$ is the set of equivalence classes of holomorphic functions that coincide in an open neighborhood of $z$. I will note that the rings $\osheaf_{z}$ are \emph{isomorphic} for all $z\in\con$, so I will \emph{mostly} talk about $\osheaf_{0}$ wich will be denoted simply as $\osheaf_{n}$ denoting the dimension of the variety/manifold.
+
+Similarly, the set of \emph{biholomorphic} funtions between two spaces $U$ and $V$ i.e. the set of biyective holomorphic mappings with holomorphic inverse between $U$ and $V$ will be denoted as $\mathrm{Bil}(U,V)$, if $U=V$, then it will be denoted as $\mathrm{Bil}(U).$
 
 The set of complex lines in a $d$ dimensional complex vector spaces, also known as the complex projective space, will be denoted as $\cp^{d-1}$. Complex and real manifolds will be denoted usually with the letters $L, N, M,\dots$. etc. The tanget space of a manifold wil be denoted as $TM$ and the space of smooth sections (vector fields) of $TM$ will be denoted as $\mathcal{T}M$.
 
 An almost complex structure of an even dimensional real manifold will be denoted as $J:TM\rightarrow TM$, with $J²=-Id_{TM}$. Moreover the complexification of a even dimentional real manifold will be denoted as $TM_{\co}:=TM\otimes\co$, and the complex conjugate splitting will be denoted as $TM_{\co}=TM^{1,0}\oplus TM^{0,1}$.
-Similarly the space of $(p,q)$-forms on a complex manifold $M$ is denoted as $\Omega^{(p,q)}(M)$, defined as the section space of the vector bundles
+Similarly the space of $(p,q)$-forms on a complex manifold $M$ is  defined as the section space of the vector bundles
 \[
   \bigwedge^{p,q}T^{*}M=\bigwedge^{p}T^{*}M\otimes_{\co}\bigwedge^{q}T^{*}M,
 \]
-\noindent where the following \emph{``conjugation''} convention is asumed: $\overline{\om^{(p,q)}(M)}=\om^{(q,p)}(M)$, with the space of complex differential forms given as the space
+\noindent and will be denoted as $\Omega^{(p,q)}(M)$, and the following \emph{``conjugation''} convention is asumed: $\overline{\om^{(p,q)}(M)}=\om^{(q,p)}(M)$, with the space of complex differential forms given as the space
 \[
   \om^{k}_{\co}(M)=\bigoplus_{p+q=k}\om^{p,q}(M).
 \]
-\noindent The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\om^{(p,q)}(M)\rightarrow \om^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\om^{(p,q)}(M)\rightarrow\om^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.\\
+
+The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\om^{(p,q)}(M)\rightarrow \om^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\om^{(p,q)}(M)\rightarrow\om^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.
+
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
-\begin{definition}{Foliation}
-A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defined in a numerous of distict and interesting ways, depending on the application needed a foliation will be understood as
-\begin{itemize}
-  \item A decomposition of $M$ into disjoint connected submanifolds called \emph{leaves},
-        \[
-          M=\bigcup_{\alpha}\mathcal{L_{\alpha}},
-        \]
-        \noindent such that for every point $p\in M$ there exists an open set and a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) function $(U,\phi)$, with $\phi\rightarrow\re^{m}$, such that every $\mathcal{L}_{\alpha}\cap U$ is a level set of $\phi$.
-  \item A \emph{foliated chart} $\{(U_{i},\varphi_{i})\}$ such that $\{U_{i}\}$ is a covering of $M$ and $\varphi_{i}:U_{i}\rightarrow\re^{n}$ is a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) chart such that
-        \[
-          \varphi_{i}(U_{i})=W_{i}\times\re^{m},\text{ with }W_{i}\subset\re^{n-m}.
-        \]
-      \item An \emph{involutive} distribution of the tangent bundle $TM$, i.e. A $\mathcal{C}^{\infty}(M)$-module $\mathfrak{F}\subset\mathcal{T}M$ closed under the lie bracket
-        \[
-          [X,Y]\in\mathfrak{F}\text{ for any } \{X,Y\}\subset\mathfrak{F}
-        \]
-  \item The dual poin of view from the previous viewpoint will also be adopted, i.e. a foliation $\mathfrak{F}$ is a set of $k$-forms that nulls on an involutive disribution.
-\end{itemize}
 
-If all the leaves are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimension of the leaves. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.
-\end{definition}
-
-\begin{definition}
-The \emph{holonomy grupoid} also called the \emph{graph} of a foliation $(M,\mathcal{F})$ is the set of all curves contained in the leaves of the foliation \textit{modulo homotopy} and will be denoted as 
-\[
-G(M,\mathfrak{F}):=\{[\gamma],\,\gamma:[0,1]\rightarrow\mathcal{L}\,\,\vert\,\,\mathcal{L}\in\mathfrak{F}\}.
-\]
-\end{definition}
-Since grupoids are a difficult structure to work with, there is also the easier to work with \emph{holonomy group}, defined at a point $z\in L$ as
-\[
-\mathcal{H}_z(L):=\{[\gamma]\in G(M,\mathfrak{F})\,|\,\gamma(0)=\gamma(1)=z\}.
-\]
-This is naturally a group and can be representen via a surjective homomorphism of the fondamental group of $L$, said surjective homomorphism is called the \emph{holonomy morphism}
-\[
-H:\pi_{1}(L,z)\rightarrow\mathcal{H}_z(L).
-\]
-The prefix on the holonomy groups will be preserved in order to not confuse it with the set of holomorphic functions on a set.
 \section{Analytic and Algebraic Varieties}
-For a set of functions $A\subset\osheaf_{U}$, where $U\subset M$ is an open set on a complex manifold, the vanishing set of is denoted and defined as
+\noindent The Manifolds and varieties that will be studied in this thesis are complex and holomorphic which has important consequences for the ring of local functions. For starters, for any $z\in U\subset\con$ open subset, the ring $\osheaf_{z}$ is isomorphic to the set of \emph{convergent power series arround the point $z$.} Moreover, the ring $\osheaf_{n}$ is an integral domain for all $n\in\nat$, there is also \emph{Weierstrass's Preparation and Division Theorems} where there is alot more we can know about $\osheaf_{n}$ by looking at the ring of polynomials of the ring of holomorphic germs at a lesser dimesnion $\osheaf_{n-1}$, since there are a natural inclusions
+\[
+  \osheaf_{n-1}\xhookrightarrow{}\osheaf_{n-1}[z_{n}]\xhookrightarrow{}\osheaf_{n}.
+\]
+Where $z_{n}$ clearly denotes the nth coordinate in $\con$. In order to study $\osheaf_{n}$ in terms of $\osheaf_{n-1}$ the notion is necesary to know how a $f\in\osheaf_{n}$ behaves in terms of $z_{n}$, we say $f\in\osheaf_{n}$ is \emph{regular of order $k$ in $z_{n}$} if $g(z_{n})=f(0,\dots,0,z_{n})$ has a cero of order $k$ at $0$.
+\begin{theorem}{Weierstrass's Preparation Theorem}\label{weier-prep}
+If $f\in\osheaf_{n}$ is regular of order $k$ in $z_{n}$, then there is a unique \emph{Weiertrass polynomial} $h\in\osheaf[z_{n}]$ of degree $k$ such that $f=uh$, for some unit $u\in\osheaf_{n}$.
+\end{theorem}
+Where a \emph{Weiertrass polynomial} of degree $k>0$ in $z_{n}$ is polynomial $h\in\osheaf_{n-1}[z_{n}]$ such that
+\[
+  h(z_{1},\dots,z_{n})=z_{n}^{k}+\alpha_{1}(z_{1}\dots,z_{n-1})z_{n}^{k-1}+\dots+\alpha_{k}(z_{1},\dots,z_{n-1}).
+\]
+With $\alpha_{j}\in\osheaf_{n-1}$ are \emph{nonunits}. In a similar way there is
+\begin{theorem}{Weierstrass's Division Theorem}\label{weier-div}
+  Let $h\in\osheaf_{n-1}[z_{n}]$ be a \emph{Weierstrass polynoial in $z_{n}$} of degree $k$. Then for any $f\in\osheaf_{n}$ there are $g\in\osheaf_{n}$ and a polynomial $r\in\osheaf_{n-1}[z_{n}]$ of degree $<k$ such that $f=gh+r$. Moreover if $f\in\osheaf_{n-1}[z_{n}]$, then $g\in\osheaf_{n-1}[z_{n}]$.
+\end{theorem}
+See \cite{Gunnin-Rossi}. Now, as the art of algebraic geometry goes, the main focus of study will be \emph{varieties}, which is the \emph{geometric counterpart} of rings and ideals as the \emph{Nullstellensatz theorem} indicates. For a set of functions $A\subset\osheaf_{U}$, where $U\subset M$ is an open set on a complex manifold, the vanishing set of is denoted and defined as
 \[
   V(A):=\{x\in U\,\vert\,f(x)=0,\,\forall\,f\in A\}.
 \]
+\noindent Conversely the \emph{ideal defined by a set $V\subset\con$} is denoted and defined as
+\[
+  \mathcal{I}(V):=\{f\in\osheaf_{n}\,|\,f|_{V}\equiv0\}.
+\]
 \begin{definition}[Analytic Variety]
-An \emph{analytic variety} is defined as a paracompact Hausdorff space $X$ with a locally ringed structure $\mathcal{H}_{X}$ modeled by the local ring structure of a vanishing set in some finite dimensional complex vector space. That is, $\mathcal{H}$ is a sheaf of rings on $X$ such that for every $x\in X$ there is a open neighborhood of $x$, $U_{x}$ and a isomorphism of ringed spaces to a local model $(Z,\osheaf_{W}/(f_{1},\dots,f_{k}))$, meaning a pair $(\varphi,\phi)$ where $W\subset\con$ is and open set, $\varphi:U_{x}\rightarrow W\cap Z$ is an homeomorphism and $\phi=\varphi_{*}:\mathcal{O}_{W}/(f_{1},\dots,f_{k})\rightarrow\mathcal{H}_{U}$ is a sheaf isomorphism. Moreover $Z=V(f_{1},\dots,f_{k})$, and $(f_{1},\dots,f_{k})$ denotes the ideal of $\mathcal{O}_{W}$ generated by the functions $\{f_{1},\dots,f_{k}\}$. Given a open set $V\subset X$, an open set $U\subset\co$ and an isomorphism between ringed structures as previously discussed, $\varphi:V\rightarrow U\cap V(f_{1},\dots,f_{k})$, the pair $(V,\varphi)$ will be called a \emph{chart}.
+  An \emph{analytic variety} is defined is a paracompact Hausdorff space $X$ with a locally ringed structure $\osheaf_{X}$ modeled by the local ring structure of a vanishing set in some finite dimensional complex vector space. That is, $\osheaf_{X}$ is a sheaf of rings on $X$ such that for every $x\in X$ there is a open neighborhood of $x$, $U_{x}$ and a isomorphism of ringed spaces to a local model $(Z,\osheaf(W)/(f_{1},\dots,f_{k}))$, meaning a pair $(\varphi,\phi)$ where $W\subset\con$ is and open set, $\varphi:U_{x}\rightarrow W\cap Z$ is an homeomorphism and $\phi=\varphi_{*}:\osheaf(W)/(f_{1},\dots,f_{k})\rightarrow\osheaf_{X}(U_{x})$ is a sheaf isomorphism. Moreover $Z=V(f_{1},\dots,f_{k})$, and $(f_{1},\dots,f_{k})$ denotes the ideal of $\osheaf(W)$ generated by the functions $\{f_{1},\dots,f_{k}\}$.
 \end{definition}
-Similarly, the definition of a complex algebraic variety is the same as the definition of a complex analytic variety, the only difference is that instead of the ring of germs of holomorphic functions, the ring of polynomials $\co[z_{1},\dots,z_{n}]$ is used as the structure ring. Moreover an analytic or algebraic variety $X$ is said to be of pure dimension $k$ if all of its irreducible components are of the same dimension \emph{Krull dimesnion}.
+\noindent Given a open set $V\subset X$, an open set $U\subset\co$ and an isomorphism between ringed structures as previously discussed, $\varphi:V\rightarrow U\cap V(f_{1},\dots,f_{k})$, the pair $(V,\varphi)$ will be called a \emph{chart}.
 
-An \emph{analytic subspace} of an analytic variety $(X,\mathcal{H}_{X})$ consist of a subset $Y\subset X$ such that for every $y\in Y$ there is a chart $(U,\varphi)$ around $y$ with
+The definition of a complex algebraic variety is the same as the definition of a complex analytic variety, the only difference is that instead of the ring of germs of holomorphic functions, the ring of polynomials $\osheaf=\co[z_{1},\dots,z_{n}]$ is used as the structure ring. Moreover an analytic or algebraic variety $X$ is said to be of pure dimension $k$ if all of its irreducible components are of the same dimension \emph{Krull dimesnion $k$}.
+
+An \emph{analytic subspace} of an analytic variety $(X,\osheaf_{X})$ consist of a subset $Y\subset X$ such that for every $y\in Y$ there is a chart $(U,\varphi)$ around $y$ with
 \[
   \varphi(Y\cap U)=V_U(\varphi(\eta_1),\dots,\varphi(\eta_k)),
 \]
 
-\noindent and $\lbrace\eta_1,\dots,\eta_k\rbrace\subset\mathcal{H}_{X}$, naturally we have a local ring structure $(Y,\mathcal{H}_{Y})$ given by $\mathcal{H}_Y:=\mathcal{H}_n/\mathcal{I}(Y)$, as before and the definition of a \emph{algebraic subspace} can be decuced by replacing the stucture ring by the righ of polynomials.
+\noindent and $\lbrace\eta_1,\dots,\eta_k\rbrace\subset\osheaf_{X}$, naturally we have a local ring structure $(Y,\osheaf_{Y})$ given by $\osheaf_Y:=\osheaf_{X}/\mathcal{I}(Y)$, as before and the definition of a \emph{algebraic subspace} can be decuced by replacing the stucture ring by the righ of polynomials.
 
 Of particular interest are the analytic and algebraic subset of the \emph{complex projective space} $\cp^{n}$, note that using projective coordinates, the set of vanishing points of \emph{homogeneous} polynomials are well defined on $\cp^n$ and therefore algebraic projective subsets exist for $\cp^{n}$. Analytic and algebraic subsets of $\cp^n$ are going to be called  \emph{\textbf{projective} analytic subsets} and \emph{\textbf{projective} algebraic subsets} respectively.
 
-\subsection{Kähler Manifolds}
+
+\section{Kähler Manifolds}
 There are several equivalent ways to define a K\"ahler manifold, depending on the problem one is tackling, the traditonal way to define a Kähler manifold is as a complex manifold $(M,J)$ with an Hermitian structure $h=g-i\omega$ such that the (1,1)-form defined by $\omega=-\Im (h)$ is closed $d\,\omega=0$. This closed form is denoted as the \emph{K\"ahler form}, this means that a Kähler manifold $M$ is a real differentiable manifold of dimension $2d$ with a \emph{symplectic stucture} and an complex structure, i.e. $J:TM\rightarrow TM,\quad J^2=-Id$ is such that the Schouten–Nijenhuis bracket vanishes
 \[
   N_{J}(X,Y)=[X,Y]+J[JX,Y]+J[X,JY]-[JX,JY]=0.
@@ -324,7 +315,7 @@ The most important prototypical examples of K\"ahler manifolds are the complex v
 
 Likewise, it is important to mention that every complex submanifold of a K\"ahler manifold is K\"ahler. Similarly, compact complex submanifolds of a K\"ahler manifold minimize the volume in their homology class. This is some evidence that Kähler manifolds have some strong topological restrictions, another way to express this is the fact that powers of the Kähler form $\omega^k$ are non trivial representatives of cohomology classes in $H^{2k}(M ;\re)$, meaning these groups are never trivial. More importantly complex submanifolds of a Kähler manifold are also K\"ahler.
 
-\subsubsection{Kähler manifolds and their volumes}
+\subsection{Kähler manifolds and their volumes}
 \noindent Another way to state Wirtinger's inequality is the following
 \begin{theorem}\label{wirtinger}
         Let $N$ be a complex compact submanifold with boundary of a Kähler manifold $M$, then $N$ is a volume minimizing
@@ -344,8 +335,8 @@ Likewise, it is important to mention that every complex submanifold of a K\"ahle
                               \frac{1}{k!}\int_{X\setminus\Sigma(X)} \omega^k=
                                                             \textrm{Vol}_{2k}(X\setminus\Sigma(X)).
 \]
-\subsection{The Hausdorff measure and The Hausdorff metric}
-\noindent One way to realate the geometric structure of analytic sets and their analytic structure will be through a very useful tool that is directly related to the volumes, the Hausdorff measure, which can be conceptualized as a generalization of the volume for arbitrary dimensions and is in itself a tool for measuring dimensions as an arbitrary non-negative real number for arbitrary metric spaces $(X,\rho)$. First some notation, for a set on a \textbf{bounded} set $S\subset X$ the diamater is denoted as
+\section{The Hausdorff measure and The Hausdorff metric}
+\noindent One way to realate the geometric structure of analytic sets or manifolds and their analytic structure will be through a very useful tool that is directly related to the volumes, the Hausdorff measure, which can be conceptualized as a generalization of the volume for arbitrary dimensions and is in itself a tool for measuring dimensions as an arbitrary non-negative real number for arbitrary metric spaces $(X,\rho)$. First some notation, for a set on a \textbf{bounded} set $S\subset X$ the diamater is denoted as
 \[
 \textrm{diam}(S)=\max\{\rho(x,y)\,|\,x,y\in S\}
 \]
@@ -383,16 +374,57 @@ Here is a list some of the most important properties of the Hausdorff measure fo
 Related to the Hausdorff measure is the Hausdorff metric
 \begin{definition}
 Let $(X,\rho)$ be a metric space and $A,B$ two subsets of $X$, the Hausdorff metric defined for $A$
-and $B$ is defined as 
+and $B$ is defined as
 \[
 d_h(A,B):= \max\Big\{\sup_{a\in A}d(a,B),\sup_{b\in B}d(b,B)\Big\}.
 \]
 \end{definition}
 The Hausdorff metric allows to define a convenient notion of convergence of closed subsets; let $\{S_n \}$ be any sequence of closed subsets of $X$, then $S_n$ converges to the closed subset $S$ in the Hausdorff metric $S_n\overset{h}\rightarrow S$, if for every $K\subset X$ compact we have
 \[
-  d_h(K\cap S_n,K\cap S)\rightarrow 0. 
+  d_h(K\cap S_n,K\cap S)\rightarrow 0.
 \]
-\noindent This convergence is a particular version of the Gromov-Hausdorff convergence, however for analytic varieties it is enough to work with Hausdorff convergence instead of the more complex theory of Gromov-Hausdorff convergence. Its worth mentioning that Gromov-Hausdorff convergence has been used in recent years for the study of holomorphic vector bundles on Kähler manifolds with particular curvature considerations, in particular, Donadlson, Tiean, Sun et al have used Gromov-Hausdorff convergence for studying the Ricci curvatures of Kähler-Einstein manifolds, their convergence results share some resembrance to the ones I expose here and its worth asking about how far this similarities go (see \cite{Donadlson-Sun} \cite{tian}). 
+\noindent This convergence is a particular version of the Gromov-Hausdorff convergence, however for analytic varieties it is enough to work with Hausdorff convergence instead of the more complex theory of Gromov-Hausdorff convergence. Its worth mentioning that Gromov-Hausdorff convergence has been used in recent years for the study of holomorphic vector bundles on Kähler manifolds with particular curvature considerations, in particular, Donadlson, Tiean, Sun et al have used Gromov-Hausdorff convergence for studying the Ricci curvatures of Kähler-Einstein manifolds, their convergence results share some resembrance to the ones I expose here and its worth asking about how far this similarities go (see \cite{Donadlson-Sun} \cite{tian}).
+
+\section{Holomorphic Foliations}
+
+\begin{definition}{Foliation}
+A foliation $\mathfrak{F}$ on a manifold $M$ of real dimension $n$, can be defined in a numerous of distict and interesting ways, depending on the application needed a foliation will be understood as
+\begin{itemize}
+  \item A decomposition of $M$ into disjoint connected submanifolds called \emph{leaves},
+        \[
+          M=\bigcup_{\alpha}\mathcal{L_{\alpha}},
+        \]
+        \noindent such that for every point $p\in M$ there exists an open set and a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) function $(U,\phi)$, with $\phi\rightarrow\re^{m}$, such that every $\mathcal{L}_{\alpha}\cap U$ is a level set of $\phi$.
+  \item A \emph{foliated chart} $\{(U_{i},\varphi_{i})\}$ such that $\{U_{i}\}$ is a covering of $M$ and $\varphi_{i}:U_{i}\rightarrow\re^{n}$ is a ($\mathcal{C}^{k}$, differential, analytic or holomorphic) chart such that
+        \[
+          \varphi_{i}(U_{i})=W_{i}\times\re^{m},\text{ with }W_{i}\subset\re^{n-m}.
+        \]
+      \item An \emph{involutive} distribution of the tangent bundle $TM$, i.e. A $\mathcal{C}^{\infty}(M)$-module $\mathfrak{F}\subset\mathcal{T}M$ closed under the lie bracket
+        \[
+          [X,Y]\in\mathfrak{F}\text{ for any } \{X,Y\}\subset\mathfrak{F}
+        \]
+  \item The dual poin of view from the previous viewpoint will also be adopted, i.e. a foliation $\mathfrak{F}$ is a set of $k$-forms that nulls on an involutive disribution.
+\end{itemize}
+
+If all the leaves are of the same dimension, then the foliation is said to be \emph{regular}, note that a foliated chart determines the dimension of the leaves. This is equivalent to all the spaces generated by the poinwise evaluations of $\mathcal{F}$ being of the same dimension.
+\end{definition}
+
+\begin{definition}
+The \emph{holonomy grupoid} also called the \emph{graph} of a foliation $(M,\mathcal{F})$ is the set of all curves contained in the leaves of the foliation \textit{modulo homotopy} and will be denoted as 
+\[
+G(M,\mathfrak{F}):=\{[\gamma],\,\gamma:[0,1]\rightarrow\mathcal{L}\,\,\vert\,\,\mathcal{L}\in\mathfrak{F}\}.
+\]
+\end{definition}
+Since grupoids are a difficult structure to work with, there is also the easier to work with \emph{holonomy group}, defined at a point $z\in L$ as
+\[
+\mathcal{H}_z(L):=\{[\gamma]\in G(M,\mathfrak{F})\,|\,\gamma(0)=\gamma(1)=z\}.
+\]
+This is naturally a group and can be representen via a surjective homomorphism of the fondamental group of $L$, said surjective homomorphism is called the \emph{holonomy morphism}
+\[
+H:\pi_{1}(L,z)\rightarrow\mathcal{H}_z(L).
+\]
+The prefix on the holonomy groups will be preserved in order to not confuse it with the set of holomorphic functions on a set.
+
 
 \section{Bishop's theorems}
 \noindent This sections is as its sayd colloquially, the ``meat and potatos'' of this introductory chapters. Here I present three theorems from Errett Albert Bishop. The breadth of subjects Bishop worked on is wide but there was allways a holomorphic and analytic kernel to it, here in particular I show three theorems that give a bridge between complex algebraic/analytic geometry and complex/functional analyis in Bishop's work.  
