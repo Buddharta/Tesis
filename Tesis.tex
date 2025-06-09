@@ -141,11 +141,10 @@
 \thispagestyle{empty}
 \begin{center}
     \vspace*{\fill}
-    This thesis is dedicated to\\
-    My father who always supported\\
-    me and encouraged me to pursue\\
-    higher forms of knowledge and\\
-    mathematics.
+    This thesis is dedicated to my father\\
+    who always supported me and encouraged\\
+    me to pursue higher forms of knowledge\\
+    and mathematics.
     \vspace*{\fill}
 \end{center}
 \clearpage
@@ -201,7 +200,7 @@ Then, these propperties are used in the contexts of holomphic foliations, to stu
 \fancyhead[LE]{\rightmark}
 \fancyhead[RO]{\leftmark}
 \fancyfoot[C]{\thepage}
-This chapter is for stablishing the basic definitions, notations and conventions that will be used throughout the thesis. 
+This chapter is for stablishing the basic definitions, notations and conventions that will be used throughout this thesis.
 
 The set of complex numbers denoted as $\co$ and naturally the complex vector space of dimension $n$ will be denoted as $\con$. Given an open set $U\subset\con$ the sheaf of holomorphic functions at $U$, $f:U\rightarrow\co$ will be denoted as $\mathcal{H}(U)$ and $\osheaf_{z}$ will represent the sheaf of holomorphic germs near a point $z$, i.e. $\osheaf_{z}$ is the set of equivalence classes of holomorphic functions that coincide in an open neighborhood of $z$. I will note that the rings $\osheaf_{z}$ are \emph{isomorphic} for all $z\in\con$, so I will \emph{mostly} talk about $\osheaf_{0}$ wich will be denoted simply as $\osheaf_{n}$ denoting the dimension of the variety/manifold.
 
@@ -224,7 +223,7 @@ The external differential operator is $d=\partial + \overline{\partial}$, where 
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
 
 \section{Analytic and Algebraic Varieties}
-\noindent The Manifolds and varieties that will be studied in this thesis are complex and holomorphic which has important consequences for the ring of local functions. For starters, for any $z\in U\subset\con$ open subset, the ring $\osheaf_{z}$ is isomorphic to the set of \emph{convergent power series arround the point $z$.} Moreover, the ring $\osheaf_{n}$ is an integral domain for all $n\in\nat$, there is also \emph{Weierstrass's Preparation and Division Theorems} where there is alot more we can know about $\osheaf_{n}$ by looking at the ring of polynomials of the ring of holomorphic germs at a lesser dimesnion $\osheaf_{n-1}$, since there are a natural inclusions
+\noindent The manifolds and varieties that will be studied in this thesis are complex and holomorphic which has important consequences for the ring of local functions. For starters, for any $z\in U\subset\con$ open subset, the ring $\osheaf_{z}$ is isomorphic to the set of \emph{convergent power series arround the point $z$.} Moreover, the ring $\osheaf_{n}$ is an integral domain for all $n\in\nat$, there is also \emph{Weierstrass's Preparation and Division Theorems} where there is alot more we can know about $\osheaf_{n}$ by looking at the ring of polynomials of the ring of holomorphic germs at a lesser dimesnion $\osheaf_{n-1}$, since there are a natural inclusions
 \[
   \osheaf_{n-1}\xhookrightarrow{}\osheaf_{n-1}[z_{n}]\xhookrightarrow{}\osheaf_{n}.
 \]
@@ -253,14 +252,14 @@ See \cite{Gunnin-Rossi}. Now, as the art of algebraic geometry goes, the main fo
 \end{definition}
 \noindent Given a open set $V\subset X$, an open set $U\subset\co$ and an isomorphism between ringed structures as previously discussed, $\varphi:V\rightarrow U\cap V(f_{1},\dots,f_{k})$, the pair $(V,\varphi)$ will be called a \emph{chart}.
 
-The definition of a complex algebraic variety is the same as the definition of a complex analytic variety, the only difference is that instead of the ring of germs of holomorphic functions, the ring of polynomials $\osheaf=\co[z_{1},\dots,z_{n}]$ is used as the structure ring. Moreover an analytic or algebraic variety $X$ is said to be of pure dimension $k$ if all of its irreducible components are of the same dimension \emph{Krull dimesnion $k$}.
+The definition of a complex algebraic variety is the same as the definition of a complex analytic variety, the only difference is that instead of the ring of germs of holomorphic functions, the ring of polynomials $\osheaf=\co[z_{1},\dots,z_{n}]$ is used as the structure ring. Moreover an analytic or algebraic variety $X$ is said to be of pure dimension $k$ if all of its irreducible components are of the same dimension $k$.
 
 An \emph{analytic subspace} of an analytic variety $(X,\osheaf_{X})$ consist of a subset $Y\subset X$ such that for every $y\in Y$ there is a chart $(U,\varphi)$ around $y$ with
 \[
-  \varphi(Y\cap U)=V_U(\varphi(\eta_1),\dots,\varphi(\eta_k)),
+  \varphi(Y\cap U)=V_{\varphi(U)}(\varphi_{*}(\eta_1),\dots,\varphi_{*}(\eta_k)),
 \]
 
-\noindent and $\lbrace\eta_1,\dots,\eta_k\rbrace\subset\osheaf_{X}$, naturally we have a local ring structure $(Y,\osheaf_{Y})$ given by $\osheaf_Y:=\osheaf_{X}/\mathcal{I}(Y)$, as before and the definition of a \emph{algebraic subspace} can be decuced by replacing the stucture ring by the righ of polynomials.
+\noindent and $\lbrace\eta_1,\dots,\eta_k\rbrace\subset\osheaf_{n}$, naturally we have a local ring structure $(Y,\osheaf_{Y})$ given by $\osheaf_Y:=\osheaf_{X}/\mathcal{I}(Y)$, as before and the definition of a \emph{algebraic subspace} can be decuced by replacing the stucture ring by the ring of polynomials, the terms analytic set, analytic subset and analytic variety, analytic subvariety are going to be used interchangeable.
 
 Of particular interest are the analytic and algebraic subset of the \emph{complex projective space} $\cp^{n}$, note that using projective coordinates, the set of vanishing points of \emph{homogeneous} polynomials are well defined on $\cp^n$ and therefore algebraic projective subsets exist for $\cp^{n}$. Analytic and algebraic subsets of $\cp^n$ are going to be called  \emph{\textbf{projective} analytic subsets} and \emph{\textbf{projective} algebraic subsets} respectively.
 
@@ -281,22 +280,13 @@ However this is not enough as there are complex manifolds with symplectic struct
 \end{itemize}
 An Hermitian metric $h$ will also be denoted as $\langle\cdot,\cdot\rangle$, a manifold with a Hermitian metric $(M,h)$ its called a \textit{Hermitian manifold}.
 \end{definition}
-An Hermitian metric $h$ has an associated Riemannian metric and a associated $(1,1)$-form given by the real and
-imaginary part of $h$ respectively. Conversely, a Riemannian manifold of even dimension $(M,g)$ with an almost complex structure $J$ has
-a natural Hermitian metric given by
+An Hermitian metric $h$ has an associated Riemannian metric and a associated $(1,1)$-form given by the real and imaginary part of $h$ respectively. Conversely, a Riemannian manifold of even dimension $(M,g)$ with an almost complex structure $J$ has a natural Hermitian metric given by
 \[
   h(X,Y):=g(X,Y)-i\omega(X,Y).
 \]
 \noindent Where $\omega$ is its associated 2-form given by $\omega(X,Y)=g(JX,Y)$ which is clearly antisymmetric since $J^2=-Id_M$. From the geometric standpoint this means that Hermitian manifolds and Hermitian structures are special because of the relationship between their Riemannian metrics and their associated $(1,1)$-forms, one aspect of this relationship is the fact that both volume forms coincide, meaning that $g$ is a Riemannian metric with the same volume form as the one induced by $\omega$.
 
-\begin{theorem}[Wirtinger's inequality]
-        Let $M$ be an Hermitian manifold with its corresponding 2-form $\omega_M$ and let $f:N\rightarrow M$ be a closed oriented immersion of an oriented real manifold of real dimension $2k$. Let $\omega=f^*\,\omega_M$, then
-        \begin{equation}
-                        \frac{\omega^k}{k!}\leq \textrm{Vol}_N\hspace{0.3cm}\text{where }\textrm{Vol}_N\text{ is the volume form of N,}
-        \end{equation}
-        and the equality holds if and only if $N$ is a complex submanifold of $M$.
-\end{theorem}
-\begin{definition}
+\begin{definition}\label{Kahler-metric}
         Let $(M,h)$ be a Hermitian manifold with Hermitian metric $h$ and associated $(1,1)$-form $\omega$, $h$ is a Kähler metric if
         \[
           d\omega=0,
@@ -316,25 +306,73 @@ The most important prototypical examples of K\"ahler manifolds are the complex v
 Likewise, it is important to mention that every complex submanifold of a K\"ahler manifold is K\"ahler. Similarly, compact complex submanifolds of a K\"ahler manifold minimize the volume in their homology class. This is some evidence that Kähler manifolds have some strong topological restrictions, another way to express this is the fact that powers of the Kähler form $\omega^k$ are non trivial representatives of cohomology classes in $H^{2k}(M ;\re)$, meaning these groups are never trivial. More importantly complex submanifolds of a Kähler manifold are also K\"ahler.
 
 \subsection{Kähler manifolds and their volumes}
-\noindent Another way to state Wirtinger's inequality is the following
+Being a K\"ahler manifold has some strong topological restrictions. For example, powers of the K\"ahler form $\omega^k$ are nontrivial representatives of cohomology classes in $H^{2k}(M ;\re)$, meaning that these groups are never trivial.
+More important for our purposes is the fact that, by our definition of submanifold, it follows that every complex submanifold (or immersed complex submanifold) of a K\"ahler manifold is also K\"ahler
+since the closedness of the 2-form follows from the compatibility of $J$ and the derivative under the pullback $f^*$. Other consequences are the following equivalent results, known as ``Wirtinger's inequality'', which imply that Kähler manifolds have a special of geometry, a type geometry known as \emph{calibrated geometry}, later I will expand on this, but Wirtinger's inequality provides an important link between complex geometry and strucutes and calibrated geometries and structures
+
+\begin{theorem}[Wirtinger's inequality]Let $V$  be a real vector space  of even dimension $2k$ endowed with a positive-definite inner product $g$, symplectic form $\omega$, and  an almost-complex structure $J$  linked, as before by $\omega(u, v) = g(J(u), v)\, ,\forall\,u,v\in{V}$. Then for any orthonormal vectors $u_1, \dots, u_{2k}$ the following inequality holds:
+ \[ (\underbrace {\omega \wedge \cdots \wedge \omega } _{k{\text{ times}}})(u_{1},\ldots ,u_{2k})\leq k!.
+ \]
+There is equality if and only if the span of $u_1,\dots, u_{2k}$ is closed under the action of $J$.
+\end{theorem}
+As a consequence for the volume forms for submanifolds of K\"ahler manifolds we have the following
+\begin{theorem}[Complex submanifolds of Kähler manifolds minimize volume]
+Let $M$ be a K\"ahler manifold with K\"ahler form $\omega_M$ and let $f:N\rightarrow M$ be a closed and oriented immersion
+of an oriented real manifold of real dimension $2k$. Let $\omega=f^*\,\omega_m$, then
+\begin{equation}
+            \int_{N} \frac{\omega^k}{k!}\leq \int_N d\textrm{Vol}_N\hspace{0.3cm}\text{where }d\textrm{Vol}_N\text{ is the volume form of N,}
+\end{equation}
+and the equality holds if and only if $N$ is a complex submanifold of $M$.
+\end{theorem}
+We can state the natural conclusions as the following theorem
 \begin{theorem}\label{wirtinger}
-        Let $N$ be a complex compact submanifold with boundary of a Kähler manifold $M$, then $N$ is a volume minimizing
-        submanifold in its homology class $H_{2k}(M,\partial N,\re),$ meaning that for any real submanifold $X$ of
-        real dimension $2k$ and boundary $\partial N$ homologous to $N$ has
+        Let $N$ be a complex compact submanifold of a K\"ahler manifold $M$, then $N$ is a volume-minimizing submanifold in its homology class $H_{2k}(M,\partial N,\zah)$, meaning that for any real submanifold $X$ of real dimension $2k$ that is homologous to $N$, has a greater volume than $N$, meaning
         \[
-          \textrm{Vol}_{2k}(N)\leq \textrm{Vol}_{2k}(X).
+          \mathrm{Vol}_{2k}(N)\leq \mathrm{Vol}_{2k}(X).
         \]
 \end{theorem}
-\noindent This is one of the reasons Kähler manifolds are geometrically special, their complex submanifolds are volume minimizing in their respective homology class. Now let $\omega=-Im\langle\cdot,\cdot\rangle$ be the standard $(1,1)$-form of the standard euclidean Kähler metric in $\con$ and let $M$ be a complex submanifold of $\con$ by Wirtinger's inequality, if $\textrm{Vol}_{2k}(M)$ is the volume of $M$ given by the riemannian structure $g=Re\langle\cdot,\cdot\rangle\vert_{M}$, then
+Given $(M,g)$ a oriented Riemannian manifold of dimension $n$, then $M$ has a natural volume form $\textrm{Vol}_{n}$. In local coordinates, is expressed as
+\[
+ \textrm{Vol}_{n}=\sqrt{|g|}dx_{1}\wedge\dots\wedge dx_{n}.
+\]
+Let $\omega=-Im\langle\cdot,\cdot\rangle$ be the standard 2-form of the standard Euclidean K\"ahler metric in $\con$ and let $M$ be a complex submanifold of $\con$ by Wirtinger's inequality, if $\textrm{Vol}_{2k}(M)$ is the volume of $M$ given by the Riemannian structure as before, $g=Re\langle\cdot,\cdot\rangle\vert_{M}$, then
 \begin{equation}
         \textrm{Vol}_{2k}(M)= \frac{1}{k!}\int_M \omega^k.
 \end{equation}
-\noindent Moreover if $X$ is a purely $k$ dimensional analytic subset of $\con$ and $\Sigma(X)$ is its singular locus, then $M=X\setminus\Sigma(X)$ is a complex manifold and since $\Sigma(X)$ is an analytic subset of $X$ of lesser dimension its volume is negible, i.e.
+If $X$ is a purely $k$-dimensional analytic subset of $\con$, the singular locus of $X$, $\Sigma(X)$ is the set of points where the defining functions of $X$, say $X\cap U=V(f_{1},\dots,f_{n-k})$ have derivatives that span a space of dimension \emph{less than $k$}, meaning that the matrix defined by the partial derivatives
 \[
-    \textrm{Vol}_{2k}(X)= \frac{1}{k!}\int_{x} \omega^k=
-                              \frac{1}{k!}\int_{X\setminus\Sigma(X)} \omega^k=
-                                                            \textrm{Vol}_{2k}(X\setminus\Sigma(X)).
+  M=\left(\dfrac{\partial f_{j}}{\partial z_{i}}\right)_{ij}
 \]
+has a rank \emph{less than $k$}.Therefore $M=X\setminus\Sigma(X)$ is a complex manifold and $\Sigma(X)$ is an analytic subset of $X$ of lesser dimension, defined as the null set of the square submatrices of $M$ and so its volume is negligible, i.e.
+\[
+    \textrm{Vol}_{2k}(X)= \frac{1}{k!}\int_{X} \omega^k= \frac{1}{k!}\int_{X\setminus\Sigma(X)} \omega^k=
+    \textrm{Vol}_{2k}(X\setminus\Sigma(X)).
+\]
+
+
+\section{Calibrated manifolds}
+Now I would like to address \emph{calibrations and calibrated geometries}, a calibrated geometry is a way to describe a geometry via a distinguished family of submanifolds, more precisely, a volume minimizing family of subsets. This approach can be better suited for understanding \emph{foliated geometries}, as I will show later, Bishop's theorems is a very valuable too that help us with such an endeavor.
+In order to distinguish said family of subsets, a \emph{calibration} is needed, a calibration can be thought of a way to find volume minimizing manifolds of certain dimensions (see \cite{Harvey}). K\"ahler manifolds and their submanifolds have a natural calibration by Wirtinger's inequality. The relationship between the symplectic and volume forms of a hermitian inner product and the Riemannian volume implies that the normalized exterior powers of the Kähler form of a Kähler manifold are calibrations.
+
+\begin{definition}[Calibrated manifolds] A \textbf{calibrated $n$-manifold} is a Riemannian manifold $(M, g)$ of dimension $n$ equipped with a differential $p$-form $\varphi\,$  ($0 \leq {p} \leq{n}$) with the following properties
+\begin{enumerate}
+ \item $\varphi$ is closed, meaning $d\varphi = 0$, where $d$ is the exterior derivative.
+ \item For any $x \in M$ and any oriented $p$-dimensional subspace $\xi$ of $T_{x}M$, $\varphi|_{\xi} = \lambda \textrm{Vol}_{\xi}$ with $\lambda\leq 1$.
+\end{enumerate}
+When referring to Riemannian manifolds, $\textrm{Vol}_{\xi}$ denotes the volume form of  $\xi$ with respect to the Riemannian metric $g$. The $p$-form its called a $p$-\emph{calibration}.
+\end{definition}
+For $x\in M$, set $G_{x}(\varphi) = \{ \xi \subset T_{x}M\,\vert\,  \varphi|_{\xi} = \textrm{Vol}_{\xi} \}$. In order for the theory to be nontrivial, we need $G_x(\varphi)$ to be nonempty. Let $G(\varphi)$ denote the union of all $G_x(\varphi)$ with $x\in M$.
+\begin{definition}[Calibrated submanifold]
+A $p$-dimensional calibrated submanifold of a manifold $M$ with calibration $\varphi$ is an oriented submanifold $\Sigma$ such that the calibration restricted to the tangent bundle of $\Sigma$, equals the induced volume form of the submanifold $\varphi|_{T\Sigma}=\textrm{Vol}_{\Sigma}$. Equivalently $T\Sigma\subset G(\varphi)$
+\end{definition}
+For calibrated manifolds and submanifolds the volume-minimizing property of submanifolds in the same homological class is proven by the following one line argument
+\begin{equation}\label{oneline}
+  \int_{\Sigma}\mathrm{Vol}_{\Sigma}=\int_{\Sigma}\varphi =\int_{\Sigma'}\varphi \leq \int_{\Sigma'}\mathrm{Vol}_{\Sigma'}
+\end{equation}
+where the first equality holds because $\Sigma$ is calibrated, the second equality is Stoke's theorem (as $\varphi$ is closed), and the last inequality holds because $ \varphi$ is a calibration.
+Here $\Sigma$ is a calibrated submanifold of $M$ and $\Sigma'$ is any submanifold in the same homology class of $\Sigma$. Note that a Kähler manifold $(M,\omega)$ is a calibrated manifold with its calibrations given by the Kähler form and its powers $\{\omega^{k}\,\vert\, 1\leq k\leq \dim(M)\}$. Meaning that $(M,\omega^{k})$ is a calibrated manifold for every $k\in\{1,\dots,\dim(M)\}$, and the previous one line argument is a version of Wirtinger's inequality. There are more aspects of calibrated geometries thet will be explored later, the aspects of calibrations that are most important for this thesis are the ones telated to \emph{foliated geometries} and \emph{integration currents.}
+
+
 \section{The Hausdorff measure and The Hausdorff metric}
 \noindent One way to realate the geometric structure of analytic sets or manifolds and their analytic structure will be through a very useful tool that is directly related to the volumes, the Hausdorff measure, which can be conceptualized as a generalization of the volume for arbitrary dimensions and is in itself a tool for measuring dimensions as an arbitrary non-negative real number for arbitrary metric spaces $(X,\rho)$. First some notation, for a set on a \textbf{bounded} set $S\subset X$ the diamater is denoted as
 \[
@@ -343,7 +381,7 @@ Likewise, it is important to mention that every complex submanifold of a K\"ahle
 \begin{definition}
 Let $S$ be any subset of $X$ and any $\delta\in\re^{+}$. The Hausdorff measure of dimension $d$ bounded by $\delta$ is defined as
 \[
-H_{\delta}^{d}(S)=\inf\Big\{\sum_{i=0}^{\infty}\textrm{diam}(U_i)^{d}\,|\,S\subset\bigcup_{i=0}^{\infty}U_i,\,\textrm{diam}(U_i)<\delta\Big\},
+H_{\delta}^{d}(S)=\inf\Big\{\sum_{i=0}^{\infty}\mathrm{diam}(U_i)^{d}\,|\,S\subset\bigcup_{i=0}^{\infty}U_i,\,\mathrm{diam}(U_i)<\delta\Big\},
 \]
 \end{definition}
 \noindent where the infimum is taken over all the countable covers of $S$ with sets of diameter less than $\delta$. With this, the \emph{$d$-Hausdorff outer measure of dimension $d$} also known as the \emph{Hausdorff measure of dimension $d$}, is defined as the limit of the increasing sequence $\{H_{\delta}^d\}$ when $\delta\rightarrow 0$, in other words
@@ -352,7 +390,7 @@ H_{\delta}^{d}(S)=\inf\Big\{\sum_{i=0}^{\infty}\textrm{diam}(U_i)^{d}\,|\,S\subs
 \]
 The $d$-Hausdorff measure is a rough measure of the dimensionality of the set being measured and in the case of analytic sets it IS a measure of the dimensionality of a analytic subset. Note here that the definition does not specify that $d\in\nat$ and in fact the Hausdorff dimension may be any real $d\in\re$, but in the case of analytic and algebraic sets, the dimension is a natural number and coincides with the notion of dimension of analytic and algebraic varieties. Here I would like to mention in a brief section, that in general in the history of mathematics there is a rich discussion about te notion of \emph{dimension} of certan object of study, its not always inmediatly obvious how to define it, for example in this thesis there are two ways for assigning a dimension to a complex manifold/variety one is the ``real diemension'' and the other is the ``complex dimension'', here there is not such a big discrepancy since the two are related in many ways and one is two times the other but never the less its interesting, see \cite{YURI-MANIM:ON-THE-NOTION-OF-DIMENSION..}).
 
-Here is a list some of the most important properties of the Hausdorff measure for the purpose of this thesis, see \cite{Stolzenberg}[ch. 3]
+\noindent Here is a list some of the most important properties of the Hausdorff measure for the purpose of this thesis, see \cite{Stolzenberg}[ch. 3]:
 
 \begin{enumerate}
         \item[1.] If $\mathcal{H}^d(S)<\infty$, and $d<k$, then $\mathcal{H}^k(S)=0$.\\
@@ -371,19 +409,28 @@ Here is a list some of the most important properties of the Hausdorff measure fo
         \]
 \noindent where $\Gamma(z)$ is the Euler's gamma function.
 \end{enumerate}
-Related to the Hausdorff measure is the Hausdorff metric
+Similarly, if the Hausdorff measure is a measure of dimension, the Hausdorff metric is a way to measure how close two closed sets are
 \begin{definition}
 Let $(X,\rho)$ be a metric space and $A,B$ two subsets of $X$, the Hausdorff metric defined for $A$
 and $B$ is defined as
 \[
-d_h(A,B):= \max\Big\{\sup_{a\in A}d(a,B),\sup_{b\in B}d(b,B)\Big\}.
+d_H(A,B):= \max\Big\{\sup_{a\in A}d(a,B),\sup_{b\in B}d(b,B)\Big\}.
 \]
 \end{definition}
 The Hausdorff metric allows to define a convenient notion of convergence of closed subsets; let $\{S_n \}$ be any sequence of closed subsets of $X$, then $S_n$ converges to the closed subset $S$ in the Hausdorff metric $S_n\overset{h}\rightarrow S$, if for every $K\subset X$ compact we have
 \[
-  d_h(K\cap S_n,K\cap S)\rightarrow 0.
+  d_H(K\cap S_n,K\cap S)\rightarrow 0.
 \]
-\noindent This convergence is a particular version of the Gromov-Hausdorff convergence, however for analytic varieties it is enough to work with Hausdorff convergence instead of the more complex theory of Gromov-Hausdorff convergence. Its worth mentioning that Gromov-Hausdorff convergence has been used in recent years for the study of holomorphic vector bundles on Kähler manifolds with particular curvature considerations, in particular, Donadlson, Tiean, Sun et al have used Gromov-Hausdorff convergence for studying the Ricci curvatures of Kähler-Einstein manifolds, their convergence results share some resembrance to the ones I expose here and its worth asking about how far this similarities go (see \cite{Donadlson-Sun} \cite{tian}).
+\noindent This convergence is a particular version of the Gromov-Hausdorff convergence, however for analytic varieties it is enough to work with Hausdorff convergence instead of the more complex theory of Gromov-Hausdorff convergence.
+The Gromov-Hausdorff metric is defined as the \emph{infimum} of all the Hausdorff distances of isometric embeddings of any two bounded metric spaces, meaning that the Gromov-Hausdorff distance does not need an ambient space to measure the distance beetween two spaces, more formally
+\begin{definition}[Gromov-Hausdorff distance]\label{Gromov-Hausdorff}
+  Let $(X,d_{x})$ and $(Y,d_{Y})$ be bounded metric spaces, the Gromov-Hausdorff distance between them is defined as
+  \begin{equation}
+    d_{GH}(X,Y):=\inf d_{H}(\phi(X),\psi(Y)).
+  \end{equation}
+  Where the infimum is taken over all isometric embeddings $\phi$, $\psi$ into a metric space $Z$ and over all metric spaces $Z$.
+\end{definition}
+Being the infimum, implies that any sequence of closed sets of some ambient metric space that is convergent in the Hausdorff metric, is convergent in the Gromov-Hausdorff metric, and that is why here only Hausdorff convergence will be considered. Its worth mentioning that Gromov-Hausdorff convergence has been used in recent years for the study of holomorphic vector bundles on Kähler manifolds with particular curvature considerations, in particular, Donadlson, Tiean, Sun et al have used Gromov-Hausdorff convergence for studying the Ricci curvatures of Kähler-Einstein manifolds, their convergence results share some resembrance to the ones I expose here and its worth asking about how far this similarities can bie taken (see \cite{Donadlson-Sun} and \cite{tian}) I will explore this in the end section and in the future.
 
 \section{Holomorphic Foliations}
 
