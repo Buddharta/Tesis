@@ -9,10 +9,10 @@
 *.fls
 *.fdb_latexmk
 .auctex-auto/
-Articulos Tesis de Doctorado/*
 *.lof
 *.lof
 *~
 #*
 *.lot
 examen-de-candidatura
+Articulos\ Tesis\ de\ Doctorado/*
