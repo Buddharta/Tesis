@@ -216,7 +216,10 @@ Similarly the space of $(p,q)$-forms on a complex manifold $M$ is  defined as th
   \om^{k}_{\co}(M)=\bigoplus_{p+q=k}\om^{p,q}(M).
 \]
 
-The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\om^{(p,q)}(M)\rightarrow \om^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\om^{(p,q)}(M)\rightarrow\om^{(p,q+1)}(M)$ is the anti-holomorphic differential operator.
+The external differential operator is $d=\partial + \overline{\partial}$, where $\partial:\om^{(p,q)}(M)\rightarrow \om^{(p+1,q)}(M)$ is the holomorphic differential operator and $\overline{\partial}:\om^{(p,q)}(M)\rightarrow\om^{(p,q+1)}(M)$ is the anti-holomorphic differential operator. Similarly, there is the ``twisted'' or ``conjugated'' differential operator $d^c=i(\overline{\partial}-\partial)$, I will use both operators thoughout this thesis, but more important for this work is the related Kähler operator which will be usedd extensively in various ways
+\[
+  \frac{i}{2}dd^c\varphi=i\partial\overline{\partial}\varphi\quad\varphi:M\to\re,\varphi\in\csheaf^2{M}.
+\]
 
 Unless stated otherwise a submanifold will be understood as an embedded submanifold, i.e. $N$ is an embedded (differential/complex) submanifold of $M$ if $N$ is a (differential/complex) manifold such that there exist $f:N\rightarrow M$ a (differental/holomorphic) immersion.
 
@@ -237,7 +240,7 @@ With $\alpha_{j}\in\osheaf_{n-1}$ are \emph{nonunits}. In a similar way there is
 \begin{theorem}{Weierstrass's Division Theorem}\label{weier-div}
   Let $h\in\osheaf_{n-1}[z_{n}]$ be a \emph{Weierstrass polynoial in $z_{n}$} of degree $k$. Then for any $f\in\osheaf_{n}$ there are $g\in\osheaf_{n}$ and a polynomial $r\in\osheaf_{n-1}[z_{n}]$ of degree $<k$ such that $f=gh+r$. Moreover if $f\in\osheaf_{n-1}[z_{n}]$, then $g\in\osheaf_{n-1}[z_{n}]$.
 \end{theorem}
-See \cite{Gunnin-Rossi}. Now, as the art of algebraic geometry goes, the main focus of study will be \emph{varieties}, which is the \emph{geometric counterpart} of rings and ideals as the \emph{Nullstellensatz theorem} indicates. For a set of functions $A\subset\osheaf_{U}$, where $U\subset M$ is an open set on a complex manifold, the vanishing set of is denoted and defined as
+See \cite{Gunning-Rossi}. Now, as the art of algebraic geometry goes, the main focus of study will be \emph{varieties}, which is the \emph{geometric counterpart} of rings and ideals as the \emph{Nullstellensatz theorem} indicates. For a set of functions $A\subset\osheaf_{U}$, where $U\subset M$ is an open set on a complex manifold, the vanishing set of is denoted and defined as
 \[
   V(A):=\{x\in U\,\vert\,f(x)=0,\,\forall\,f\in A\}.
 \]
@@ -435,7 +438,7 @@ Being the infimum, implies that any sequence of closed sets of some ambient metr
 \begin{definition}\label{psh}
   A funtion \(\varphi:U\to\re\) defined on an open subset \(U\subset\con\), is said to be plurisubharmonic (often shortened as \textbf{psh}) if \(\varphi\) is upper semi continuous and if for every complex line
   \[
-    L=\{\alpha z_0+\beta_0\,|\,\,\alpha\in\co,\text{ with }\{z_0,\beta_0\}\subset\con\text{ fixed }\}.
+    L=\{\alpha_0 z+\beta_0\,|\,\,z\in\co,\text{ with }\{\alpha_0,\beta_0\}\subset\con\text{ fixed }\}.
   \]
   The restiction of \(\varphi|_{U\cap L}\) is subharmonic, meaning that
   \begin{equation}
@@ -460,10 +463,16 @@ The inequality in the previous definitions is known as the \emph{mean value ineq
     \begin{equation}
       H\varphi(\zeta)[\xi]=\sum_{1\leq j,k\leq n}\dfrac{\partial^2\varphi(\zeta)}{\partial z_j\partial\overline{z}_k}\,\xi_j\overline{\xi}_k,
     \end{equation}
-        is positive semi-definite for all \(\zeta\in U\). Morreover \(H\varphi[\xi]\) defines a positive measure for all \(\xi\), note that in the case of holomorphic manifolds, \(H\varphi\) coincides with \(i\dd\varphi\).
+        is positive semi-definite for all \(\zeta\in U\). Moreover \(H\varphi[\xi]\) defines a positive measure for all \(\xi\), note that in the case of holomorphic manifolds, \(H\varphi\) coincides with \(i\dd\varphi\).
 \end{enumerate}
 
 \noindent A plurisubharmonic function $\varphi:U\to\re$ is said to be \emph{\textbf{strictly plurisubharmonic functions}} if the previous inequalities are strict.
+
+Furthermore, analogously to plurisubharmonic functions, a \emph{\textbf{pluriharmonic function}} is a twice differentiable function \(f:U\to\re\) defined on an open subset \(U\subset\con\) such that for every complex line
+  \[
+    L=\{\alpha_0 z+\beta_0\,|\,\,z\in\co,\text{ with }\{\alpha_0,\beta_0\}\subset\con\text{ fixed }\}.
+  \]
+  The restiction of \(f|_{U\cap L}\) is harmonic $\nabla^2f(w)=0$. Equivalently for complex manifols, a real valued function \hbox{$f:M\to\re$} is pluriharmonic if $dd^{c}f=0$. See \cite{Gunning-Rossi}[pp. 271].
 
 \section{Holomorphic Foliations}
 
@@ -1601,8 +1610,10 @@ and as we know $A$ is an analytic set.
 
 \chapter{Singular Kählerian varieties}
 \noindent The notion of a ``singular Kählerian variety'' is an expression that is not well defined in the sense that there is not a definition with universal or near universal recognition in the field of complex algebraic geometry, that is, a definition with most if not all experts in the area agree on. Two proponents for what a definition of what a ``singular Kählerian variety'' the first was due to Grauert in 1962, where he defines it as a \emph{reduced ringed holomorphic space} $Y$ with a cover $\{U_\alpha\}_{\alpha\in\Lambda}$ such that there is a Hermitian metric $h$ and family of \emph{\textbf{strictly plurisubharmonic functions}} $\rho_\alpha:U_\alpha\to\re$ with $i\partial\overline{\partial}\rho_\alpha=h
-$ locally outside of its singular set $S=\mathrm{sing}(Y)$ (see \cite{Grauert2}). However the definition that I will be using is due to Moishezon 1974, the context for Moishezon's definition is that he proved that there is an equivalence between complex \emph{projective manifolds} and Kähler manifolds such that the number of \emph{algebraically independent} meromorphic functions equal the manifold's dimension. This condition is called \emph{Moishezon's condition}, and it turns out that for the definition he provided of \emph{singular Kählerian space} ther is no such equivallence, however, more recent developments have shown that for Kähler spaces with isolated singularities, the equivalence holds true still. The reason for why Moishezon's definition seems to be better suited for my thesis is that, it seems to be stable under Gromov-Hausddorff convergence.
-
+$ locally outside of its singular set $S=\mathrm{sing}(Y)$ (see \cite{Grauert2}). However the definition that I will be using is due to Moishezon in 1974, the context for Moishezon's definition is that he proved that there is an equivalence between complex \emph{projective manifolds} and Kähler manifolds such that the number of \emph{algebraically independent} meromorphic functions equal the manifold's dimension. This condition is called \emph{Moishezon's condition}, and it turns out that for the definition he provided of \emph{singular Kählerian space} there is no such equivallence, however, more recent developments have shown that for Kähler spaces with isolated singularities, the equivalence holds true still. The reason for why Moishezon's definition seems to be better suited for my thesis is that, it seems to be stable under Gromov-Hausddorff convergence.
+\begin{definition}
+  I will call a complex ringed space $X$ a \textbf{singualr Kähler} variety if it admits an open covering $\mathcal{U}=\{U_{\alpha}\}_{\alpha\in\Lambda}$ and a family of \textbf{plurisubharmonic fuctions} $\phi_{\alpha}:U_{\alpha}\to\re$ such that in the intersections $U_{\alpha}\cap U_{\beta}$ the co-cycles $\phi_{\alpha}-\phi_{\beta}$ are \textbf{pluriharmonic}
+\end{definition}
 
 \thebibliography{100}
 
@@ -1627,6 +1638,8 @@ Journal of the London Mathematical Society 16 (3), 548--552 (1977).
 \bibitem{Grauert1} Grauert, H.: {\it Ein Theorem der analytischen Garbentheorie und die Modulräume komplexer Strukturen,} Publ. Inst. Hautes Études Sci. No 5, 233--292 (1960).
 
 \bibitem{Grauert2} Grauert, H.: {\it Über Modifikationen und exzeptionelle analytische Mengen,} Math. Ann. 146, 331–368 (1962). \doi{https://doi.org/10.1007/BF01441136}
+
+\bibitem{Gunning-Rossi} Robert C.(1965) {\bf Analytic Functions of Several Complex Variables}, Prentice-Hall, Inc, Englewood Cliffs, N.J. \doi{https://doi.org/10.1090/chel/368}
 
 \bibitem{Haefliger} Haefliger, A.: {\it Structures feuilletées et cohomologie à valeur dans un faisceau de groupoïdes,}.
 Commentarii Mathematici Helvetici, Vol 32, 248--329 (1958).
